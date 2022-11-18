@@ -7,10 +7,11 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="397.0" prefWidth="755.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gestiune.farmacie.HelloController">
    <children>
-      <Button layoutX="355.0" layoutY="280.0" mnemonicParsing="false" onAction="#testTest" text="Button" />
-      <Label fx:id="mylabel" alignment="CENTER" layoutX="6.0" layoutY="26.0" prefHeight="142.0" prefWidth="749.0" text="Label" textFill="RED">
+      <Button layoutX="340.0" layoutY="307.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="73.0" text="Log In" />
+      <Button layoutX="350.0" layoutY="257.0" mnemonicParsing="false" text="Sign In" />
+      <Label alignment="CENTER" layoutX="277.0" layoutY="93.0" prefHeight="93.0" prefWidth="199.0" text="Farmacie" textAlignment="CENTER">
          <font>
-            <Font size="58.0" />
+            <Font size="36.0" />
          </font>
       </Label>
    </children>

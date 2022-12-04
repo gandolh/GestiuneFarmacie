@@ -7,7 +7,20 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class DatabaseConnection {
-    public static void main(String[] args) {
+
+    private static Connection con;
+    public static Connection getConnection(){
+        if(con == null){
+            try {
+                Connection con = getSQLDataSource().getConnection();
+            } catch (SQLServerException ex) {
+                throw new RuntimeException(ex);
+            }
+        }
+        return con;
+    }
+
+    private static SQLServerDataSource getSQLDataSource(){
         SQLServerDataSource ds = new SQLServerDataSource();
         ds.setUser(DatabaseCredentials.getUser());
         ds.setPassword(DatabaseCredentials.getPassword());
@@ -16,31 +29,18 @@ public class DatabaseConnection {
         ds.setDatabaseName(DatabaseCredentials.getDatabaseName());
         ds.setTrustServerCertificate(true);
         ds.setEncrypt("true");
-        try (Connection con = ds.getConnection()) {
-
-            ResultSet rs = con.prepareCall("SELECT TOP (1000) [id]\n" +
-                    "      ,[title]\n" +
-                    "      ,[content]\n" +
-                    "  FROM [piiiproject].[dbo].[notes]").executeQuery();
-            while(rs.next()) {
-                System.out.println( rs.getString(2));
-            }
-            // Execute a stored procedure that returns some data.
-//            cstmt.setInt(1, 50);
-//            ResultSet rs = cstmt.executeQuery();
-//
-//            // Iterate through the data in the result set and display it.
-//            while (rs.next()) {
-//                System.out.println("EMPLOYEE: " + rs.getString("LastName") + ", " + rs.getString("FirstName"));
-//                System.out.println("MANAGER: " + rs.getString("ManagerLastName") + ", " + rs.getString("ManagerFirstName"));
-//                System.out.println();
-//            }
-        }
-        // Handle any errors that may have occurred.
-        catch (SQLServerException e) {
-            throw new RuntimeException(e);
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
+        return ds;
     }
+
+    public static void executeQuerry(){
+//        ResultSet rs = con.prepareCall("SELECT TOP (1000) [id]\n" +
+//                "      ,[title]\n" +
+//                "      ,[content]\n" +
+//                "  FROM [piiiproject].[dbo].[notes]").executeQuery();
+//        while(rs.next()) {
+//            System.out.println( rs.getString(2));
+//        }
+    }
+
+
 }

@@ -7,9 +7,9 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gestiune.farmacie.SignInController">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gestiune.farmacie.controller.SignUpController">
    <children>
-      <Label alignment="CENTER" layoutX="225.0" layoutY="42.0" prefHeight="106.0" prefWidth="149.0" text="Sign In">
+      <Label alignment="CENTER" layoutX="225.0" layoutY="42.0" prefHeight="106.0" prefWidth="149.0" text="Sign up">
          <font>
             <Font size="36.0" />
          </font>
@@ -20,6 +20,7 @@
       <Label layoutX="273.0" layoutY="182.0" text="Username" />
       <Label layoutX="275.0" layoutY="235.0" text="Password" />
       <Label layoutX="254.0" layoutY="287.0" text="Confirm Password" />
-      <Button fx:id="signButton" layoutX="276.0" layoutY="342.0" mnemonicParsing="false" text="Sign In" />
+      <Button fx:id="signButton" layoutX="324.0" layoutY="342.0" mnemonicParsing="false" onAction="#SignUp" text="Sign up" />
+      <Button layoutX="228.0" layoutY="342.0" mnemonicParsing="false" onAction="#goToAplicationEntry" text="back" />
    </children>
 </AnchorPane>

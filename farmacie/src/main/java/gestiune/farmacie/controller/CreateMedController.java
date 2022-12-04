@@ -1,4 +1,4 @@
-package gestiune.farmacie;
+package gestiune.farmacie.controller;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;

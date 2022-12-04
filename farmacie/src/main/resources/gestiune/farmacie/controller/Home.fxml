@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
+   <top>
+       <MenuBar prefHeight="25.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+           <menus>
+               <Menu mnemonicParsing="false" text="Medicamente">
+                   <items>
+                       <MenuItem mnemonicParsing="false" text="Gestionare furnizori" />
+                       <MenuItem mnemonicParsing="false" text="Gestionare categorii" />
+                       <MenuItem mnemonicParsing="false" text="Gestionare medicamente" />
+                       <MenuItem mnemonicParsing="false" text="Gestionare stock" />
+                   </items>
+               </Menu>
+               <Menu mnemonicParsing="false" text="Vanzare">
+                   <items>
+                       <MenuItem mnemonicParsing="false" text="Selectare conținut" />
+                   </items>
+               </Menu>
+               <Menu mnemonicParsing="false" text="Mentiuni">
+                   <items>
+                       <MenuItem mnemonicParsing="false" text="Mentiuni medicamente" />
+                   </items>
+               </Menu>
+               <Menu mnemonicParsing="false" text="Administrare">
+                   <items>
+                       <MenuItem mnemonicParsing="false" text="Gestionare utilizatori" />
+                       <MenuItem mnemonicParsing="false" text="Gestionare salarii" />
+                       <MenuItem mnemonicParsing="false" text="Statistici" />
+                       <MenuItem mnemonicParsing="false" text="Solicitare marfă" />
+                   </items>
+               </Menu>
+               <Menu mnemonicParsing="false" text="Setări">
+                   <items>
+                       <MenuItem mnemonicParsing="false" text="Setări de sistem" />
+                       <MenuItem mnemonicParsing="false" text="Setări de utilizator" />
+                   </items>
+               </Menu>
+               <Menu mnemonicParsing="false" text="Ajutor">
+                   <items>
+                       <MenuItem mnemonicParsing="false" text="Raportare probleme" />
+                       <MenuItem mnemonicParsing="false" text="Documentație" />
+                   </items>
+               </Menu>
+           </menus>
+       </MenuBar>
+   </top>
+   <center>
+      <Label fx:id="greetingLabel" alignment="CENTER" contentDisplay="CENTER" prefHeight="75.0" prefWidth="606.0" textAlignment="CENTER" BorderPane.alignment="CENTER">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+   </center>
+</BorderPane>

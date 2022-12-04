@@ -7,7 +7,7 @@
 <?import javafx.scene.text.Font?>
 
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gestiune.farmacie.CreateProviderController">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gestiune.farmacie.controller.CreateProviderController">
    <children>
       <TextField fx:id="fieldCUI" layoutX="64.0" layoutY="110.0" promptText="CUI" />
       <Label layoutX="212.0" layoutY="14.0" prefHeight="54.0" prefWidth="176.0" text="Introducere Provider">

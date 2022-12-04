@@ -13,4 +13,5 @@ module gestiune.farmacie {
     exports gestiune.farmacie;
     exports gestiune.farmacie.controller;
     opens gestiune.farmacie.controller to javafx.fxml;
+    requires java.naming;
 }

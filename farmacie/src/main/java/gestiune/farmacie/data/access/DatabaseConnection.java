@@ -12,7 +12,7 @@ public class DatabaseConnection {
     public static Connection getConnection(){
         if(con == null){
             try {
-                Connection con = getSQLDataSource().getConnection();
+                 con = getSQLDataSource().getConnection();
             } catch (SQLServerException ex) {
                 throw new RuntimeException(ex);
             }
@@ -32,15 +32,9 @@ public class DatabaseConnection {
         return ds;
     }
 
-    public static void executeQuerry(){
-//        ResultSet rs = con.prepareCall("SELECT TOP (1000) [id]\n" +
-//                "      ,[title]\n" +
-//                "      ,[content]\n" +
-//                "  FROM [piiiproject].[dbo].[notes]").executeQuery();
-//        while(rs.next()) {
-//            System.out.println( rs.getString(2));
-//        }
+    public static ResultSet executeQuerry(Connection con, String sql) throws SQLException {
+       return con.prepareCall(sql).executeQuery();
     }
-
+    
 
 }

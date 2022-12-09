@@ -8,11 +8,12 @@ import java.sql.SQLException;
 
 public class TableCreator {
     public boolean createUsers(Connection con){
-        String sql = "SELECT TOP (1000) [recipe_id]\n" +
-                "      ,[recipe_name]\n" +
-                "  FROM [jdbcconnection].[dbo].[recipes]";
+        String sql = "SELECT count(*)\n" +
+                "FROM [jdbcconnection].[dbo].[recipes]";
         try {
-            ResultSet rs =   DatabaseConnection.executeQuerry(con,sql);
+            ResultSet rs = DatabaseConnection.executeQuerry(con,sql);
+            rs.next();
+            System.out.println(rs.getInt(1));
         } catch (SQLException e) {
             throw new RuntimeException(e);
 //            return false;

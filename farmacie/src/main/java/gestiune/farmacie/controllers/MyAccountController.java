@@ -1,10 +1,17 @@
 package gestiune.farmacie.controllers;
 
+import gestiune.farmacie.components.MyMenubar;
+import gestiune.farmacie.data.objects.PlatformInstance;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextField;
+import javafx.scene.layout.BorderPane;
 
 import java.net.URL;
+import java.time.LocalDate;
+import java.time.ZoneId;
+import java.time.format.DateTimeFormatter;
 import java.util.ResourceBundle;
 
 public class MyAccountController implements Initializable {
@@ -18,13 +25,20 @@ public class MyAccountController implements Initializable {
     private TextField birthdateField;
     @FXML
     private TextField hiredateField;
-
+    @FXML
+    private BorderPane rootBorderPane;
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        usernameField.setText("2");
-        firstNameField.setText("2");
-        lastNameField.setText("2");
-        birthdateField.setText("2");
-        hiredateField.setText("2");
+        MyMenubar myMenubar = new MyMenubar();
+        rootBorderPane.setTop(myMenubar);
+        usernameField.setText(PlatformInstance.getUser().getUsername());
+        firstNameField.setText(PlatformInstance.getUser().getFirstname());
+        lastNameField.setText(PlatformInstance.getUser().getLastname());
+        birthdateField.setText(PlatformInstance.getUser().getBirthdate().toString());
+        hiredateField.setText(PlatformInstance.getUser().getHiredate().toString());
+
+
     }
+
+
 }

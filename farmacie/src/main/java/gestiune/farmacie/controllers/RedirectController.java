@@ -8,22 +8,37 @@ import javafx.stage.Stage;
 import java.io.IOException;
 
 public class RedirectController {
-    public void goToAplicationEntry(Stage stage) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("aplicationEntry.fxml"));
+    public void goToAplicationEntry(Stage stage)  {
+        Parent root = null;
+        try {
+            root = FXMLLoader.load(getClass().getResource("/gestiune/farmacie/controllers/aplicationEntry.fxml"));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
         Scene scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
     }
 
-    public void goToHome(Stage stage) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("Home.fxml"));
+    public void goToHome(Stage stage) {
+        Parent root = null;
+        try {
+            root = FXMLLoader.load(getClass().getResource("/gestiune/farmacie/controllers/Home.fxml"));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
         Scene scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
     }
 
-    public void goToMyAccount(Stage stage) throws IOException{
-        Parent root = FXMLLoader.load(getClass().getResource("myAccount.fxml"));
+    public void goToMyAccount(Stage stage) {
+        Parent root = null;
+        try {
+            root = FXMLLoader.load(getClass().getResource("/gestiune/farmacie/controllers/myAccount.fxml"));
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
         Scene scene = new Scene(root);
         stage.setScene(scene);
         stage.show();

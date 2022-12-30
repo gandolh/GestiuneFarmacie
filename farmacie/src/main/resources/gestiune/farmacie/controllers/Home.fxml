@@ -1,37 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.Menu?>
-<?import javafx.scene.control.MenuBar?>
-<?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gestiune.farmacie.controllers.HomeController">
-   <top>
-       <MenuBar prefHeight="25.0" prefWidth="600.0" BorderPane.alignment="CENTER">
-           <menus>
-            <Menu mnemonicParsing="false" text="Conturi">
-              <items>
-                  <MenuItem fx:id="contulMeu" mnemonicParsing="false" onAction="#goToMyAcount" text="Contul meu" />
-                <MenuItem fx:id="gestionareConturi" mnemonicParsing="false" text="Gestionare conturi" visible="false" />
-              </items>
-            </Menu>
-               <Menu mnemonicParsing="false" text="Setări">
-                   <items>
-                       <MenuItem mnemonicParsing="false" text="Setări de sistem" />
-                       <MenuItem mnemonicParsing="false" text="Setări de utilizator" />
-                   </items>
-               </Menu>
-               <Menu mnemonicParsing="false" text="Ajutor">
-                   <items>
-                       <MenuItem mnemonicParsing="false" text="Raportare probleme" />
-                       <MenuItem mnemonicParsing="false" text="Documentație" />
-                   </items>
-               </Menu>
-           </menus>
-       </MenuBar>
-   </top>
+<BorderPane fx:id="rootBorderPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gestiune.farmacie.controllers.HomeController">
    <center>
       <Label fx:id="greetingLabel" alignment="CENTER" contentDisplay="CENTER" prefHeight="75.0" prefWidth="230.0" textAlignment="CENTER" BorderPane.alignment="CENTER">
          <font>

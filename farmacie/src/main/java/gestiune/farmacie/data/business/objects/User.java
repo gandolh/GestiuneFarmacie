@@ -1,5 +1,6 @@
 package gestiune.farmacie.data.business.objects;
 
+import java.util.Date;
 import java.util.List;
 
 public class User {
@@ -7,6 +8,42 @@ public class User {
     private String employeeId;
     private String username;
     private String hashedPassword;
+    private String firstname;
+    private String lastname;
+    private Date birthdate;
+    private Date hiredate;
+
+    public void setFirstname(String firstname) {
+        this.firstname = firstname;
+    }
+
+    public void setLastname(String lastname) {
+        this.lastname = lastname;
+    }
+
+    public void setBirthdate(Date birthdate) {
+        this.birthdate = birthdate;
+    }
+
+    public void setHiredate(Date hiredate) {
+        this.hiredate = hiredate;
+    }
+
+    public String getFirstname() {
+        return firstname;
+    }
+
+    public String getLastname() {
+        return lastname;
+    }
+
+    public Date getBirthdate() {
+        return birthdate;
+    }
+
+    public Date getHiredate() {
+        return hiredate;
+    }
 
     public List<UserRole> getRoles() {
         return roles;

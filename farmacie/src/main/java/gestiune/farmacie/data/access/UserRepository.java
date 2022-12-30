@@ -1,7 +1,7 @@
 package gestiune.farmacie.data.access;
 
 import gestiune.farmacie.data.business.objects.User;
-import gestiune.farmacie.data.objects.DatabaseResult;
+import gestiune.farmacie.utils.Password;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -11,16 +11,22 @@ public class UserRepository {
         return new User();
     }
 
-    public User CreateUser() {
+    public User createUser() {
         return new User();
     }
 
     public Boolean getIsUser(String email, String password) {
-        String sql = String.format("select * from FarmacieUser where username=%s and hashedPassword=%s", email, password);
+        if (email == null || email == null)
+            return false;
+        if (password == null || password == null)
+            return false;
+        String sql = String.format("select * from FarmacieUser where username='%s'", email);
         ResultSet set = null;
         try {
             set = DatabaseConnection.executeQuerry(sql);
-            return set.next();
+            set.next();
+            String hashedPassword = set.getString("hashedPassword");
+            return  Password.checkPassword(password,hashedPassword);
         } catch (SQLException e) {
             e.printStackTrace();
             return false;

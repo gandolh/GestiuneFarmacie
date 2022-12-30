@@ -25,7 +25,8 @@ public class LogInController {
 
     public void back(ActionEvent event) throws IOException {
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        goToAplicationEntry(stage);
+        RedirectController redirect = new RedirectController();
+        redirect.goToAplicationEntry(stage);
     }
 
     public void logIn(ActionEvent event) throws IOException {
@@ -33,24 +34,13 @@ public class LogInController {
         UserRepository userRepo = new UserRepository();
         boolean isUser = userRepo.getIsUser(usernameField.getText(), passwordField.getText());
         if (isUser) {
-            goToHome(stage);
+            RedirectController redirect = new RedirectController();
+            redirect.goToHome(stage);
         } else {
             MyDialog dialog = new MyDialog(Alert.AlertType.ERROR);
         }
     }
 
-    private void goToHome(Stage stage) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("Home.fxml"));
-        Scene scene = new Scene(root);
-        stage.setScene(scene);
-        stage.show();
-    }
 
-    private void goToAplicationEntry(Stage stage) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("aplicationEntry.fxml"));
-        Scene scene = new Scene(root);
-        stage.setScene(scene);
-        stage.show();
-    }
 
 }

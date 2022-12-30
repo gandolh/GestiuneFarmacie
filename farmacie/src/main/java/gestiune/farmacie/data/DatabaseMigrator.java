@@ -29,7 +29,7 @@ public class DatabaseMigrator {
     public static void main(String[] args) {
         dropTables();
          createTables();
-//        seedTables();
+        seedTables();
 
         //user.dir property for current directory and user.home for home directory
 //        showFilesAtPath(getProcsPath());
@@ -60,21 +60,27 @@ public class DatabaseMigrator {
 
     }
 
-    public static String createTables() {
-        String sqlscript = "";
+    public static void createTables() {
         try {
-            sqlscript = new String(Files.readAllBytes(Paths.get(getProcsPath(),"migrate.sql")));
+            String sqlscript = new String(Files.readAllBytes(Paths.get(getProcsPath(),"migrate.sql")));
             DatabaseConnection.executeNonQuerry(sqlscript);
 
         }catch (IOException e){
             e.printStackTrace();
         } catch (SQLException e) {
-            throw new RuntimeException(e);
+            e.printStackTrace();
         }
-        return sqlscript;
     }
 
     public static void seedTables() {
+        try {
+            String sqlscript = new String(Files.readAllBytes(Paths.get(getProcsPath(),"seedusers.sql")));
+            DatabaseConnection.executeNonQuerry(sqlscript);
 
+        }catch (IOException e){
+            e.printStackTrace();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
 }

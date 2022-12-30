@@ -1,11 +1,10 @@
 package gestiune.farmacie.controllers;
 
+import gestiune.farmacie.data.access.UserRepository;
+import gestiune.farmacie.data.business.objects.User;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
@@ -23,19 +22,24 @@ public class SignUpController {
     @FXML
     private Button signButton;
 
-    public void goToAplicationEntry(ActionEvent event) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("aplicationEntry.fxml"));
+    public void back(ActionEvent event) throws IOException {
         Stage stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
-        Scene scene = new Scene(root);
-        stage.setScene(scene);
-        stage.show();
+        RedirectController redirect = new RedirectController();
+        redirect.goToAplicationEntry(stage);
     }
 
     public void SignUp(ActionEvent event) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("Home.fxml"));
+
+        UserRepository userRepo = new UserRepository();
+        User user = new User();
+        userRepo.createUser(
+        );
+
+
         Stage stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
-        Scene scene = new Scene(root);
-        stage.setScene(scene);
-        stage.show();
+        RedirectController redirect = new RedirectController();
+        redirect.goToHome(stage);
     }
+
+
 }

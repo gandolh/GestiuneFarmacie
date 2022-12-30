@@ -13,6 +13,11 @@ public class User {
     private Date birthdate;
     private Date hiredate;
 
+    public User(){
+
+    }
+//    public User();// cu toate;
+
     public void setFirstname(String firstname) {
         this.firstname = firstname;
     }

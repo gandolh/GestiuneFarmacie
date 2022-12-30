@@ -9,9 +9,11 @@ import javafx.scene.control.MenuItem;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.sql.SQLOutput;
 
 public class MyMenubar extends MenuBar {
-    public MyMenubar(){
+    public MyMenubar() {
+        Menu acasa = new Menu("Acasa");
         Menu conturi = new Menu("Conturi");
         MenuItem contulMeu = new MenuItem("Contul meu");
         MenuItem gestionareConturi = new MenuItem("Gestionare conturi");
@@ -21,22 +23,31 @@ public class MyMenubar extends MenuBar {
         Menu ajutor = new Menu("Ajutor");
         MenuItem raportareProbleme = new MenuItem("Raportare probleme");
         MenuItem documentatie = new MenuItem("Documentatie");
-        conturi.getItems().add(contulMeu);
-        conturi.getItems().add(gestionareConturi);
-        setari.getItems().add(setariDePlatforma);
-        setari.getItems().add(setariDeSistem);
-        ajutor.getItems().add(raportareProbleme);
-        ajutor.getItems().add(documentatie);
-        this.getMenus().add(conturi);
-        this.getMenus().add(setari);
-        this.getMenus().add(ajutor);
+        conturi.getItems().addAll(contulMeu, gestionareConturi);
+        setari.getItems().addAll(setariDePlatforma, setariDeSistem);
+        ajutor.getItems().addAll(raportareProbleme, documentatie);
+        this.getMenus().addAll(acasa,conturi,setari,ajutor);
 
+        addGoHomeAction(acasa);
         contulMeu.setOnAction(e -> {
             Stage stage = (Stage) this.getScene().getWindow();
             RedirectController redirect = new RedirectController();
-                redirect.goToMyAccount(stage);
+            redirect.goToMyAccount(stage);
         });
 
+    }
+
+    private void addGoHomeAction(Menu acasa) {
+
+        final MenuItem menuItem = new MenuItem();
+        acasa.getItems().add(menuItem);
+        acasa.addEventHandler(Menu.ON_SHOWN, event -> acasa.hide());
+        acasa.addEventHandler(Menu.ON_SHOWING, event -> acasa.fire());
+        acasa.setOnShown(e -> {
+            Stage stage = (Stage) this.getScene().getWindow();
+            RedirectController redirect = new RedirectController();
+            redirect.goToHome(stage);
+        });
     }
 
 

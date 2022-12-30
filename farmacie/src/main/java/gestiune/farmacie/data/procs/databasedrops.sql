@@ -1,0 +1,16 @@
+drop table dbo.UserPermissions;
+drop table dbo.UserRole;
+drop table dbo.Issue;
+drop table dbo.Salary;
+drop table dbo.Bonuses;
+drop table dbo.FarmacieUser;
+drop table dbo.Employee;
+drop table dbo.Promotions;
+drop table dbo.StockRequest;
+drop table dbo.OrderMed;
+drop table dbo.Client;
+drop table dbo.PlatformSettings;
+drop table dbo.Medicine;
+drop table dbo.Comentarii;
+drop table dbo.MedicineCategory;
+drop table dbo.ProviderFarmacie;

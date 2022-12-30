@@ -1,6 +1,6 @@
 package gestiune.farmacie.auth;
 
-import gestiune.farmacie.business.objects.User;
+import gestiune.farmacie.data.business.objects.User;
 
 public class DatabaseUserAuthenticator implements UserAuthenticator {
 

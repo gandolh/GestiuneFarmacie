@@ -32,9 +32,17 @@ public class DatabaseConnection {
         return ds;
     }
 
-    public static ResultSet executeQuerry(Connection con, String sql) throws SQLException {
-       return con.prepareCall(sql).executeQuery();
+    public static ResultSet executeQuerry(String sql) throws SQLException {
+       return getConnection().prepareCall(sql).executeQuery();
     }
-    
+    public static boolean executeNonQuerry(String sql) throws SQLException {
+        return getConnection().prepareCall(sql).execute();
+    }
+    public static int[] executeScript(String sql) throws SQLException {
+//        getConnection().prepareStatement(sql).execute();
+//        System.out.println(sql);
+        return getConnection().prepareStatement(sql).executeBatch();
+    }
+
 
 }

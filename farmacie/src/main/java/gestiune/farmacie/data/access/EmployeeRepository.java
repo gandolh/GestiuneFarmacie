@@ -1,7 +1,7 @@
 package gestiune.farmacie.data.access;
 
-import gestiune.farmacie.business.objects.Employee;
-import gestiune.farmacie.classes.DatabaseResult;
+import gestiune.farmacie.data.business.objects.Employee;
+import gestiune.farmacie.data.objects.DatabaseResult;
 
 public class EmployeeRepository {
     public Employee getEmployee(){

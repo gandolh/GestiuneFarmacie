@@ -1,7 +1,6 @@
 package gestiune.farmacie.auth;
 
-import gestiune.farmacie.business.objects.Employee;
-import gestiune.farmacie.business.objects.User;
+import gestiune.farmacie.data.business.objects.User;
 
 public interface UserAuthenticator {
     public void logIn(String userId, String password);

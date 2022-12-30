@@ -5,8 +5,44 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b824ef3c-2441-4ff1-ac05-ff9f9795d812" name="Changes" comment="authentication handler blueprint">
-      <change afterPath="$PROJECT_DIR$/farmacie/src/main/java/gestiune/farmacie/data/proc/migrate.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/farmacie/src/main/java/gestiune/farmacie/data/DatabaseMigrator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/farmacie/src/main/java/gestiune/farmacie/data/procs/databasedrops.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/farmacie/src/main/java/gestiune/farmacie/utils/FileOperations.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/farmacie/src/main/java/gestiune/farmacie/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/farmacie/src/main/java/gestiune/farmacie/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/farmacie/src/main/java/gestiune/farmacie/auth/DatabaseUserAuthenticator.java" beforeDir="false" afterPath="$PROJECT_DIR$/farmacie/src/main/java/gestiune/farmacie/auth/DatabaseUserAuthenticator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/farmacie/src/main/java/gestiune/farmacie/auth/UserAuthenticator.java" beforeDir="false" afterPath="$PROJECT_DIR$/farmacie/src/main/java/gestiune/farmacie/auth/UserAuthenticator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/farmacie/src/main/java/gestiune/farmacie/business/objects/Employee.java" beforeDir="false" afterPath="$PROJECT_DIR$/farmacie/src/main/java/gestiune/farmacie/data/business/objects/Employee.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/farmacie/src/main/java/gestiune/farmacie/business/objects/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/farmacie/src/main/java/gestiune/farmacie/data/business/objects/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/farmacie/src/main/java/gestiune/farmacie/business/objects/UserPermissions.java" beforeDir="false" afterPath="$PROJECT_DIR$/farmacie/src/main/java/gestiune/farmacie/data/business/objects/UserPermissions.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/farmacie/src/main/java/gestiune/farmacie/business/objects/UserRole.java" beforeDir="false" afterPath="$PROJECT_DIR$/farmacie/src/main/java/gestiune/farmacie/data/business/objects/UserRole.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/farmacie/src/main/java/gestiune/farmacie/classes/DatabaseResult.java" beforeDir="false" afterPath="$PROJECT_DIR$/farmacie/src/main/java/gestiune/farmacie/data/objects/DatabaseResult.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/farmacie/src/main/java/gestiune/farmacie/classes/PlatformInstance.java" beforeDir="false" afterPath="$PROJECT_DIR$/farmacie/src/main/java/gestiune/farmacie/data/objects/PlatformInstance.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/farmacie/src/main/java/gestiune/farmacie/classes/UserData.java" beforeDir="false" afterPath="$PROJECT_DIR$/farmacie/src/main/java/gestiune/farmacie/data/business/objects/UserData.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/farmacie/src/main/java/gestiune/farmacie/controller/AplicationEntryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/farmacie/src/main/java/gestiune/farmacie/controllers/AplicationEntryController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/farmacie/src/main/java/gestiune/farmacie/controller/CreateCategController.java" beforeDir="false" afterPath="$PROJECT_DIR$/farmacie/src/main/java/gestiune/farmacie/controllers/CreateCategController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/farmacie/src/main/java/gestiune/farmacie/controller/CreateMedController.java" beforeDir="false" afterPath="$PROJECT_DIR$/farmacie/src/main/java/gestiune/farmacie/controllers/CreateMedController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/farmacie/src/main/java/gestiune/farmacie/controller/CreateProviderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/farmacie/src/main/java/gestiune/farmacie/controllers/CreateProviderController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/farmacie/src/main/java/gestiune/farmacie/controller/HomeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/farmacie/src/main/java/gestiune/farmacie/controllers/HomeController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/farmacie/src/main/java/gestiune/farmacie/controller/LogInController.java" beforeDir="false" afterPath="$PROJECT_DIR$/farmacie/src/main/java/gestiune/farmacie/controllers/LogInController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/farmacie/src/main/java/gestiune/farmacie/controller/SignUpController.java" beforeDir="false" afterPath="$PROJECT_DIR$/farmacie/src/main/java/gestiune/farmacie/controllers/SignUpController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/farmacie/src/main/java/gestiune/farmacie/data/access/DatabaseConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/farmacie/src/main/java/gestiune/farmacie/data/access/DatabaseConnection.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/farmacie/src/main/java/gestiune/farmacie/data/access/EmployeeRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/farmacie/src/main/java/gestiune/farmacie/data/access/EmployeeRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/farmacie/src/main/java/gestiune/farmacie/data/access/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/farmacie/src/main/java/gestiune/farmacie/data/access/UserRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/farmacie/src/main/java/gestiune/farmacie/data/migrate/DatabaseMigrator.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/farmacie/src/main/java/gestiune/farmacie/data/migrate/TableCreator.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/farmacie/src/main/java/gestiune/farmacie/data/proc/migrate.sql" beforeDir="false" afterPath="$PROJECT_DIR$/farmacie/src/main/java/gestiune/farmacie/data/procs/migrate.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/farmacie/src/main/java/gestiune/farmacie/data/seed/MainSeed.java" beforeDir="false" afterPath="$PROJECT_DIR$/farmacie/src/main/java/gestiune/farmacie/data/Seed.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/farmacie/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/farmacie/src/main/java/module-info.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/farmacie/src/main/resources/gestiune/farmacie/controller/CreateCateg.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/farmacie/src/main/resources/gestiune/farmacie/controllers/CreateCateg.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/farmacie/src/main/resources/gestiune/farmacie/controller/CreateMed.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/farmacie/src/main/resources/gestiune/farmacie/controllers/CreateMed.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/farmacie/src/main/resources/gestiune/farmacie/controller/CreateProvider.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/farmacie/src/main/resources/gestiune/farmacie/controllers/CreateProvider.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/farmacie/src/main/resources/gestiune/farmacie/controller/Home.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/farmacie/src/main/resources/gestiune/farmacie/controllers/Home.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/farmacie/src/main/resources/gestiune/farmacie/controller/LogIn.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/farmacie/src/main/resources/gestiune/farmacie/controllers/LogIn.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/farmacie/src/main/resources/gestiune/farmacie/controller/SignUp.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/farmacie/src/main/resources/gestiune/farmacie/controllers/SignUp.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/farmacie/src/main/resources/gestiune/farmacie/controller/aplicationEntry.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/farmacie/src/main/resources/gestiune/farmacie/controllers/aplicationEntry.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/farmacie/src/main/resources/gestiune/farmacie/controller/myAccount.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/farmacie/src/main/resources/gestiune/farmacie/controllers/myAccount.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,15 +82,15 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/projects/ngo_backend/ngo&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.project.maven.repository.indices&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "last_opened_file_path": "D:/projects/my_github/piii-project",
+    "settings.editor.selected.configurable": "reference.settings.project.maven.repository.indices"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="gestiune.farmacie.vault" />
@@ -67,8 +103,9 @@
       <recent name="gestiune.farmacie.auth" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
-      <recent name="gestiune.farmacie.controller" />
+      <recent name="" />
       <recent name="gestiune.farmacie" />
+      <recent name="gestiune.farmacie.controller" />
     </key>
   </component>
   <component name="RunManager" selected="Application.createDatabase">
@@ -80,7 +117,7 @@
       </method>
     </configuration>
     <configuration name="createDatabase" type="Application" factoryName="Application">
-      <option name="MAIN_CLASS_NAME" value="gestiune.farmacie.data.migrate.DatabaseMigrator" />
+      <option name="MAIN_CLASS_NAME" value="gestiune.farmacie.data.DatabaseMigrator" />
       <module name="farmacie" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -148,16 +185,5 @@
     <MESSAGE value="igtignore solved" />
     <MESSAGE value="authentication handler blueprint" />
     <option name="LAST_COMMIT_MESSAGE" value="authentication handler blueprint" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/farmacie/src/main/java/gestiune/farmacie/data/migrate/TableCreator.java</url>
-          <line>16</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>

@@ -1,6 +1,6 @@
 package gestiune.farmacie;
 
-import gestiune.farmacie.controller.AplicationEntryController;
+import gestiune.farmacie.controllers.AplicationEntryController;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;

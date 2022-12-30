@@ -22,4 +22,11 @@ public class RedirectController {
         stage.show();
     }
 
+    public void goToMyAccount(Stage stage) throws IOException{
+        Parent root = FXMLLoader.load(getClass().getResource("myAccount.fxml"));
+        Scene scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+    }
+
 }

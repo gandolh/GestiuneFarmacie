@@ -7,36 +7,16 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gestiune.farmacie.controllers.HomeController">
    <top>
        <MenuBar prefHeight="25.0" prefWidth="600.0" BorderPane.alignment="CENTER">
            <menus>
-               <Menu mnemonicParsing="false" text="Medicamente">
-                   <items>
-                       <MenuItem mnemonicParsing="false" text="Gestionare furnizori" />
-                       <MenuItem mnemonicParsing="false" text="Gestionare categorii" />
-                       <MenuItem mnemonicParsing="false" text="Gestionare medicamente" />
-                       <MenuItem mnemonicParsing="false" text="Gestionare stock" />
-                   </items>
-               </Menu>
-               <Menu mnemonicParsing="false" text="Vanzare">
-                   <items>
-                       <MenuItem mnemonicParsing="false" text="Selectare conținut" />
-                   </items>
-               </Menu>
-               <Menu mnemonicParsing="false" text="Mentiuni">
-                   <items>
-                       <MenuItem mnemonicParsing="false" text="Mentiuni medicamente" />
-                   </items>
-               </Menu>
-               <Menu mnemonicParsing="false" text="Administrare">
-                   <items>
-                       <MenuItem mnemonicParsing="false" text="Gestionare utilizatori" />
-                       <MenuItem mnemonicParsing="false" text="Gestionare salarii" />
-                       <MenuItem mnemonicParsing="false" text="Statistici" />
-                       <MenuItem mnemonicParsing="false" text="Solicitare marfă" />
-                   </items>
-               </Menu>
+            <Menu mnemonicParsing="false" text="Conturi">
+              <items>
+                  <MenuItem fx:id="contulMeu" mnemonicParsing="false" onAction="#goToMyAcount" text="Contul meu" />
+                <MenuItem fx:id="gestionareConturi" mnemonicParsing="false" text="Gestionare conturi" visible="false" />
+              </items>
+            </Menu>
                <Menu mnemonicParsing="false" text="Setări">
                    <items>
                        <MenuItem mnemonicParsing="false" text="Setări de sistem" />
@@ -53,7 +33,7 @@
        </MenuBar>
    </top>
    <center>
-      <Label fx:id="greetingLabel" alignment="CENTER" contentDisplay="CENTER" prefHeight="75.0" prefWidth="606.0" textAlignment="CENTER" BorderPane.alignment="CENTER">
+      <Label fx:id="greetingLabel" alignment="CENTER" contentDisplay="CENTER" prefHeight="75.0" prefWidth="230.0" textAlignment="CENTER" BorderPane.alignment="CENTER">
          <font>
             <Font size="18.0" />
          </font>

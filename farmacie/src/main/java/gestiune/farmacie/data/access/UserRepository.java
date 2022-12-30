@@ -1,14 +1,36 @@
 package gestiune.farmacie.data.access;
 
 import gestiune.farmacie.data.business.objects.User;
+import gestiune.farmacie.data.objects.PlatformInstance;
 import gestiune.farmacie.utils.Password;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class UserRepository {
-    public User getUser() {
-        return new User();
+    public User getUser(String email, String passwd) {
+        if (email == null || email == null)
+            return null;
+        if(getIsUser(email,passwd) == false )
+            return null;
+        User user = new User();
+        String sql = String.format(
+                "select * from FarmacieUser f inner join employee e on employeeId=e.id where username='%s'", email);
+        ResultSet set = null;
+        try {
+            set = DatabaseConnection.executeQuerry(sql);
+            if(set.next()){
+                user.setUsername(set.getString("username"));
+                user.setFirstname(set.getString("firstname"));
+                user.setLastname(set.getString("lastname"));
+                user.setBirthdate(set.getDate("birthdate"));
+                user.setHiredate(set.getDate("hiredate"));
+            }
+            return user;
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return null;
     }
 
     public User createUser() {

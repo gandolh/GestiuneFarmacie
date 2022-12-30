@@ -2,6 +2,8 @@ package gestiune.farmacie.controllers;
 
 import gestiune.farmacie.components.MyDialog;
 import gestiune.farmacie.data.access.UserRepository;
+import gestiune.farmacie.data.business.objects.User;
+import gestiune.farmacie.data.objects.PlatformInstance;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -34,6 +36,8 @@ public class LogInController {
         UserRepository userRepo = new UserRepository();
         boolean isUser = userRepo.getIsUser(usernameField.getText(), passwordField.getText());
         if (isUser) {
+            User user = userRepo.getUser(usernameField.getText(),passwordField.getText());
+            PlatformInstance.setUser(user);
             RedirectController redirect = new RedirectController();
             redirect.goToHome(stage);
         } else {

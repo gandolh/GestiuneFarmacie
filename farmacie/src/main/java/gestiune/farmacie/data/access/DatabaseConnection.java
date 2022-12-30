@@ -38,11 +38,5 @@ public class DatabaseConnection {
     public static boolean executeNonQuerry(String sql) throws SQLException {
         return getConnection().prepareCall(sql).execute();
     }
-    public static int[] executeScript(String sql) throws SQLException {
-//        getConnection().prepareStatement(sql).execute();
-//        System.out.println(sql);
-        return getConnection().prepareStatement(sql).executeBatch();
-    }
-
 
 }

@@ -75,6 +75,6 @@ public class DatabaseMigrator {
     }
 
     public static void seedTables() {
-        
+
     }
 }

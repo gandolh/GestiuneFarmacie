@@ -1,5 +1,6 @@
 package gestiune.farmacie.controllers;
 
+import gestiune.farmacie.data.business.objects.User;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -71,13 +72,13 @@ public class RedirectController {
         stage.show();
     }
 
-    public void goToUpdateUser(Stage stage) {
+    public void goToUpdateUser(Stage stage, User user) {
         Parent root = null;
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/gestiune/farmacie/controllers/CreateUpdateAccount.fxml"));
             root = loader.load();
             CreateUpdateAccountController controller = loader.getController();
-            controller.initializeUpdate();
+            controller.initializeUpdate(user);
         } catch (Exception e) {
             e.printStackTrace();
         }

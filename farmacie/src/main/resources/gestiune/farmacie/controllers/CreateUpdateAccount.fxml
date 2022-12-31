@@ -51,7 +51,7 @@
                </children>
             </GridPane>
             <Button fx:id="cancelBtn" layoutX="226.0" layoutY="329.0" mnemonicParsing="false" onAction="#cancel" text="Anulare" />
-            <Button fx:id="addOrUpdateBtn" layoutX="321.0" layoutY="329.0" mnemonicParsing="false" onAction="#add" text="Adauga" />
+            <Button fx:id="addOrUpdateBtn" layoutX="321.0" layoutY="329.0" mnemonicParsing="false" text="Adauga" />
          </children>
          <BorderPane.margin>
             <Insets />

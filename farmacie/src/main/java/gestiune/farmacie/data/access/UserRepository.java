@@ -51,9 +51,9 @@ public class UserRepository {
         try {
             String employeeId =java.util.UUID.randomUUID().toString();
             String userId = java.util.UUID.randomUUID().toString();
-            String formatedBirthDate = PlatformInstance.getSqlDateFormat().format(birthdate);;
-            String formatedHiredate = PlatformInstance.getSqlDateFormat().format(hiredate);;
-            String sqlscript = new String(Files.readAllBytes(Paths.get(getProcsPath(),"templates","users.sql")));
+            String formatedBirthDate = PlatformInstance.getSqlDateFormat().format(birthdate);
+            String formatedHiredate = PlatformInstance.getSqlDateFormat().format(hiredate);
+            String sqlscript = new String(Files.readAllBytes(Paths.get(getProcsPath(),"templates","insertUser.sql")));
             DatabaseConnection.executeNonQuerry(sqlscript, new String[]{employeeId,firstname,lastname,formatedBirthDate,
                     formatedHiredate, userId, employeeId, username, hashedPassword});
         } catch (IOException | SQLException e) {
@@ -122,5 +122,20 @@ public class UserRepository {
             e.printStackTrace();
         }
         return false;
+    }
+
+    public boolean updateUser(String username, String userId, String firstname, String lastname, Date birthdate, Date hiredate, String employeeId) {
+        try {
+            String formatedBirthDate = PlatformInstance.getSqlDateFormat().format(birthdate);
+            String formatedHiredate = PlatformInstance.getSqlDateFormat().format(hiredate);
+            String sql = new String(Files.readAllBytes(Paths.get(getProcsPath(),"templates","updateUser.sql")));
+            DatabaseConnection.executeNonQuerry(sql, new String[]{username,userId,firstname,lastname,formatedBirthDate,formatedHiredate,employeeId});
+        }catch (IOException e){
+            e.printStackTrace();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return  true;
     }
 }

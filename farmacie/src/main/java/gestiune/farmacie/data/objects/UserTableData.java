@@ -111,7 +111,7 @@ public class UserTableData {
 
         actualizeazaMenuItem.setOnAction(e -> {
             RedirectController redirect = new RedirectController();
-            redirect.goToUpdateUser((Stage) root.getScene().getWindow());
+            redirect.goToUpdateUser((Stage) root.getScene().getWindow(), user);
         });
 
         stergeMenuItem.setOnAction(e -> {

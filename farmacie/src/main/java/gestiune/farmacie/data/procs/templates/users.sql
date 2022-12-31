@@ -8,8 +8,8 @@ INSERT INTO [dbo].[Employee]
 		?,
         ?,
         ?,
-        convert(datetime,'18-06-99 10:34:09 PM',5),
-        convert(datetime,'18-06-99 10:34:09 PM',5))
+        convert(datetime, ?, 5), -- '18-06-99 10:34:09 PM'
+        convert(datetime, ?, 5)) -- '18-06-99 10:34:09 PM'
 
 
 INSERT INTO [dbo].[FarmacieUser]

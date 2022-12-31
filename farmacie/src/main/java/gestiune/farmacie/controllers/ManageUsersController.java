@@ -45,6 +45,7 @@ public class ManageUsersController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+
         //configure columns
         usernameTC.setCellValueFactory(new PropertyValueFactory<>("username"));
         firstnameTC.setCellValueFactory(new PropertyValueFactory<>("firstname"));
@@ -57,7 +58,7 @@ public class ManageUsersController implements Initializable {
         List<User> users = userRepo.getAllUsers();
         List<UserTableData> usersTableData = new ArrayList<>();
         for (User user: users) {
-            usersTableData.add(new UserTableData(user));
+            usersTableData.add(new UserTableData( rootBorderPane,user));
         }
         userTable.getItems().addAll(usersTableData);
 
@@ -72,5 +73,8 @@ public class ManageUsersController implements Initializable {
         RedirectController redirect = new RedirectController();
         redirect.goToCreateUser(stage);
     }
+
+
+
 
 }

@@ -28,7 +28,7 @@
                </columnConstraints>
                <rowConstraints>
                   <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints fx:id="resetPasswordGridRow" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                   <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                   <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                   <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
@@ -41,16 +41,17 @@
                   <Label text="Data angajarii" GridPane.rowIndex="5" />
                   <Label text="Nume de utilizator" />
                   <TextField fx:id="usernameField" GridPane.columnIndex="1" />
-                  <TextField fx:id="passwordField" GridPane.columnIndex="1" GridPane.rowIndex="1" />
                   <TextField fx:id="firstNameField" GridPane.columnIndex="1" GridPane.rowIndex="2" />
                   <TextField fx:id="lastNameField" GridPane.columnIndex="1" GridPane.rowIndex="3" />
                   <DatePicker fx:id="birthdateField" GridPane.columnIndex="1" GridPane.rowIndex="4" />
                   <DatePicker fx:id="hiredateField" GridPane.columnIndex="1" GridPane.rowIndex="5" />
                   <Label text="Parola" GridPane.rowIndex="1" />
+                  <Button fx:id="resetPasswordBtn" mnemonicParsing="false" onAction="#resetPassword" prefHeight="25.0" prefWidth="149.0" text="Reseteaza parola" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
+                  <TextField fx:id="passwordField" GridPane.columnIndex="1" GridPane.rowIndex="1" />
                </children>
             </GridPane>
             <Button fx:id="cancelBtn" layoutX="226.0" layoutY="329.0" mnemonicParsing="false" onAction="#cancel" text="Anulare" />
-            <Button fx:id="AddBtn" layoutX="321.0" layoutY="329.0" mnemonicParsing="false" onAction="#add" text="Adauga" />
+            <Button fx:id="addOrUpdateBtn" layoutX="321.0" layoutY="329.0" mnemonicParsing="false" onAction="#add" text="Adauga" />
          </children>
          <BorderPane.margin>
             <Insets />

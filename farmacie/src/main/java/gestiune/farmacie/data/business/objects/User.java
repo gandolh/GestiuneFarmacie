@@ -1,10 +1,11 @@
 package gestiune.farmacie.data.business.objects;
 
-import java.util.Date;
+import java.sql.Date;
 import java.util.List;
 
 public class User {
     private List<UserRole> roles;
+    private String userId;
     private String employeeId;
     private String username;
     private String hashedPassword;
@@ -13,12 +14,14 @@ public class User {
     private Date birthdate;
     private Date hiredate;
 
-    public User(){
-        this("a","a","a","a","a",new Date(),new Date());
+    public User() {
+        this("a","a", "a", "a", "a", "a",
+                new Date(System.currentTimeMillis()), new Date(System.currentTimeMillis()));
     }
 
-    public User(String employeeId, String username, String hashedPassword, String firstname, String lastname,
-                Date birthdate, Date hiredate) {
+    public User(String userId, String employeeId, String username, String hashedPassword, String firstname,
+                String lastname, Date birthdate, Date hiredate) {
+        this.userId = userId;
         this.employeeId = employeeId;
         this.username = username;
         this.hashedPassword = hashedPassword;
@@ -36,6 +39,7 @@ public class User {
         this.birthdate = birthdate;
         this.hiredate = hiredate;
     }
+
     public void setFirstname(String firstname) {
         this.firstname = firstname;
     }
@@ -68,6 +72,11 @@ public class User {
         return hiredate;
     }
 
+    public String getUserId() {
+        return userId;
+    }
+
+
     public List<UserRole> getRoles() {
         return roles;
     }
@@ -99,4 +108,9 @@ public class User {
     public void setHashedPassword(String hashedPassword) {
         this.hashedPassword = hashedPassword;
     }
+
+    public void setUserId(String userId) {
+        this.userId = userId;
+    }
+
 }

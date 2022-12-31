@@ -1,6 +1,7 @@
 package gestiune.farmacie.data.access;
 
 import gestiune.farmacie.data.business.objects.User;
+import gestiune.farmacie.data.objects.PlatformInstance;
 import gestiune.farmacie.utils.Password;
 
 import java.io.IOException;
@@ -10,7 +11,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.Date;
+import java.sql.Date;
 import java.util.List;
 
 import static gestiune.farmacie.data.objects.PlatformInstance.getProcsPath;
@@ -23,11 +24,14 @@ public class UserRepository {
             return null;
         User user = new User();
         String sql = String.format(
-                "select * from FarmacieUser f inner join employee e on employeeId=e.id where username='%s'", email);
+                "select f.id, employeeId, username, firstname, lastname, birthdate, hiredate " +
+                        "from FarmacieUser f inner join employee e on employeeId=e.id where username='%s'", email);
         ResultSet set = null;
         try {
             set = DatabaseConnection.executeQuerry(sql);
             if(set.next()){
+                user.setUserId(set.getString("id"));
+                user.setEmployeeId(set.getString("employeeId"));
                 user.setUsername(set.getString("username"));
                 user.setFirstname(set.getString("firstname"));
                 user.setLastname(set.getString("lastname"));
@@ -47,8 +51,11 @@ public class UserRepository {
         try {
             String employeeId =java.util.UUID.randomUUID().toString();
             String userId = java.util.UUID.randomUUID().toString();
+            String formatedBirthDate = PlatformInstance.getSqlDateFormat().format(birthdate);;
+            String formatedHiredate = PlatformInstance.getSqlDateFormat().format(hiredate);;
             String sqlscript = new String(Files.readAllBytes(Paths.get(getProcsPath(),"templates","users.sql")));
-            DatabaseConnection.executeNonQuerry(sqlscript, new String[]{employeeId,firstname,lastname, userId, employeeId, username, hashedPassword});
+            DatabaseConnection.executeNonQuerry(sqlscript, new String[]{employeeId,firstname,lastname,formatedBirthDate,
+                    formatedHiredate, userId, employeeId, username, hashedPassword});
         } catch (IOException | SQLException e) {
             e.printStackTrace();
             return false;
@@ -62,7 +69,7 @@ public class UserRepository {
             return false;
         if (password == null || password == null)
             return false;
-        String sql = String.format("select * from FarmacieUser where username='%s'", email);
+        String sql = String.format("select hashedPassword from FarmacieUser where username='%s'", email);
         ResultSet set = null;
         try {
             set = DatabaseConnection.executeQuerry(sql);
@@ -78,12 +85,15 @@ public class UserRepository {
     public List<User> getAllUsers() {
         //TODO: implement fetching from db
         List<User> users = new ArrayList<User>();
-        String sql = String.format("select * from FarmacieUser f inner join employee e on employeeId=e.id");
+        String sql = String.format("select f.id, employeeId, username, firstname, lastname, birthdate, hiredate " +
+                        "from FarmacieUser f inner join employee e on employeeId=e.id");
         ResultSet set = null;
         try {
             set = DatabaseConnection.executeQuerry(sql);
             while(set.next()){
                 User user = new User();
+                user.setUserId(set.getString("id"));
+                user.setEmployeeId(set.getString("employeeId"));
                 user.setUsername(set.getString("username"));
                 user.setFirstname(set.getString("firstname"));
                 user.setLastname(set.getString("lastname"));
@@ -97,5 +107,20 @@ public class UserRepository {
         }
         return null;
 
+    }
+
+    public static boolean deleteUser(String userId, String employeeId) {
+        String sql = "DELETE FROM [dbo].[FarmacieUser]\n" +
+                "      WHERE id= '%s';\n" +
+                "DELETE FROM [dbo].[Employee]\n" +
+                "      WHERE id= '%s';";
+        sql = String.format(sql,userId,employeeId);
+        try {
+            DatabaseConnection.executeNonQuerry(sql);
+            return true;
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return false;
     }
 }

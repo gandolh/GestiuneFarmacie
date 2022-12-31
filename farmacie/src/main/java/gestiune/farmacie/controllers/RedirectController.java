@@ -59,7 +59,25 @@ public class RedirectController {
     public void goToCreateUser(Stage stage) {
         Parent root = null;
         try {
-            root = FXMLLoader.load(getClass().getResource("/gestiune/farmacie/controllers/CreateUpdateAccount.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/gestiune/farmacie/controllers/CreateUpdateAccount.fxml"));
+            root = loader.load();
+            CreateUpdateAccountController controller = loader.getController();
+            controller.initializeCreate();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        Scene scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+    }
+
+    public void goToUpdateUser(Stage stage) {
+        Parent root = null;
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/gestiune/farmacie/controllers/CreateUpdateAccount.fxml"));
+            root = loader.load();
+            CreateUpdateAccountController controller = loader.getController();
+            controller.initializeUpdate();
         } catch (Exception e) {
             e.printStackTrace();
         }

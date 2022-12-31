@@ -9,17 +9,21 @@ import java.text.SimpleDateFormat;
 
 public class PlatformInstance {
     private static User user;
+    private static DateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy");
+    private static DateFormat sqlDateFormat = new SimpleDateFormat("dd-MM-yy");
 
     public static DateFormat getDateFormat() {
         return dateFormat;
     }
-
     public static void setDateFormat(DateFormat dateFormat) {
         PlatformInstance.dateFormat = dateFormat;
     }
-
-    private static DateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy");
-
+    public static DateFormat getSqlDateFormat() {
+        return sqlDateFormat;
+    }
+    public static void setSqlDateFormat(DateFormat sqlDateFormat) {
+        PlatformInstance.sqlDateFormat = sqlDateFormat;
+    }
     public static User getUser() {
         if(user == null)return new User();
         return user;

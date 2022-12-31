@@ -34,6 +34,14 @@ public class MyMenubar extends MenuBar {
             RedirectController redirect = new RedirectController();
             redirect.goToMyAccount(stage);
         });
+        gestionareConturi.setOnAction(e -> {
+            Stage stage = (Stage) this.getScene().getWindow();
+            RedirectController redirect = new RedirectController();
+            redirect.goToManageUsers(stage);
+
+        });
+
+
 
     }
 

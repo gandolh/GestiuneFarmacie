@@ -44,4 +44,15 @@ public class RedirectController {
         stage.show();
     }
 
+    public void goToManageUsers(Stage stage) {
+        Parent root = null;
+        try {
+            root = FXMLLoader.load(getClass().getResource("/gestiune/farmacie/controllers/ManageUsers.fxml"));
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        Scene scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+    }
 }

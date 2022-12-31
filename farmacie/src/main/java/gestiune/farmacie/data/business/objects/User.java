@@ -14,9 +14,19 @@ public class User {
     private Date hiredate;
 
     public User(){
-
+        this("a","a","a","a","a",new Date(),new Date());
     }
-//    public User();// cu toate;
+
+    public User(String employeeId, String username, String hashedPassword, String firstname, String lastname,
+                Date birthdate, Date hiredate) {
+        this.employeeId = employeeId;
+        this.username = username;
+        this.hashedPassword = hashedPassword;
+        this.firstname = firstname;
+        this.lastname = lastname;
+        this.birthdate = birthdate;
+        this.hiredate = hiredate;
+    }
 
     public void setFirstname(String firstname) {
         this.firstname = firstname;

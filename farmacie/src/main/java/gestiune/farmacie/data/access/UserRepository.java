@@ -4,8 +4,11 @@ import gestiune.farmacie.data.business.objects.User;
 import gestiune.farmacie.data.objects.PlatformInstance;
 import gestiune.farmacie.utils.Password;
 
+import java.sql.Array;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 public class UserRepository {
     public User getUser(String email, String passwd) {
@@ -53,5 +56,15 @@ public class UserRepository {
             e.printStackTrace();
             return false;
         }
+    }
+
+    public List<User> getAllUsers() {
+        //TODO: implement fetching from db
+
+        return List.of(
+          new User(),
+          new User(),
+          new User()
+        );
     }
 }

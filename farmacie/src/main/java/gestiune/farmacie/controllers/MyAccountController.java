@@ -34,8 +34,15 @@ public class MyAccountController implements Initializable {
         usernameField.setText(PlatformInstance.getUser().getUsername());
         firstNameField.setText(PlatformInstance.getUser().getFirstname());
         lastNameField.setText(PlatformInstance.getUser().getLastname());
-        birthdateField.setText(PlatformInstance.getUser().getBirthdate().toString());
-        hiredateField.setText(PlatformInstance.getUser().getHiredate().toString());
+        ;
+        birthdateField.setText(
+                PlatformInstance.getDateFormat()
+                    .format(PlatformInstance.getUser().getBirthdate())
+        );
+        hiredateField.setText(
+                PlatformInstance.getDateFormat()
+                    .format(PlatformInstance.getUser().getHiredate())
+        );
 
 
     }

@@ -15,6 +15,7 @@ public class UserTableData {
     private String userId;
     private String employeeId;
     private String username;
+    private String email;
     private String firstname;
     private String lastname;
     private String birthdate;
@@ -61,6 +62,10 @@ public class UserTableData {
         return actions;
     }
 
+    public String getEmail() {
+        return email;
+    }
+
     public void setUserId(String userId) {
         this.userId = userId;
     }
@@ -96,10 +101,15 @@ public class UserTableData {
         this.root = root;
     }
 
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
     public UserTableData(BorderPane root, User user) {
         userId = user.getUserId();
         employeeId = user.getEmployeeId();
         username = user.getUsername();
+        email = user.getEmail();
         firstname = user.getFirstname();
         lastname = user.getLastname();
         birthdate = PlatformInstance.getDateFormat().format(user.getBirthdate());

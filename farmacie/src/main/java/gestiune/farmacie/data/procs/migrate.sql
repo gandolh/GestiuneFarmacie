@@ -13,6 +13,7 @@ IF NOT EXISTS (SELECT * FROM sysobjects WHERE name='FarmacieUser' and xtype='U')
         id varchar(64) NOT NULL UNIQUE,
 		employeeId varchar(64),
 		username varchar(64),
+		email varchar(256),
 		hashedPassword varchar(256),
      FOREIGN KEY (employeeId) REFERENCES Employee(id)
 	)

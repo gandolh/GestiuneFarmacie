@@ -29,6 +29,8 @@ public class ManageUsersController implements Initializable {
     @FXML
     public TableView<UserTableData> userTable;
     @FXML
+    public TableColumn emailTC;
+    @FXML
     public TableColumn usernameTC;
     @FXML
     public TableColumn firstnameTC;
@@ -48,6 +50,7 @@ public class ManageUsersController implements Initializable {
 
         //configure columns
         usernameTC.setCellValueFactory(new PropertyValueFactory<>("username"));
+        emailTC.setCellValueFactory(new PropertyValueFactory<>("email"));
         firstnameTC.setCellValueFactory(new PropertyValueFactory<>("firstname"));
         lastnameTC.setCellValueFactory(new PropertyValueFactory<>("lastname"));
         birthdateTC.setCellValueFactory(new PropertyValueFactory<>("birthdate"));

@@ -17,15 +17,15 @@ import java.util.List;
 import static gestiune.farmacie.data.objects.PlatformInstance.getProcsPath;
 
 public class UserRepository {
-    public User getUser(String email, String passwd) {
-        if (email == null || email == null)
+    public User getUser(String username, String passwd) {
+        if (username == null || username == null)
             return null;
-        if(getIsUser(email,passwd) == false )
+        if(getIsUser(username,passwd) == false )
             return null;
         User user = new User();
         String sql = String.format(
-                "select f.id, employeeId, username, firstname, lastname, birthdate, hiredate " +
-                        "from FarmacieUser f inner join employee e on employeeId=e.id where username='%s'", email);
+                "select f.id, employeeId, username, email, firstname, lastname, birthdate, hiredate " +
+                        "from FarmacieUser f inner join employee e on employeeId=e.id where username='%s'", username);
         ResultSet set = null;
         try {
             set = DatabaseConnection.executeQuerry(sql);
@@ -33,6 +33,7 @@ public class UserRepository {
                 user.setUserId(set.getString("id"));
                 user.setEmployeeId(set.getString("employeeId"));
                 user.setUsername(set.getString("username"));
+                user.setEmail(set.getString("email"));
                 user.setFirstname(set.getString("firstname"));
                 user.setLastname(set.getString("lastname"));
                 user.setBirthdate(set.getDate("birthdate"));
@@ -45,7 +46,7 @@ public class UserRepository {
         return null;
     }
 
-    public boolean createUser(String username, String password, String firstname, String lastname, Date birthdate, Date hiredate) {
+    public boolean createUser(String username,String email, String password, String firstname, String lastname, Date birthdate, Date hiredate) {
         String hashedPassword = Password.hashPassword(password);
         User user = new User(username,hashedPassword,firstname,lastname,birthdate,hiredate);
         try {
@@ -55,21 +56,20 @@ public class UserRepository {
             String formatedHiredate = PlatformInstance.getSqlDateFormat().format(hiredate);
             String sqlscript = new String(Files.readAllBytes(Paths.get(getProcsPath(),"templates","insertUser.sql")));
             DatabaseConnection.executeNonQuerry(sqlscript, new String[]{employeeId,firstname,lastname,formatedBirthDate,
-                    formatedHiredate, userId, employeeId, username, hashedPassword});
+                    formatedHiredate, userId, employeeId, username, email, hashedPassword});
         } catch (IOException | SQLException e) {
             e.printStackTrace();
             return false;
         }
-        String sql = "";
         return true;
     }
 
-    public Boolean getIsUser(String email, String password) {
-        if (email == null || email == null)
+    public Boolean getIsUser(String username, String password) {
+        if (username == null || username == null)
             return false;
         if (password == null || password == null)
             return false;
-        String sql = String.format("select hashedPassword from FarmacieUser where username='%s'", email);
+        String sql = String.format("select hashedPassword from FarmacieUser where username='%s'", username);
         ResultSet set = null;
         try {
             set = DatabaseConnection.executeQuerry(sql);
@@ -83,9 +83,8 @@ public class UserRepository {
     }
 
     public List<User> getAllUsers() {
-        //TODO: implement fetching from db
         List<User> users = new ArrayList<User>();
-        String sql = String.format("select f.id, employeeId, username, firstname, lastname, birthdate, hiredate " +
+        String sql = String.format("select f.id, employeeId, username, email, firstname, lastname, birthdate, hiredate " +
                         "from FarmacieUser f inner join employee e on employeeId=e.id");
         ResultSet set = null;
         try {
@@ -95,6 +94,7 @@ public class UserRepository {
                 user.setUserId(set.getString("id"));
                 user.setEmployeeId(set.getString("employeeId"));
                 user.setUsername(set.getString("username"));
+                user.setEmail(set.getString("email"));
                 user.setFirstname(set.getString("firstname"));
                 user.setLastname(set.getString("lastname"));
                 user.setBirthdate(set.getDate("birthdate"));

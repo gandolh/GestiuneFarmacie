@@ -1,5 +1,6 @@
 UPDATE [dbo].[FarmacieUser]
    SET [username] = ?
+   ,[email] = ?
  WHERE  id= ?
 
 

@@ -15,9 +15,11 @@ INSERT INTO [dbo].[FarmacieUser]
            ([id]
            ,[employeeId]
            ,[username]
+           ,[email]
            ,[hashedPassword])
      VALUES
            (1
            ,1
            ,'admin'
+           ,'itmanager@admin.ro'
            ,'$2a$12$PIHoJhEBLgtu9DpqyeABGuMpcPWpREdUvUXsHwTLrYqtZxhDavl82') --admin

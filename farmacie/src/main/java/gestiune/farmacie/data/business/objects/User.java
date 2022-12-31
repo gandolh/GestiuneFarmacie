@@ -8,6 +8,7 @@ public class User {
     private String userId;
     private String employeeId;
     private String username;
+    private String email;
     private String hashedPassword;
     private String firstname;
     private String lastname;
@@ -55,6 +56,10 @@ public class User {
     public void setHiredate(Date hiredate) {
         this.hiredate = hiredate;
     }
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
 
     public String getFirstname() {
         return firstname;
@@ -75,7 +80,9 @@ public class User {
     public String getUserId() {
         return userId;
     }
-
+    public String getEmail() {
+        return email;
+    }
 
     public List<UserRole> getRoles() {
         return roles;

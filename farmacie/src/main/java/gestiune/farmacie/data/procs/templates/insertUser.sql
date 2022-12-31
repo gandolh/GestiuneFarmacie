@@ -16,9 +16,11 @@ INSERT INTO [dbo].[FarmacieUser]
            ([id]
            ,[employeeId]
            ,[username]
+           ,[email]
            ,[hashedPassword])
      VALUES
            (?
+           ,?
            ,?
            ,?
            ,?)

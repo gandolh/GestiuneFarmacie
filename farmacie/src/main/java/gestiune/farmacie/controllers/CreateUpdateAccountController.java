@@ -29,6 +29,8 @@ public class CreateUpdateAccountController implements Initializable {
     @FXML
     private TextField passwordField;
     @FXML
+    private TextField emailField;
+    @FXML
     private Button resetPasswordBtn;
     @FXML
     private RowConstraints resetPasswordGridRow;
@@ -59,10 +61,11 @@ public class CreateUpdateAccountController implements Initializable {
         String password = passwordField.getText();
         String firstname = firstNameField.getText();
         String lastname = lastNameField.getText();
+        String email = emailField.getText();
         Date birthdate = Date.valueOf(birthdateField.getValue());
         Date hiredate = Date.valueOf(hiredateField.getValue());
         UserRepository userRepo = new UserRepository();
-        isUserCreated = userRepo.createUser(username, password, firstname, lastname, birthdate, hiredate);
+        isUserCreated = userRepo.createUser(username,email, password, firstname, lastname, birthdate, hiredate);
 
         if (isUserCreated == true) {
             Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
@@ -110,6 +113,7 @@ public class CreateUpdateAccountController implements Initializable {
         usernameField.setText(selectedUser.getUsername());
         firstNameField.setText(selectedUser.getFirstname());
         lastNameField.setText(selectedUser.getLastname());
+        emailField.setText(selectedUser.getEmail());
         passwordField.clear();
         birthdateField.setValue(DateConverter.convertToLocalDateViaInstant(selectedUser.getBirthdate()));
         hiredateField.setValue(DateConverter.convertToLocalDateViaInstant(selectedUser.getHiredate()));

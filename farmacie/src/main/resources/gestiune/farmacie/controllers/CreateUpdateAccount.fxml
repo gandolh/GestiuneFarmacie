@@ -40,13 +40,13 @@
                   <Label text="Data nasterii" GridPane.rowIndex="4" />
                   <Label text="Data angajarii" GridPane.rowIndex="5" />
                   <Label text="Nume de utilizator" />
+                  <TextField fx:id="usernameField" GridPane.columnIndex="1" />
+                  <TextField fx:id="passwordField" GridPane.columnIndex="1" GridPane.rowIndex="1" />
                   <TextField fx:id="firstNameField" GridPane.columnIndex="1" GridPane.rowIndex="2" />
                   <TextField fx:id="lastNameField" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-                  <TextField fx:id="usernameField" GridPane.columnIndex="1" />
                   <DatePicker fx:id="birthdateField" GridPane.columnIndex="1" GridPane.rowIndex="4" />
                   <DatePicker fx:id="hiredateField" GridPane.columnIndex="1" GridPane.rowIndex="5" />
                   <Label text="Parola" GridPane.rowIndex="1" />
-                  <TextField fx:id="passwordField" GridPane.columnIndex="1" GridPane.rowIndex="1" />
                </children>
             </GridPane>
             <Button fx:id="cancelBtn" layoutX="226.0" layoutY="329.0" mnemonicParsing="false" onAction="#cancel" text="Anulare" />

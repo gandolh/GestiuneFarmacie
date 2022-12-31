@@ -8,6 +8,7 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Date;
 import java.util.List;
@@ -46,7 +47,7 @@ public class UserRepository {
         try {
             String employeeId =java.util.UUID.randomUUID().toString();
             String userId = java.util.UUID.randomUUID().toString();
-            String sqlscript = new String(Files.readAllBytes(Paths.get(getProcsPath(),"insert","templates","users.sql")));
+            String sqlscript = new String(Files.readAllBytes(Paths.get(getProcsPath(),"templates","users.sql")));
             DatabaseConnection.executeNonQuerry(sqlscript, new String[]{employeeId,firstname,lastname, userId, employeeId, username, hashedPassword});
         } catch (IOException | SQLException e) {
             e.printStackTrace();
@@ -76,11 +77,25 @@ public class UserRepository {
 
     public List<User> getAllUsers() {
         //TODO: implement fetching from db
+        List<User> users = new ArrayList<User>();
+        String sql = String.format("select * from FarmacieUser f inner join employee e on employeeId=e.id");
+        ResultSet set = null;
+        try {
+            set = DatabaseConnection.executeQuerry(sql);
+            while(set.next()){
+                User user = new User();
+                user.setUsername(set.getString("username"));
+                user.setFirstname(set.getString("firstname"));
+                user.setLastname(set.getString("lastname"));
+                user.setBirthdate(set.getDate("birthdate"));
+                user.setHiredate(set.getDate("hiredate"));
+                users.add(user);
+            }
+            return users;
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return null;
 
-        return List.of(
-          new User(),
-          new User(),
-          new User()
-        );
     }
 }

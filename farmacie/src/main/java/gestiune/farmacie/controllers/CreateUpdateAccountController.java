@@ -56,7 +56,6 @@ public class CreateUpdateAccountController {
             RedirectController redirect = new RedirectController();
             redirect.goToManageUsers(stage);
         }
-
     }
 
 }

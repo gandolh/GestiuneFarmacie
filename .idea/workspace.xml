@@ -5,17 +5,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b824ef3c-2441-4ff1-ac05-ff9f9795d812" name="Changes" comment="authentication handler blueprint">
-      <change afterPath="$PROJECT_DIR$/farmacie/src/main/java/gestiune/farmacie/controllers/ManageUsersController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/farmacie/src/main/java/gestiune/farmacie/data/objects/UserTableData.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/farmacie/src/main/resources/gestiune/farmacie/controllers/ManageUsers.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/farmacie/src/main/java/gestiune/farmacie/controllers/CreateUpdateAccountController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/farmacie/src/main/resources/gestiune/farmacie/controllers/CreateUpdateAccount.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/farmacie/src/main/java/gestiune/farmacie/components/MyMenubar.java" beforeDir="false" afterPath="$PROJECT_DIR$/farmacie/src/main/java/gestiune/farmacie/components/MyMenubar.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/farmacie/src/main/java/gestiune/farmacie/controllers/MyAccountController.java" beforeDir="false" afterPath="$PROJECT_DIR$/farmacie/src/main/java/gestiune/farmacie/controllers/MyAccountController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/farmacie/src/main/java/gestiune/farmacie/controllers/LogInController.java" beforeDir="false" afterPath="$PROJECT_DIR$/farmacie/src/main/java/gestiune/farmacie/controllers/LogInController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/farmacie/src/main/java/gestiune/farmacie/controllers/ManageUsersController.java" beforeDir="false" afterPath="$PROJECT_DIR$/farmacie/src/main/java/gestiune/farmacie/controllers/ManageUsersController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/farmacie/src/main/java/gestiune/farmacie/controllers/RedirectController.java" beforeDir="false" afterPath="$PROJECT_DIR$/farmacie/src/main/java/gestiune/farmacie/controllers/RedirectController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/farmacie/src/main/java/gestiune/farmacie/controllers/SignUpController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/farmacie/src/main/java/gestiune/farmacie/data/DatabaseMigrator.java" beforeDir="false" afterPath="$PROJECT_DIR$/farmacie/src/main/java/gestiune/farmacie/data/DatabaseMigrator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/farmacie/src/main/java/gestiune/farmacie/data/Seed.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/farmacie/src/main/java/gestiune/farmacie/data/access/DatabaseConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/farmacie/src/main/java/gestiune/farmacie/data/access/DatabaseConnection.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/farmacie/src/main/java/gestiune/farmacie/data/access/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/farmacie/src/main/java/gestiune/farmacie/data/access/UserRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/farmacie/src/main/java/gestiune/farmacie/data/business/objects/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/farmacie/src/main/java/gestiune/farmacie/data/business/objects/User.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/farmacie/src/main/java/gestiune/farmacie/data/objects/PlatformInstance.java" beforeDir="false" afterPath="$PROJECT_DIR$/farmacie/src/main/java/gestiune/farmacie/data/objects/PlatformInstance.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/farmacie/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/farmacie/src/main/java/module-info.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/farmacie/src/main/java/gestiune/farmacie/data/procs/seed.sql" beforeDir="false" afterPath="$PROJECT_DIR$/farmacie/src/main/java/gestiune/farmacie/data/procs/insert/templates/users.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/farmacie/src/main/resources/gestiune/farmacie/controllers/aplicationEntry.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/farmacie/src/main/resources/gestiune/farmacie/controllers/aplicationEntry.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,7 +64,7 @@
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/projects/my_github/piii-project&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/projects/my_github/piii-project/farmacie/src/main/resources/gestiune/farmacie/controllers&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.project.maven.repository.indices&quot;
   }
 }</component>
@@ -68,6 +72,9 @@
     <key name="CreateClassDialog.RecentsKey">
       <recent name="gestiune.farmacie.vault" />
       <recent name="gestiune.farmacie.business.objects" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\projects\my_github\piii-project\farmacie\src\main\resources\gestiune\farmacie\controllers" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\projects\my_github\piii-project\farmacie\src\main\java\gestiune\farmacie\utils" />
@@ -179,9 +186,19 @@
           <option name="timeStamp" value="13" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/farmacie/src/main/java/gestiune/farmacie/controllers/ManageUsersController.java</url>
-          <line>46</line>
-          <option name="timeStamp" value="14" />
+          <url>file://$PROJECT_DIR$/farmacie/src/main/java/gestiune/farmacie/controllers/RedirectController.java</url>
+          <line>51</line>
+          <option name="timeStamp" value="15" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/farmacie/src/main/java/gestiune/farmacie/controllers/CreateUpdateAccountController.java</url>
+          <line>53</line>
+          <option name="timeStamp" value="16" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/farmacie/src/main/java/gestiune/farmacie/data/access/UserRepository.java</url>
+          <line>52</line>
+          <option name="timeStamp" value="17" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

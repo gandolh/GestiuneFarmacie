@@ -1,14 +1,18 @@
 package gestiune.farmacie.data.access;
 
 import gestiune.farmacie.data.business.objects.User;
-import gestiune.farmacie.data.objects.PlatformInstance;
 import gestiune.farmacie.utils.Password;
 
-import java.sql.Array;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Date;
 import java.util.List;
+
+import static gestiune.farmacie.data.objects.PlatformInstance.getProcsPath;
 
 public class UserRepository {
     public User getUser(String email, String passwd) {
@@ -36,8 +40,20 @@ public class UserRepository {
         return null;
     }
 
-    public User createUser() {
-        return new User();
+    public boolean createUser(String username, String password, String firstname, String lastname, Date birthdate, Date hiredate) {
+        String hashedPassword = Password.hashPassword(password);
+        User user = new User(username,hashedPassword,firstname,lastname,birthdate,hiredate);
+        try {
+            String employeeId =java.util.UUID.randomUUID().toString();
+            String userId = java.util.UUID.randomUUID().toString();
+            String sqlscript = new String(Files.readAllBytes(Paths.get(getProcsPath(),"insert","templates","users.sql")));
+            DatabaseConnection.executeNonQuerry(sqlscript, new String[]{employeeId,firstname,lastname, userId, employeeId, username, hashedPassword});
+        } catch (IOException | SQLException e) {
+            e.printStackTrace();
+            return false;
+        }
+        String sql = "";
+        return true;
     }
 
     public Boolean getIsUser(String email, String password) {

@@ -3,6 +3,7 @@ import  com.microsoft.sqlserver.jdbc.*;
 import gestiune.farmacie.vault.DatabaseCredentials;
 
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
@@ -37,6 +38,14 @@ public class DatabaseConnection {
     }
     public static boolean executeNonQuerry(String sql) throws SQLException {
         return getConnection().prepareCall(sql).execute();
+    }
+
+    public static boolean executeNonQuerry(String sql, String[] params) throws SQLException {
+        PreparedStatement stmt = getConnection().prepareStatement(sql);
+        for (int i=0;i<params.length;i++ ){
+            stmt.setString(i+1,params[i]);
+        }
+        return stmt.execute();
     }
 
 }

@@ -28,6 +28,14 @@ public class User {
         this.hiredate = hiredate;
     }
 
+    public User(String username, String hashedPassword, String firstname, String lastname, Date birthdate, Date hiredate) {
+        this.username = username;
+        this.hashedPassword = hashedPassword;
+        this.firstname = firstname;
+        this.lastname = lastname;
+        this.birthdate = birthdate;
+        this.hiredate = hiredate;
+    }
     public void setFirstname(String firstname) {
         this.firstname = firstname;
     }

@@ -15,16 +15,12 @@ import java.sql.SQLOutput;
 import java.util.Scanner;
 import java.util.ServiceConfigurationError;
 
+import static gestiune.farmacie.data.objects.PlatformInstance.getProcsPath;
 import static gestiune.farmacie.utils.FileOperations.showFilesAtPath;
 
 public class DatabaseMigrator {
 
-    public static String getProcsPath(){
-        Path currentPath = Paths.get(System.getProperty("user.dir"));
-        Path filePath = Paths.get(currentPath.toString(), "farmacie","src","main","java","gestiune","farmacie","data","procs");
-//        System.out.println(filePath.toString());
-        return filePath.toString();
-    }
+
 
     public static void main(String[] args) {
         dropTables();
@@ -47,7 +43,7 @@ public class DatabaseMigrator {
                     DatabaseConnection.executeNonQuerry(dropSeq);
                 }catch (Exception e){
 //                   e.printStackTrace();
-                    System.err.println("Nu s-a putut executa comanda drop: " + dropSeq);
+                    System.err.println("Nu s-a putut executa comanda drop: a" + dropSeq);
 
                 }
             }

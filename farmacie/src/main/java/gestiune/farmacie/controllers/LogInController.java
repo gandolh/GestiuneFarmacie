@@ -6,13 +6,16 @@ import gestiune.farmacie.data.business.objects.User;
 import gestiune.farmacie.data.objects.PlatformInstance;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.control.*;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.net.URL;
+import java.util.ResourceBundle;
 
-public class LogInController {
+public class LogInController implements Initializable {
     @FXML
     private TextField usernameField;
 
@@ -43,5 +46,11 @@ public class LogInController {
     }
 
 
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
 
+        //ONLY FOR DEBUG
+        usernameField.setText("admin");
+        passwordField.setText("admin");
+    }
 }

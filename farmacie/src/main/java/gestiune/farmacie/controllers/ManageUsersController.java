@@ -7,11 +7,13 @@ import gestiune.farmacie.data.objects.UserTableData;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.BorderPane;
+import javafx.stage.Stage;
 
 import java.net.URL;
 import java.security.PrivateKey;
@@ -66,7 +68,9 @@ public class ManageUsersController implements Initializable {
 
     @FXML
     public void goToCreateUser(ActionEvent event){
-        System.out.println("create");
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        RedirectController redirect = new RedirectController();
+        redirect.goToCreateUser(stage);
     }
 
 }

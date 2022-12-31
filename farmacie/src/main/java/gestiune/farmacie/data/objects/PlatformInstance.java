@@ -2,6 +2,8 @@ package gestiune.farmacie.data.objects;
 
 import gestiune.farmacie.data.business.objects.User;
 
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 
@@ -25,5 +27,12 @@ public class PlatformInstance {
 
     public static void setUser(User user) {
         PlatformInstance.user = user;
+    }
+
+    public static String getProcsPath(){
+        Path currentPath = Paths.get(System.getProperty("user.dir"));
+        Path filePath = Paths.get(currentPath.toString(), "farmacie","src","main","java","gestiune","farmacie","data","procs");
+//        System.out.println(filePath.toString());
+        return filePath.toString();
     }
 }

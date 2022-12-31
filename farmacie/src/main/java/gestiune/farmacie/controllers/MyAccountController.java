@@ -26,6 +26,8 @@ public class MyAccountController implements Initializable {
     @FXML
     private TextField hiredateField;
     @FXML
+    private TextField emailField;
+    @FXML
     private BorderPane rootBorderPane;
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -34,6 +36,7 @@ public class MyAccountController implements Initializable {
         usernameField.setText(PlatformInstance.getUser().getUsername());
         firstNameField.setText(PlatformInstance.getUser().getFirstname());
         lastNameField.setText(PlatformInstance.getUser().getLastname());
+        emailField.setText(PlatformInstance.getUser().getEmail());
         ;
         birthdateField.setText(
                 PlatformInstance.getDateFormat()

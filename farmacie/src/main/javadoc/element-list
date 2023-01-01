@@ -1,0 +1,12 @@
+module:gestiune.farmacie
+gestiune.farmacie
+gestiune.farmacie.auth
+gestiune.farmacie.components
+gestiune.farmacie.controllers
+gestiune.farmacie.data
+gestiune.farmacie.data.access
+gestiune.farmacie.data.business.objects
+gestiune.farmacie.data.objects
+gestiune.farmacie.utils
+gestiune.farmacie.vault
+org.mindrot.jbcrypt

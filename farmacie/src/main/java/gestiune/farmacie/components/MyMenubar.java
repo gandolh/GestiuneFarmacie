@@ -1,13 +1,26 @@
 package gestiune.farmacie.components;
 
+import gestiune.farmacie.Main;
 import gestiune.farmacie.controllers.RedirectController;
 import gestiune.farmacie.data.objects.PlatformInstance;
+import javafx.application.Platform;
 import javafx.scene.control.Menu;
 import javafx.scene.control.MenuBar;
 import javafx.scene.control.MenuItem;
 import javafx.stage.Stage;
 
+import java.io.File;
+import java.io.IOException;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+
 public class MyMenubar extends MenuBar {
+    private static Path getJavaDocPath(){
+        Path currentPath = Paths.get(System.getProperty("user.dir"));
+        Path filePath = Paths.get(currentPath.toString(), "farmacie","src","main","javadoc","index.html");
+//        System.out.println(filePath.toString());
+        return filePath;
+    }
     public MyMenubar() {
         Menu home = new Menu("Acasa");
         Menu accounts = new Menu("Conturi");
@@ -18,7 +31,7 @@ public class MyMenubar extends MenuBar {
         MenuItem platformSettings = new MenuItem("Setari de platforma");
         Menu help = new Menu("Ajutor");
         MenuItem raportareProbleme = new MenuItem("Raportare probleme");
-        MenuItem documentatie = new MenuItem("Documentatie");
+        MenuItem documentation = new MenuItem("Documentatie");
         Menu logout = new Menu("Deconectare");
 
         //add my account
@@ -38,8 +51,12 @@ public class MyMenubar extends MenuBar {
                 redirect.goToManageUsers(stage);
             });
         }
+        documentation.setOnAction(event->{
+            PlatformInstance.getHostedServices().showDocument(
+                    getJavaDocPath().toUri().toString());
+        });
         settings.getItems().addAll(platformSettings, systemSettings);
-        help.getItems().addAll(raportareProbleme, documentatie);
+        help.getItems().addAll(raportareProbleme, documentation);
         this.getMenus().addAll(home,accounts,settings,help, logout);
 
         addGoHomeAction(home);

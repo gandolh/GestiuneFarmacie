@@ -1,22 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AnalysisUIOptions">
+    <option name="ANALYZE_TEST_SOURCES" value="false" />
+  </component>
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b824ef3c-2441-4ff1-ac05-ff9f9795d812" name="Changes" comment="authentication handler blueprint">
-      <change afterPath="$PROJECT_DIR$/farmacie/src/main/java/gestiune/farmacie/test/TestLogic.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/farmacie/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/farmacie/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/farmacie/src/main/java/gestiune/farmacie/utils/Password.java" beforeDir="false" afterPath="$PROJECT_DIR$/farmacie/src/main/java/gestiune/farmacie/utils/Password.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/farmacie/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/farmacie/src/main/java/module-info.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/farmacie/src/main/resources/gestiune/farmacie/data.access/samples/adaptive/ExecuteStoredProcedures.java" beforeDir="false" afterPath="$PROJECT_DIR$/farmacie/src/main/resources/gestiune/farmacie/data.access/samples/adaptive/ExecuteStoredProcedures.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/farmacie/src/main/resources/gestiune/farmacie/data.access/samples/adaptive/readLargeData.java" beforeDir="false" afterPath="$PROJECT_DIR$/farmacie/src/main/resources/gestiune/farmacie/data.access/samples/adaptive/readLargeData.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/farmacie/src/main/resources/gestiune/farmacie/data.access/samples/azureactivedirectoryauthentication/AzureActiveDirectoryAuthentication.java" beforeDir="false" afterPath="$PROJECT_DIR$/farmacie/src/main/resources/gestiune/farmacie/data.access/samples/azureactivedirectoryauthentication/AzureActiveDirectoryAuthentication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/farmacie/src/main/resources/gestiune/farmacie/data.access/samples/dataclassification/DataDiscoveryAndClassification.java" beforeDir="false" afterPath="$PROJECT_DIR$/farmacie/src/main/resources/gestiune/farmacie/data.access/samples/dataclassification/DataDiscoveryAndClassification.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/farmacie/src/main/resources/gestiune/farmacie/data.access/samples/datatypes/SqlXmlDataType.java" beforeDir="false" afterPath="$PROJECT_DIR$/farmacie/src/main/resources/gestiune/farmacie/data.access/samples/datatypes/SqlXmlDataType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/farmacie/src/main/resources/gestiune/farmacie/data.access/samples/resultsets/CacheResultSet.java" beforeDir="false" afterPath="$PROJECT_DIR$/farmacie/src/main/resources/gestiune/farmacie/data.access/samples/resultsets/CacheResultSet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/farmacie/src/main/java/gestiune/farmacie/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/farmacie/src/main/java/gestiune/farmacie/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/farmacie/src/main/java/gestiune/farmacie/components/MyMenubar.java" beforeDir="false" afterPath="$PROJECT_DIR$/farmacie/src/main/java/gestiune/farmacie/components/MyMenubar.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/farmacie/src/main/java/gestiune/farmacie/data/DatabaseMigrator.java" beforeDir="false" afterPath="$PROJECT_DIR$/farmacie/src/main/java/gestiune/farmacie/data/DatabaseMigrator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/farmacie/src/main/java/gestiune/farmacie/data/objects/PlatformInstance.java" beforeDir="false" afterPath="$PROJECT_DIR$/farmacie/src/main/java/gestiune/farmacie/data/objects/PlatformInstance.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,18 +53,18 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "last_opened_file_path": "D:/projects/my_github/piii-project/farmacie/src/main/resources/gestiune/farmacie/controllers",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
-    "settings.editor.selected.configurable": "reference.settings.project.maven.repository.indices"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/projects/my_github/piii-project/farmacie/src/main/resources/gestiune/farmacie/controllers&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.project.maven.repository.indices&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="gestiune.farmacie.vault" />
@@ -86,12 +83,12 @@
       <recent name="gestiune.farmacie.auth" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
-      <recent name="gestiune.farmacie" />
       <recent name="" />
+      <recent name="gestiune.farmacie" />
       <recent name="gestiune.farmacie.controller" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.Main">
     <configuration name="Main" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="gestiune.farmacie.Main" />
       <module name="farmacie" />
@@ -197,6 +194,11 @@
           <line>60</line>
           <option name="timeStamp" value="24" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/farmacie/src/main/java/gestiune/farmacie/components/MyMenubar.java</url>
+          <line>38</line>
+          <option name="timeStamp" value="28" />
+        </line-breakpoint>
         <breakpoint type="java-exception">
           <properties class="java.lang.UnsupportedOperationException" package="java.lang" />
           <option name="timeStamp" value="26" />
@@ -209,6 +211,11 @@
         <PinnedItemInfo parentTag="javafx.fxml.LoadException" memberName="suppressedExceptions" />
       </pinned-members>
     </pin-to-top-manager>
+    <watches-manager>
+      <configuration name="Application">
+        <watch expression="event" />
+      </configuration>
+    </watches-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/piii_project$Main.ic" NAME="Main Coverage Results" MODIFIED="1672563738987" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />

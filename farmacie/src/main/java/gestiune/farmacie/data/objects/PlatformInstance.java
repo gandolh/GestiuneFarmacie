@@ -1,6 +1,7 @@
 package gestiune.farmacie.data.objects;
 
 import gestiune.farmacie.data.business.objects.User;
+import javafx.application.HostServices;
 
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -12,6 +13,13 @@ public class PlatformInstance {
     private static DateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy");
     private static DateFormat sqlDateFormat = new SimpleDateFormat("dd-MM-yy");
 
+    private static HostServices hostedServices;
+    public static HostServices getHostedServices() {
+        return hostedServices;
+    }
+    public static void setHostedServices(HostServices hostedServices) {
+        PlatformInstance.hostedServices = hostedServices;
+    }
     public static DateFormat getDateFormat() {
         return dateFormat;
     }

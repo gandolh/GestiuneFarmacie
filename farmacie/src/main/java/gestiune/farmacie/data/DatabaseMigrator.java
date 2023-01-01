@@ -18,10 +18,17 @@ import java.util.ServiceConfigurationError;
 import static gestiune.farmacie.data.objects.PlatformInstance.getProcsPath;
 import static gestiune.farmacie.utils.FileOperations.showFilesAtPath;
 
+/**
+ * Clasa aceasta genereaza structura bazei de date pentru a putea fi folosita de interfata.
+ */
 public class DatabaseMigrator {
 
 
-
+    /**
+     * Metoda de intrare ce sterge tabelele (daca acestea exista), creaza structura noua si adauga datele initiale
+     * de care are nevoie aplicatia
+     * @param args
+     */
     public static void main(String[] args) {
         dropTables();
          createTables();
@@ -31,6 +38,10 @@ public class DatabaseMigrator {
 //        showFilesAtPath(getProcsPath());
     }
 
+
+    /**
+     * sterge structura existenta in baza de date
+    */
     public static void dropTables() {
         try {
             FileInputStream fis = new FileInputStream(Paths.get(getProcsPath(),"databasedrops.sql").toFile());
@@ -56,6 +67,10 @@ public class DatabaseMigrator {
 
     }
 
+
+    /**
+     * creaza structura bazei de date
+     */
     public static void createTables() {
         try {
             String sqlscript = new String(Files.readAllBytes(Paths.get(getProcsPath(),"migrate.sql")));
@@ -68,6 +83,10 @@ public class DatabaseMigrator {
         }
     }
 
+
+    /**
+     * Adauga datele initiale
+     */
     public static void seedTables() {
         try {
             String sqlscript = new String(Files.readAllBytes(Paths.get(getProcsPath(),"seedusers.sql")));

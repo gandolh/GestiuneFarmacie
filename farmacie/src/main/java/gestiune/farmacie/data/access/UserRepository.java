@@ -138,7 +138,7 @@ public class UserRepository {
 
         return  true;
     }
-    public static boolean changePassword(String userId, String newPassword) {
+    public boolean changePassword(String userId, String newPassword) {
         System.out.println(newPassword);
         String sql = "UPDATE [dbo].[FarmacieUser]\n" +
                 "   SET [hashedPassword] = '%s'\n" +

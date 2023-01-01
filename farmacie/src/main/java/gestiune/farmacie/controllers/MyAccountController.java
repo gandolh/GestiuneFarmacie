@@ -1,7 +1,9 @@
 package gestiune.farmacie.controllers;
 
 import gestiune.farmacie.components.MyMenubar;
+import gestiune.farmacie.data.access.UserRepository;
 import gestiune.farmacie.data.objects.PlatformInstance;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.DatePicker;
@@ -29,6 +31,8 @@ public class MyAccountController implements Initializable {
     private TextField emailField;
     @FXML
     private BorderPane rootBorderPane;
+    @FXML
+    private TextField passwordField;
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         MyMenubar myMenubar = new MyMenubar();
@@ -46,8 +50,12 @@ public class MyAccountController implements Initializable {
                 PlatformInstance.getDateFormat()
                     .format(PlatformInstance.getUser().getHiredate())
         );
+    }
 
 
+    public void changePassword(ActionEvent event){
+        UserRepository userRepo = new UserRepository();
+        userRepo.changePassword(PlatformInstance.getUser().getUserId(), passwordField.getText());
     }
 
 

@@ -3,6 +3,7 @@ package gestiune.farmacie.controllers;
 import gestiune.farmacie.data.access.UserRepository;
 import gestiune.farmacie.data.business.objects.User;
 import gestiune.farmacie.utils.DateConverter;
+import gestiune.farmacie.utils.EmailOperations;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -18,6 +19,7 @@ import java.net.URL;
 import java.time.LocalDate;
 import java.sql.Date;
 import java.util.ResourceBundle;
+import java.util.UUID;
 
 public class CreateUpdateAccountController implements Initializable {
     @FXML
@@ -77,12 +79,13 @@ public class CreateUpdateAccountController implements Initializable {
     public void update(ActionEvent event){
         boolean isUserUpdated = false;
         String username = usernameField.getText();
+        String email = emailField.getText();
         String firstname = firstNameField.getText();
         String lastname = lastNameField.getText();
         Date birthdate = Date.valueOf(birthdateField.getValue());
         Date hiredate = Date.valueOf(hiredateField.getValue());
         UserRepository userRepo = new UserRepository();
-        isUserUpdated = userRepo.updateUser(username, selectedUser.getUserId(), firstname, lastname, birthdate,
+        isUserUpdated = userRepo.updateUser(username, email, selectedUser.getUserId(), firstname, lastname, birthdate,
                 hiredate,selectedUser.getEmployeeId());
         if (isUserUpdated == true) {
             Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
@@ -121,7 +124,12 @@ public class CreateUpdateAccountController implements Initializable {
 
 
     public void resetPassword(){
-        System.out.println("Reset password");
+        String newPassword = String.valueOf(UUID.randomUUID());
+        UserRepository userRepo = new UserRepository();
+        boolean isPaswordReseted = userRepo.changePassword(selectedUser.getUserId(), newPassword);
+        if(isPaswordReseted)
+            EmailOperations.sendResetPassword(newPassword);
+
     }
 
     public User getSelectedUser() {

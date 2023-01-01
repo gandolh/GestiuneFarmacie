@@ -1,6 +1,7 @@
 package gestiune.farmacie.components;
 
 import gestiune.farmacie.controllers.RedirectController;
+import gestiune.farmacie.data.objects.PlatformInstance;
 import javafx.scene.Node;
 import javafx.scene.control.Control;
 import javafx.scene.control.Menu;
@@ -23,25 +24,29 @@ public class MyMenubar extends MenuBar {
         Menu ajutor = new Menu("Ajutor");
         MenuItem raportareProbleme = new MenuItem("Raportare probleme");
         MenuItem documentatie = new MenuItem("Documentatie");
-        conturi.getItems().addAll(contulMeu, gestionareConturi);
-        setari.getItems().addAll(setariDePlatforma, setariDeSistem);
-        ajutor.getItems().addAll(raportareProbleme, documentatie);
-        this.getMenus().addAll(acasa,conturi,setari,ajutor);
 
-        addGoHomeAction(acasa);
+        //add my account
+        conturi.getItems().add(contulMeu);
         contulMeu.setOnAction(e -> {
             Stage stage = (Stage) this.getScene().getWindow();
             RedirectController redirect = new RedirectController();
             redirect.goToMyAccount(stage);
         });
-        gestionareConturi.setOnAction(e -> {
-            Stage stage = (Stage) this.getScene().getWindow();
-            RedirectController redirect = new RedirectController();
-            redirect.goToManageUsers(stage);
 
-        });
+        //add gestionareUtilizatori doar daca e admin
+        if(PlatformInstance.getUser().getUsername().equals("admin")){
+            conturi.getItems().add(gestionareConturi);
+            gestionareConturi.setOnAction(e -> {
+                Stage stage = (Stage) this.getScene().getWindow();
+                RedirectController redirect = new RedirectController();
+                redirect.goToManageUsers(stage);
+            });
+        }
+        setari.getItems().addAll(setariDePlatforma, setariDeSistem);
+        ajutor.getItems().addAll(raportareProbleme, documentatie);
+        this.getMenus().addAll(acasa,conturi,setari,ajutor);
 
-
+        addGoHomeAction(acasa);
 
     }
 

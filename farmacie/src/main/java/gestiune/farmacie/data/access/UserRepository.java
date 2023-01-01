@@ -124,12 +124,12 @@ public class UserRepository {
         return false;
     }
 
-    public boolean updateUser(String username, String userId, String firstname, String lastname, Date birthdate, Date hiredate, String employeeId) {
+    public boolean updateUser(String username, String email, String userId, String firstname, String lastname, Date birthdate, Date hiredate, String employeeId) {
         try {
             String formatedBirthDate = PlatformInstance.getSqlDateFormat().format(birthdate);
             String formatedHiredate = PlatformInstance.getSqlDateFormat().format(hiredate);
             String sql = new String(Files.readAllBytes(Paths.get(getProcsPath(),"templates","updateUser.sql")));
-            DatabaseConnection.executeNonQuerry(sql, new String[]{username,userId,firstname,lastname,formatedBirthDate,formatedHiredate,employeeId});
+            DatabaseConnection.executeNonQuerry(sql, new String[]{username, email, userId,firstname,lastname,formatedBirthDate,formatedHiredate,employeeId});
         }catch (IOException e){
             e.printStackTrace();
         } catch (SQLException e) {
@@ -137,5 +137,19 @@ public class UserRepository {
         }
 
         return  true;
+    }
+    public static boolean changePassword(String userId, String newPassword) {
+        System.out.println(newPassword);
+        String sql = "UPDATE [dbo].[FarmacieUser]\n" +
+                "   SET [hashedPassword] = '%s'\n" +
+                " WHERE  id= '%s'";
+        sql = String.format(sql,Password.hashPassword(newPassword),userId);
+        try {
+            DatabaseConnection.executeNonQuerry(sql);
+            return true;
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return false;
     }
 }

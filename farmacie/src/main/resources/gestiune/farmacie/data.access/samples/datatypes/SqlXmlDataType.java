@@ -208,7 +208,7 @@ public class SqlXmlDataType {
 }
 
 /**
- * Handles output for XML elements for the test.
+ * Handles output for XML elements for the gestiune.farmacie.test.
  */
 class ExampleContentHandler implements ContentHandler {
 

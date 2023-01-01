@@ -80,7 +80,7 @@ public class CacheResultSet {
         stopTime = System.currentTimeMillis();
         runTime = stopTime - startTime;
 
-        // Display the results of the timer test.
+        // Display the results of the timer gestiune.farmacie.test.
         System.out.println("FETCH SIZE: " + rs.getFetchSize());
         System.out.println("ROWS PROCESSED: " + rowCount);
         System.out.println("TIME TO EXECUTE: " + runTime);

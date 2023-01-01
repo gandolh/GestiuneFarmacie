@@ -40,7 +40,7 @@ public class Password {
     }
 
     /**
-     * A simple test case for the main method, verify that a pre-generated test hash verifies successfully
+     * A simple gestiune.farmacie.test case for the main method, verify that a pre-generated gestiune.farmacie.test hash verifies successfully
      * for the password it represents, and also generate a new hash and ensure that the new hash verifies
      * just the same.
      */
@@ -51,13 +51,13 @@ public class Password {
 //        System.out.println("Testing BCrypt Password hashing and verification");
 //        System.out.println("Test password: " + test_passwd);
 //        System.out.println("Test stored hash: " + test_hash);
-//        System.out.println("Hashing test password...");
+//        System.out.println("Hashing gestiune.farmacie.test password...");
 //        System.out.println();
 //
 //        String computed_hash = hashPassword(test_passwd);
 //        System.out.println("Test computed hash: " + computed_hash);
 //        System.out.println();
-//        System.out.println("Verifying that hash and stored hash both match for the test password...");
+//        System.out.println("Verifying that hash and stored hash both match for the gestiune.farmacie.test password...");
 //        System.out.println();
 //
 //        String compare_test = checkPassword(test_passwd, test_hash)

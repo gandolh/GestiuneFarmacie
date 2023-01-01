@@ -35,7 +35,7 @@ public class DataDiscoveryAndClassification {
 
     public static void main(String[] args) {
 
-        // Provides table name to be used for running test.
+        // Provides table name to be used for running gestiune.farmacie.test.
         String tableName = "JDBC_SQL_DATA_DISCOVERY_CLASSIFICATION";
 
         // Create a variable for the connection string.
@@ -74,7 +74,7 @@ public class DataDiscoveryAndClassification {
     }
 
     /**
-     * Creates table for the test and sets tags for Sensitivity Classification
+     * Creates table for the gestiune.farmacie.test and sets tags for Sensitivity Classification
      * 
      * @param stmt
      *        Statement to work with
@@ -154,7 +154,7 @@ public class DataDiscoveryAndClassification {
     }
 
     /**
-     * Drops the table created for test
+     * Drops the table created for gestiune.farmacie.test
      * 
      * @param stmt
      *        Statement to work with

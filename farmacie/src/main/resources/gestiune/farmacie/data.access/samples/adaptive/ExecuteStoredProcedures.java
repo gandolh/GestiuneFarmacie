@@ -37,7 +37,7 @@ public class ExecuteStoredProcedures {
 			createTable(stmt);
 			createStoredProcedure(stmt);
 
-			// Create test data as an example.
+			// Create gestiune.farmacie.test data as an example.
 			StringBuffer buffer = new StringBuffer(4000);
 			for (int i = 0; i < 4000; i++)
 				buffer.append((char) ('A'));
@@ -49,7 +49,7 @@ public class ExecuteStoredProcedures {
 				pstmt.executeUpdate();
 			}
 
-			// Query test data by using a stored procedure.
+			// Query gestiune.farmacie.test data by using a stored procedure.
 			try (SQLServerCallableStatement cstmt = (SQLServerCallableStatement) con
 					.prepareCall("{call GetLargeDataValue(?, ?, ?, ?)}")) {
 

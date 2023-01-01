@@ -15,6 +15,5 @@ module gestiune.farmacie {
     opens gestiune.farmacie.controllers to javafx.fxml;
     requires java.naming;
     requires java.mail;
-
     opens gestiune.farmacie.data.objects to javafx.base;
 }

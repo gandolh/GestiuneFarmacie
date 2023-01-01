@@ -35,7 +35,7 @@ public class ReadLargeData {
         // Create a variable for the connection string.
         String connectionUrl = "jdbc:sqlserver://<server>:<port>;databaseName=AdventureWorks;user=<user>;password=<password>";
         
-        // Create test data as an example.
+        // Create gestiune.farmacie.test data as an example.
         StringBuffer buffer = new StringBuffer(4000);
         for (int i = 0; i < 4000; i++)
             buffer.append((char) ('A'));

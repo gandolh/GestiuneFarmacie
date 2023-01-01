@@ -5,7 +5,7 @@ Summary: This Microsoft JDBC Driver for SQL Server sample application
 		 Azure Data Warehouse and any other cloud database.
 		 
 		 Users can use 'ActiveDirectoryPassword' or 'ActiveDirectoryIntegrated' 
-		 Authentication modes as per their needs. This test can be used to 
+		 Authentication modes as per their needs. This gestiune.farmacie.test can be used to
 		 establish connection by both modes on any operating system, if required 
 		 setup is provided for Active Directory Integrated Authentication.
 		 

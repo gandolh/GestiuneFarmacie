@@ -2,6 +2,9 @@ package gestiune.farmacie.data.business.objects;
 
 import java.util.List;
 
+/**
+ * Clasa pentru rolul unui utilizator
+ */
 public class UserRole {
     private String id;
     private String roleName;

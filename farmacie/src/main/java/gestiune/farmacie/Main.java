@@ -10,9 +10,19 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
+/**
+ * Punctul de pornire al aplicatiei JavaFX
+ */
 public class Main extends Application {
 
-
+    /**
+     * Pornire aplicatie FX
+     * @param stage the primary stage for this application, onto which
+     * the application scene can be set.
+     * Applications may create other stages, if needed, but they will not be
+     * primary stages.
+     * @throws IOException
+     */
     @Override
     public void start(Stage stage) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(AplicationEntryController.class.getResource("aplicationEntry.fxml"));
@@ -23,6 +33,10 @@ public class Main extends Application {
         PlatformInstance.setHostedServices(getHostServices());
     }
 
+    /**
+     * Entrypoint aplicatie JavaFX
+     * @param args
+     */
     public static void main(String[] args) {
         launch();
     }

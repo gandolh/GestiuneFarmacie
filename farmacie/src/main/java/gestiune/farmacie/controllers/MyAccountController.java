@@ -2,6 +2,7 @@ package gestiune.farmacie.controllers;
 
 import gestiune.farmacie.components.MyMenubar;
 import gestiune.farmacie.data.access.UserRepository;
+import gestiune.farmacie.data.business.objects.User;
 import gestiune.farmacie.data.objects.PlatformInstance;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -16,6 +17,9 @@ import java.time.ZoneId;
 import java.time.format.DateTimeFormatter;
 import java.util.ResourceBundle;
 
+/**
+ * Controller-ul specific "contului meu"
+ */
 public class MyAccountController implements Initializable {
     @FXML
     private TextField usernameField;
@@ -33,26 +37,58 @@ public class MyAccountController implements Initializable {
     private BorderPane rootBorderPane;
     @FXML
     private TextField passwordField;
+
+    /**
+     * Adaugare bara de navigatie si completare cu datele utilizatorului curent
+     * @param location
+     * The location used to resolve relative paths for the root object, or
+     * {@code null} if the location is not known.
+     *
+     * @param resources
+     * The resources used to localize the root object, or {@code null} if
+     * the root object was not localized.
+     */
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        addMenuBar();
+        fillFields(PlatformInstance.getUser());
+
+    }
+
+    /**
+     * adaugare bara de navigatie
+     */
+    private void addMenuBar(){
         MyMenubar myMenubar = new MyMenubar();
         rootBorderPane.setTop(myMenubar);
-        usernameField.setText(PlatformInstance.getUser().getUsername());
-        firstNameField.setText(PlatformInstance.getUser().getFirstname());
-        lastNameField.setText(PlatformInstance.getUser().getLastname());
-        emailField.setText(PlatformInstance.getUser().getEmail());
+    }
+
+
+    /**
+     * Completare campuri cu ajutorul unui utilizator
+     * @param user Datele de utilizator pentru completarea campurilor machetei
+     */
+    private void fillFields(User user){
+        usernameField.setText(user.getUsername());
+        firstNameField.setText(user.getFirstname());
+        lastNameField.setText(user.getLastname());
+        emailField.setText(user.getEmail());
         ;
         birthdateField.setText(
                 PlatformInstance.getDateFormat()
-                    .format(PlatformInstance.getUser().getBirthdate())
+                        .format(user.getBirthdate())
         );
         hiredateField.setText(
                 PlatformInstance.getDateFormat()
-                    .format(PlatformInstance.getUser().getHiredate())
+                        .format(user.getHiredate())
         );
     }
 
 
+    /**
+     * Schimbarea parolei utilizatorului curent
+     * @param event
+     */
     public void changePassword(ActionEvent event){
         UserRepository userRepo = new UserRepository();
         userRepo.changePassword(PlatformInstance.getUser().getUserId(), passwordField.getText());

@@ -8,7 +8,14 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
+/**
+ * Controller-ul specific redirectionarii catre diverse ferestre
+ */
 public class RedirectController {
+    /**
+     * Redirectionare catre punctul de pornire al aplicatiei
+     * @param stage referinta la fereastra curenta
+     */
     public void goToAplicationEntry(Stage stage)  {
         Parent root = null;
         try {
@@ -21,6 +28,10 @@ public class RedirectController {
         stage.show();
     }
 
+    /**
+     * Redirectionare catre pagina de acasa
+     * @param stage referinta la fereastra curenta
+     */
     public void goToHome(Stage stage) {
         Parent root = null;
         try {
@@ -33,6 +44,10 @@ public class RedirectController {
         stage.show();
     }
 
+    /**
+     * Redirectionare catre contul meu
+     * @param stage referinta la fereastra curenta
+     */
     public void goToMyAccount(Stage stage) {
         Parent root = null;
         try {
@@ -45,6 +60,10 @@ public class RedirectController {
         stage.show();
     }
 
+    /**
+     * Redirectionare catre gestionare utilizatori
+     * @param stage referinta la fereastra curenta
+     */
     public void goToManageUsers(Stage stage) {
         Parent root = null;
         try {
@@ -57,6 +76,11 @@ public class RedirectController {
         stage.show();
     }
 
+
+    /**
+     * Redirectionare catre creare utilizatori
+     * @param stage referinta la fereastra curenta
+     */
     public void goToCreateUser(Stage stage) {
         Parent root = null;
         try {
@@ -72,6 +96,11 @@ public class RedirectController {
         stage.show();
     }
 
+    /**
+     * Redirectionare catre actualizare utilizator specific
+     * @param stage referinta la fereastra curenta
+     * @param user Un utilizator de aplicatie al caror date trebuie editate
+     */
     public void goToUpdateUser(Stage stage, User user) {
         Parent root = null;
         try {

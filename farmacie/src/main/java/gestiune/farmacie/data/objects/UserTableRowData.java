@@ -3,15 +3,15 @@ package gestiune.farmacie.data.objects;
 import gestiune.farmacie.controllers.RedirectController;
 import gestiune.farmacie.data.access.UserRepository;
 import gestiune.farmacie.data.business.objects.User;
-import javafx.scene.Node;
 import javafx.scene.control.SplitMenuButton;
 import javafx.scene.control.MenuItem;
-import javafx.scene.control.TableView;
-import javafx.scene.layout.Border;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 
-public class UserTableData {
+/**
+ * Clasa de mapare folosita pentru tabelul de gestiune a utilizatorilor
+ */
+public class UserTableRowData {
     private String userId;
     private String employeeId;
     private String username;
@@ -105,7 +105,12 @@ public class UserTableData {
         this.email = email;
     }
 
-    public UserTableData(BorderPane root, User user) {
+    /**
+     * Initializarea datelor, adaugarea butoanelor de stergere si actualizare + adaugarea functionalitatilor
+     * @param root panel-ul pe care se afla tabelul
+     * @param user  Datele de utilizator pentru linia de tabel curenta
+     */
+    public UserTableRowData(BorderPane root, User user) {
         userId = user.getUserId();
         employeeId = user.getEmployeeId();
         username = user.getUsername();

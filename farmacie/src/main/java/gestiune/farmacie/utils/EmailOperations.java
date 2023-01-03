@@ -18,14 +18,27 @@ import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
 import javax.mail.internet.NewsAddress;
 
+
+/**
+ * Clasa ajutatoare pentru gestionarea trimiterii de email-uri
+ */
 public class EmailOperations {
 
+    /**
+     * Construieste calea catre template-urile de email-uri
+     * @return un string ce reprezinta calea
+     */
     private static String getEmailTemplatePath(){
         Path currentPath = Paths.get(System.getProperty("user.dir"));
         Path filePath = Paths.get(currentPath.toString(), "farmacie","src","main","java","gestiune","farmacie","templates","mail");
 //        System.out.println(filePath.toString());
         return filePath.toString();
     }
+
+    /**
+     * Preia continutul pentru un mail de resetare a parolei
+     * @return continutul pentru un mail de resetare a parolei
+     */
     private static String getResetPasswordBody(){
         try {
             var resourcePath = Paths.get(getEmailTemplatePath(),"resetPassword.html");
@@ -35,10 +48,22 @@ public class EmailOperations {
         }
         return null;
     }
-    public static void sendResetPassword(String newPassword){
+
+    /**
+     * Trimiterea mail-ului de resetare a parolei
+     * @param newPassword noua parola
+     */
+    public static void sendResetPassword(String to,String newPassword){
         String body = getResetPasswordBody().replaceFirst("HERE_SECRET_PASSWORD",newPassword);
-        send("cristian.gusatu02@e-uvt.ro",body,"Parola dumneavoastra a fost resetata");
+        send(to,body,"Parola dumneavoastra a fost resetata");
     }
+
+    /**
+     * Trimite un email prin smtp
+     * @param to destinatarul mail-ului
+     * @param body corpul mail-ului
+     * @param subject subiect-ul mail-ului
+     */
     public static void send(String to, String body, String subject){
         String from = EmailCredentials.getSmtpEmail();
         String password = EmailCredentials.getSmtpPassword();

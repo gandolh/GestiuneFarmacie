@@ -19,20 +19,48 @@ import java.net.URL;
 import java.security.PrivilegedAction;
 import java.util.ResourceBundle;
 
+/**
+ * Controller-ul pentru pagina de acasa
+ */
 public class HomeController implements Initializable {
 
     @FXML
     private Label greetingLabel;
     @FXML
     private BorderPane rootBorderPane;
+
+    /**
+     * Redirectionare catre pagina contul meu
+     * @param event
+     * @throws IOException
+     */
     @FXML
-    public void goToMyAcount(ActionEvent event) throws IOException {
+    private void goToMyAcount(ActionEvent event) throws IOException {
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         RedirectController redirect = new RedirectController();
         redirect.goToMyAccount(stage);
     }
+
+    /**
+     * Adaugarea barei de navigatie la pornirea aplicatiei
+     * @param url
+     * The location used to resolve relative paths for the root object, or
+     * {@code null} if the location is not known.
+     *
+     * @param resourceBundle
+     * The resources used to localize the root object, or {@code null} if
+     * the root object was not localized.
+     */
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        addMenuBar();
+    }
+
+
+    /**
+     * Adaugarea barei de navigatie la pornirea aplicatiei
+     */
+    private void addMenuBar(){
         MyMenubar myMenubar = new MyMenubar();
         rootBorderPane.setTop(myMenubar);
         greetingLabel.setText("Salut, " + PlatformInstance.getUser().getUsername());

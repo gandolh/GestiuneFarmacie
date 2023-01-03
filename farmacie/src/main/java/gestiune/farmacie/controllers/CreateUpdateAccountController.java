@@ -21,6 +21,9 @@ import java.sql.Date;
 import java.util.ResourceBundle;
 import java.util.UUID;
 
+/**
+ * Controller-ul specific scenei de adaugare sau actualizare a unui utilizator
+ */
 public class CreateUpdateAccountController implements Initializable {
     @FXML
     private TextField usernameField;
@@ -50,15 +53,22 @@ public class CreateUpdateAccountController implements Initializable {
     private User selectedUser;
 
 
-
+    /**
+     * Redirectionare catre scena de gestionare a conturilor
+     * @param event
+     */
     public void cancel(ActionEvent event) {
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         RedirectController redirect = new RedirectController();
         redirect.goToManageUsers(stage);
     }
 
-    public void add(ActionEvent event) {
-        boolean isUserCreated = false;
+    /**
+     * Metoda corespunzatoare butonului de adaugare a unui nou utilizator
+     * @param event
+     */
+    @FXML
+    private void add(ActionEvent event) {
         String username = usernameField.getText();
         String password = passwordField.getText();
         String firstname = firstNameField.getText();
@@ -66,37 +76,91 @@ public class CreateUpdateAccountController implements Initializable {
         String email = emailField.getText();
         Date birthdate = Date.valueOf(birthdateField.getValue());
         Date hiredate = Date.valueOf(hiredateField.getValue());
+        createUser((Stage) ((Node) event.getSource()).getScene().getWindow(),
+                username,email, password, firstname, lastname, birthdate, hiredate);
+
+    }
+
+    /**
+     * Crearea unui utilizator
+     * @param stage Reprezinta o referinta catre fereastra curenta
+     * @param username
+     * @param email
+     * @param password
+     * @param firstname
+     * @param lastname
+     * @param birthdate
+     * @param hiredate
+     */
+    private void createUser(Stage stage,String username,String email, String password, String firstname,
+                           String lastname, Date birthdate, Date hiredate){
+        boolean isUserCreated = false;
         UserRepository userRepo = new UserRepository();
         isUserCreated = userRepo.createUser(username,email, password, firstname, lastname, birthdate, hiredate);
-
         if (isUserCreated == true) {
-            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
             RedirectController redirect = new RedirectController();
             redirect.goToManageUsers(stage);
         }
     }
 
+
+    /**
+     * Actiunea corespunzatoare butonului de actualizare
+     * @param event
+     */
     public void update(ActionEvent event){
-        boolean isUserUpdated = false;
         String username = usernameField.getText();
         String email = emailField.getText();
         String firstname = firstNameField.getText();
         String lastname = lastNameField.getText();
         Date birthdate = Date.valueOf(birthdateField.getValue());
         Date hiredate = Date.valueOf(hiredateField.getValue());
-        UserRepository userRepo = new UserRepository();
-        isUserUpdated = userRepo.updateUser(username, email, selectedUser.getUserId(), firstname, lastname, birthdate,
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        updateUser(stage, username, email, selectedUser.getUserId(), firstname, lastname, birthdate,
                 hiredate,selectedUser.getEmployeeId());
+    }
+
+
+    /**
+     * actualizarea unui utilizator
+     * @param stage Fereastra curenta
+     * @param username
+     * @param email
+     * @param userId
+     * @param firstname
+     * @param lastname
+     * @param birthdate
+     * @param hiredate
+     * @param employeeId
+     */
+    private void updateUser(Stage stage,String username, String email, String userId, String firstname, String lastname, Date birthdate, Date hiredate, String employeeId){
+        boolean isUserUpdated = false;
+        UserRepository userRepo = new UserRepository();
+        isUserUpdated = userRepo.updateUser(username, email, userId, firstname, lastname, birthdate,
+                hiredate,employeeId);
         if (isUserUpdated == true) {
-            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
             RedirectController redirect = new RedirectController();
             redirect.goToManageUsers(stage);
         }
     }
 
+    /**
+     * Initializarea componentei
+     * @param location
+     * The location used to resolve relative paths for the root object, or
+     * {@code null} if the location is not known.
+     *
+     * @param resources
+     * The resources used to localize the root object, or {@code null} if
+     * the root object was not localized.
+     */
     @Override
     public void initialize(URL location, ResourceBundle resources) { }
 
+
+    /**
+     * Initializarea scenei specific crearii
+     */
     public void initializeCreate(){
         resetPasswordBtn.setVisible(false);
         passwordField.setVisible(true);
@@ -107,6 +171,10 @@ public class CreateUpdateAccountController implements Initializable {
 
     }
 
+    /**
+     * Initializarea scenei specific actualizarii
+     * @param user
+     */
     public void initializeUpdate(User user){
         this.selectedUser = user;
         resetPasswordBtn.setVisible(true);
@@ -122,20 +190,30 @@ public class CreateUpdateAccountController implements Initializable {
         hiredateField.setValue(DateConverter.convertToLocalDateViaInstant(selectedUser.getHiredate()));
     }
 
-
+    /**
+     * Reseteaza parola unui utilizator
+     */
     public void resetPassword(){
         String newPassword = String.valueOf(UUID.randomUUID());
         UserRepository userRepo = new UserRepository();
         boolean isPaswordReseted = userRepo.changePassword(selectedUser.getUserId(), newPassword);
         if(isPaswordReseted)
-            EmailOperations.sendResetPassword(newPassword);
+            EmailOperations.sendResetPassword(selectedUser.getEmail(), newPassword);
 
     }
 
+    /**
+     * Trimite utilizatorul selectat
+     * @return Utilizatorul selectat pentru scena curenta
+     */
     public User getSelectedUser() {
         return selectedUser;
     }
 
+    /**
+     * Seteaza utilizatorul selectat
+     * @param selectedUser Utilizatorul selectat pentru scena curenta
+     */
     public void setSelectedUser(User selectedUser) {
         selectedUser = selectedUser;
     }

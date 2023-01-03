@@ -3,6 +3,9 @@ package gestiune.farmacie.data.business.objects;
 import java.util.Date;
 import java.util.UUID;
 
+/**
+ * Clasa de baza pentru structura datelor unui angajat
+ */
 public class Employee {
     private UUID id;
     private String firstname;

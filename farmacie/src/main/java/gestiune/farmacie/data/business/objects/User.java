@@ -3,6 +3,9 @@ package gestiune.farmacie.data.business.objects;
 import java.sql.Date;
 import java.util.List;
 
+/**
+ * Clasa pentru structura unui utilizator de aplicatie
+ */
 public class User {
     private List<UserRole> roles;
     private String userId;

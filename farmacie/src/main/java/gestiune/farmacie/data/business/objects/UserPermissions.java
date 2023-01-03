@@ -1,5 +1,8 @@
 package gestiune.farmacie.data.business.objects;
 
+/**
+ * Clasa pentru structura permisiunilor unui utilizator
+ */
 public class UserPermissions {
     private String value;
     private String id;

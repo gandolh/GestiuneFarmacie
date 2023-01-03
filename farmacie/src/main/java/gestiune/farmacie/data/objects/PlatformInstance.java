@@ -8,11 +8,26 @@ import java.nio.file.Paths;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 
+/**
+ * O instanta singletone ce mentine date statice necesare functionarii optime intregii aplicatii
+ */
 public class PlatformInstance {
+    /**
+     * utilizatorul de sistem curent
+     */
     private static User user;
+    /**
+     * format-ul de data afisat in aplicatie
+     */
     private static DateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy");
+    /**
+     * Formatul de date necesar server-ului de SQL pentru conversia la DateTime a unui string
+     */
     private static DateFormat sqlDateFormat = new SimpleDateFormat("dd-MM-yy");
 
+    /**
+     * Referinta asupra procesului curent de javafx
+     */
     private static HostServices hostedServices;
     public static HostServices getHostedServices() {
         return hostedServices;
@@ -41,6 +56,10 @@ public class PlatformInstance {
         PlatformInstance.user = user;
     }
 
+    /**
+     * Preluarea locatiei Procedurilor sql.
+     * @return
+     */
     public static String getProcsPath(){
         Path currentPath = Paths.get(System.getProperty("user.dir"));
         Path filePath = Paths.get(currentPath.toString(), "farmacie","src","main","java","gestiune","farmacie","data","procs");

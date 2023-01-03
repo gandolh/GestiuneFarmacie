@@ -1,5 +1,9 @@
 package gestiune.farmacie.data.objects;
 
+
+/**
+ * Clasa pentru rezultat-ul din urma interogarii bazei de date
+ */
 public class DatabaseResult {
     private String status;
     private String message;

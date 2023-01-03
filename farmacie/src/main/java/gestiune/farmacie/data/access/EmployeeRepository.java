@@ -3,6 +3,11 @@ package gestiune.farmacie.data.access;
 import gestiune.farmacie.data.business.objects.Employee;
 import gestiune.farmacie.data.objects.DatabaseResult;
 
+
+/**
+ * Preia datele asociate unui angajat
+ * WIP
+ */
 public class EmployeeRepository {
     public Employee getEmployee(){
         return new Employee();

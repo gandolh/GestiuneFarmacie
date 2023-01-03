@@ -1,5 +1,8 @@
 package gestiune.farmacie.utils;
 
+/**
+ * Clasa utilitara pentru gestionarea securizata a parolelor folosind algoritmul BCrypt.
+ */
 public class Password {
     private static int workload = 12;
 
@@ -15,8 +18,8 @@ public class Password {
      * @return String - a string of length 60 that is the bcrypt hashed password in crypt(3) format.
      */
     public static String hashPassword(String password_plaintext) {
-        String salt = org.mindrot.jbcrypt.BCrypt.gensalt(workload);
-        String hashed_password = org.mindrot.jbcrypt.BCrypt.hashpw(password_plaintext, salt);
+        String salt = gestiune.farmacie.utils.BCrypt.gensalt(workload);
+        String hashed_password = gestiune.farmacie.utils.BCrypt.hashpw(password_plaintext, salt);
         return(hashed_password);
     }
 
@@ -34,7 +37,7 @@ public class Password {
         if(null == stored_hash || !stored_hash.startsWith("$2a$"))
             throw new java.lang.IllegalArgumentException("Invalid hash provided for comparison");
 
-        password_verified = org.mindrot.jbcrypt.BCrypt.checkpw(password_plaintext, stored_hash);
+        password_verified = gestiune.farmacie.utils.BCrypt.checkpw(password_plaintext, stored_hash);
 
         return(password_verified);
     }

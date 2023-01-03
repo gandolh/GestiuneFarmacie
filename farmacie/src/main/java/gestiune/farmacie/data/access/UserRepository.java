@@ -10,13 +10,23 @@ import java.nio.file.Paths;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
-import java.util.Collections;
 import java.sql.Date;
 import java.util.List;
 
 import static gestiune.farmacie.data.objects.PlatformInstance.getProcsPath;
 
+
+/**
+ * Clasa folosita pentru a usura gestionarea utilizatorilor
+ */
 public class UserRepository {
+    /**
+     * Metoda intoarce un utilizator de aplicatie ce are numele de utilizator si parola corespunzatoare.
+     * @param username
+     * @param passwd
+     * @return un utilizator de aplicatie ce are numele de utilizator si parola corespunzatoare, null in cazul in care
+     * nu exista
+     */
     public User getUser(String username, String passwd) {
         if (username == null || username == null)
             return null;
@@ -46,6 +56,17 @@ public class UserRepository {
         return null;
     }
 
+    /**
+     * Creaza un utilizator de aplicatie nou
+     * @param username
+     * @param email
+     * @param password
+     * @param firstname
+     * @param lastname
+     * @param birthdate
+     * @param hiredate
+     * @return true daca crearea a avut success, fals in caz contrar.
+     */
     public boolean createUser(String username,String email, String password, String firstname, String lastname, Date birthdate, Date hiredate) {
         String hashedPassword = Password.hashPassword(password);
         User user = new User(username,hashedPassword,firstname,lastname,birthdate,hiredate);
@@ -64,6 +85,13 @@ public class UserRepository {
         return true;
     }
 
+
+    /**
+     * Verifica daca credentialele sunt ale unui utilizator
+     * @param username
+     * @param password
+     * @return true daca credentialele sunt asociate unui utilizator, fals in caz contrar
+     */
     public Boolean getIsUser(String username, String password) {
         if (username == null || username == null)
             return false;
@@ -82,6 +110,10 @@ public class UserRepository {
         }
     }
 
+    /**
+     * Preia toti utilizatorii de aplicatie din memoria persistenta
+     * @return toti utilizatorii aplicatiei
+     */
     public List<User> getAllUsers() {
         List<User> users = new ArrayList<User>();
         String sql = String.format("select f.id, employeeId, username, email, firstname, lastname, birthdate, hiredate " +
@@ -109,6 +141,12 @@ public class UserRepository {
 
     }
 
+    /**
+     * Sterge un utilizator cu id-urile primite
+     * @param userId id-ul de utilizator
+     * @param employeeId id-ul de angajat
+     * @return true daca stergerea a fost realizata cu success, fals in caz contrar
+     */
     public static boolean deleteUser(String userId, String employeeId) {
         String sql = "DELETE FROM [dbo].[FarmacieUser]\n" +
                 "      WHERE id= '%s';\n" +
@@ -124,6 +162,18 @@ public class UserRepository {
         return false;
     }
 
+    /**
+     * Actualizarea datelor unui utilizator
+     * @param username
+     * @param email
+     * @param userId
+     * @param firstname
+     * @param lastname
+     * @param birthdate
+     * @param hiredate
+     * @param employeeId
+     * @return true daca s-a putut realiza actiunea, false in caz contrar
+     */
     public boolean updateUser(String username, String email, String userId, String firstname, String lastname, Date birthdate, Date hiredate, String employeeId) {
         try {
             String formatedBirthDate = PlatformInstance.getSqlDateFormat().format(birthdate);
@@ -138,6 +188,13 @@ public class UserRepository {
 
         return  true;
     }
+
+    /**
+     * Schimbarea parolei unui utilizator
+     * @param userId id-ul de utilizator
+     * @param newPassword noua parola a utilizatorului
+     * @return true daca a avut loc schimbarea, fals in caz contrar
+     */
     public boolean changePassword(String userId, String newPassword) {
         System.out.println(newPassword);
         String sql = "UPDATE [dbo].[FarmacieUser]\n" +

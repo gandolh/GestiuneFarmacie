@@ -21,20 +21,44 @@ import java.util.ResourceBundle;
  * Controller-ul specific "contului meu"
  */
 public class MyAccountController implements Initializable {
+    /**
+     * Textfield pentru pentru numele de utilizator
+     */
     @FXML
     private TextField usernameField;
+    /**
+     * Textfield pentru pentru prenume
+     */
     @FXML
     private TextField firstNameField;
+    /**
+     * Textfield pentru pentru numele de familie
+     */
     @FXML
     private TextField lastNameField;
+    /**
+     * Textfield pentru pentru datanasterii
+     */
     @FXML
     private TextField birthdateField;
+    /**
+     * Textfield pentru pentru data angajarii
+     */
     @FXML
     private TextField hiredateField;
+    /**
+     * Textfield pentru pentru email
+     */
     @FXML
     private TextField emailField;
+    /**
+     * Layout-ul principal al ferestrei
+     */
     @FXML
     private BorderPane rootBorderPane;
+    /**
+     * Textfield pentru pentru parola
+     */
     @FXML
     private TextField passwordField;
 

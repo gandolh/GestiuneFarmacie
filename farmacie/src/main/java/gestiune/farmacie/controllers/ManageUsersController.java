@@ -24,24 +24,54 @@ import java.util.ResourceBundle;
  * Controller-ul specific gestionarii de utilizatori
  */
 public class ManageUsersController implements Initializable {
+    /**
+     * Layout-ul principal al ferestrei
+     */
     @FXML
     public BorderPane rootBorderPane;
+    /**
+     * Tabel cu utilizatorii aplicatiei
+     */
     @FXML
     public TableView<UserTableRowData> userTable;
+    /**
+     * Table Column
+     */
     @FXML
     public TableColumn emailTC;
+    /**
+     * Table Column
+     */
     @FXML
     public TableColumn usernameTC;
+    /**
+     * Table Column
+     */
     @FXML
     public TableColumn firstnameTC;
+    /**
+     * Table Column
+     */
     @FXML
     public TableColumn lastnameTC;
+    /**
+     * Table Column
+     */
     @FXML
     public TableColumn birthdateTC;
+    /**
+     * Table Column
+     */
     @FXML
     public TableColumn hiredateTC;
+    /**
+     * Table Column
+     */
     @FXML
     public TableColumn ActionsTC;
+    /**
+     * Buton creare utilizator
+     */
     @FXML
     public Button createUserBtn;
 

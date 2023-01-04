@@ -14,8 +14,17 @@ import java.io.IOException;
  * Controller-ul pentru scena principala a aplicatiei JavaFx
  */
 public class AplicationEntryController {
+    /**
+     * Fereastra curenta
+     */
     private Stage stage;
+    /**
+     * Scena curenta
+     */
     private Scene scene;
+    /**
+     * Elementul radacina (fxml-ul
+     */
     private Parent root;
 
     /**

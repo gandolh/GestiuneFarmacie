@@ -1,5 +1,6 @@
 package gestiune.farmacie.components;
 
+import com.sun.javafx.menu.MenuItemBase;
 import gestiune.farmacie.Main;
 import gestiune.farmacie.controllers.RedirectController;
 import gestiune.farmacie.data.objects.PlatformInstance;
@@ -21,6 +22,32 @@ import java.nio.file.Paths;
  */
 public class MyMenubar extends MenuBar {
 
+
+    /**
+     * Butonul din bara de navigatie pentru Contul meu
+     */
+    private MenuItem contulMeu;
+    /**
+     * Meniul din bara de navigatie pentru Conturi
+     */
+    private Menu accounts;
+    /**
+     * Butonul din bara de navigatie pentru Gestionarea utilizatorilor
+     */
+    private MenuItem gestionareConturi;
+    /**
+     * Butonul din bara de navigatie pentru documentatie
+     */
+    private MenuItem documentation;
+    /**
+     * Butonul din bara de navigatie pentru Acasa
+     */
+    private Menu home;
+    /**
+     * Butonul din bara de navigatie pentru deconectare
+     */
+    private Menu logout;
+
     /**
      * ia path-ul de la javadoc din solutia actuala.
      * @return Calea catre index-ul de la javadoc
@@ -38,21 +65,38 @@ public class MyMenubar extends MenuBar {
      */
     public MyMenubar() {
         //Creare elemente menu
-        Menu home = new Menu("Acasa");
-        Menu accounts = new Menu("Conturi");
-        MenuItem contulMeu = new MenuItem("Contul meu");
-        MenuItem gestionareConturi = new MenuItem("Gestionare conturi");
+        buildMenuBar();
+        setOnActions();
+    }
+
+    /**
+     * Construieste structura barei de navigatie
+     */
+    private void buildMenuBar(){
+        home = new Menu("Acasa");
+        accounts = new Menu("Conturi");
+        contulMeu = new MenuItem("Contul meu");
+        gestionareConturi = new MenuItem("Gestionare conturi");
         Menu settings = new Menu("Setari");
         MenuItem systemSettings = new MenuItem("Setari de sistem");
         MenuItem platformSettings = new MenuItem("Setari de platforma");
         Menu help = new Menu("Ajutor");
         MenuItem raportareProbleme = new MenuItem("Raportare probleme");
-        MenuItem documentation = new MenuItem("Documentatie");
-        Menu logout = new Menu("Deconectare");
+        documentation = new MenuItem("Documentatie");
+        logout = new Menu("Deconectare");
 
         //adauga contul meu
         accounts.getItems().add(contulMeu);
+        settings.getItems().addAll(platformSettings, systemSettings);
+        help.getItems().addAll(raportareProbleme, documentation);
+        this.getMenus().addAll(home,accounts,settings,help, logout);
+    }
 
+
+    /**
+     * Adauga evenimente
+     */
+    private void setOnActions(){
         //redirectionare catre contul meu la apasare
         contulMeu.setOnAction(e -> {
             Stage stage = (Stage) this.getScene().getWindow();
@@ -76,14 +120,8 @@ public class MyMenubar extends MenuBar {
                     getJavaDocPath().toUri().toString());
         });
 
-        // adaugare componente javaFX
-        settings.getItems().addAll(platformSettings, systemSettings);
-        help.getItems().addAll(raportareProbleme, documentation);
-        this.getMenus().addAll(home,accounts,settings,help, logout);
-
         addGoHomeAction(home);
         addLogoutAction(logout);
-
     }
 
 

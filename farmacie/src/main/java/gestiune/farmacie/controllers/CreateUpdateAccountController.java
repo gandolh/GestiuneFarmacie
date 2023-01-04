@@ -25,31 +25,69 @@ import java.util.UUID;
  * Controller-ul specific scenei de adaugare sau actualizare a unui utilizator
  */
 public class CreateUpdateAccountController implements Initializable {
+    /**
+     * Textfield pentru pentru numele de utilizator
+     */
     @FXML
     private TextField usernameField;
+    /**
+     * Textfield pentru pentru prenume
+     */
     @FXML
     private TextField firstNameField;
+    /**
+     * Textfield pentru pentru numele de familie
+     */
     @FXML
     private TextField lastNameField;
+    /**
+     * Textfield pentru pentru parola
+     */
     @FXML
     private TextField passwordField;
+    /**
+     * Textfield pentru pentru email
+     */
     @FXML
     private TextField emailField;
+    /**
+     * Textfield pentru resetare parola
+     */
     @FXML
     private Button resetPasswordBtn;
+    /**
+     * Textfield pentru linia din grid pentru resetarea parolei
+     */
     @FXML
     private RowConstraints resetPasswordGridRow;
+    /**
+     * Datepicker pentru data nasterii
+     */
     @FXML
     private DatePicker birthdateField;
+    /**
+     * Datepicker pentru data angajarii
+     */
     @FXML
     private DatePicker hiredateField;
+    /**
+     * Referinta asupra elementului de layout
+     */
     @FXML
     private BorderPane rootBorderPane;
+    /**
+     * Referinta asupra butonului de anulare asupra actiunii de editare sau creere a unui utilizator
+     */
     @FXML
     private Button cancelBtn;
+    /**
+     * Referinta asupra butonului de editare sau creere a unui utilizator
+     */
     @FXML
     private Button addOrUpdateBtn;
-
+    /**
+     * Referint aasupra utilizatorului caruia este necesara editarea datelor
+     */
     private User selectedUser;
 
 

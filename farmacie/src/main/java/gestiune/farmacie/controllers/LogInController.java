@@ -19,12 +19,21 @@ import java.util.ResourceBundle;
  * Controller-ul pentru inregistrare
  */
 public class LogInController implements Initializable {
+    /**
+     * TextField pentru numele de utilizator
+     */
     @FXML
     private TextField usernameField;
 
+    /**
+     * TextField pentru parola
+     */
     @FXML
     private PasswordField passwordField;
 
+    /**
+     * Buton pentru realizarea actiunii de login
+     */
     @FXML
     private Button loginButton;
 

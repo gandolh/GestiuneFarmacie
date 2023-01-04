@@ -4,6 +4,11 @@ package gestiune.farmacie.utils;
  * Clasa utilitara pentru gestionarea securizata a parolelor folosind algoritmul BCrypt.
  */
 public class Password {
+    /**
+     * workload - the log2 of the number of rounds of
+     * hashing to apply - the work factor therefore increases as
+     * 2**log_rounds.
+     */
     private static int workload = 12;
 
     /**

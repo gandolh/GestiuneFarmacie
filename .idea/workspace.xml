@@ -8,12 +8,98 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b824ef3c-2441-4ff1-ac05-ff9f9795d812" name="Changes" comment="authentication handler blueprint">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/farmacie/src/main/java/gestiune/farmacie/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/farmacie/src/main/java/gestiune/farmacie/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/farmacie/src/main/java/gestiune/farmacie/components/MyDialog.java" beforeDir="false" afterPath="$PROJECT_DIR$/farmacie/src/main/java/gestiune/farmacie/components/MyDialog.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/farmacie/src/main/java/gestiune/farmacie/components/MyMenubar.java" beforeDir="false" afterPath="$PROJECT_DIR$/farmacie/src/main/java/gestiune/farmacie/components/MyMenubar.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/farmacie/src/main/java/gestiune/farmacie/data/DatabaseMigrator.java" beforeDir="false" afterPath="$PROJECT_DIR$/farmacie/src/main/java/gestiune/farmacie/data/DatabaseMigrator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/farmacie/src/main/java/gestiune/farmacie/controllers/AplicationEntryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/farmacie/src/main/java/gestiune/farmacie/controllers/AplicationEntryController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/farmacie/src/main/java/gestiune/farmacie/controllers/CreateCategController.java" beforeDir="false" afterPath="$PROJECT_DIR$/farmacie/src/main/java/gestiune/farmacie/controllers/CreateCategController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/farmacie/src/main/java/gestiune/farmacie/controllers/CreateMedController.java" beforeDir="false" afterPath="$PROJECT_DIR$/farmacie/src/main/java/gestiune/farmacie/controllers/CreateMedController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/farmacie/src/main/java/gestiune/farmacie/controllers/CreateProviderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/farmacie/src/main/java/gestiune/farmacie/controllers/CreateProviderController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/farmacie/src/main/java/gestiune/farmacie/controllers/CreateUpdateAccountController.java" beforeDir="false" afterPath="$PROJECT_DIR$/farmacie/src/main/java/gestiune/farmacie/controllers/CreateUpdateAccountController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/farmacie/src/main/java/gestiune/farmacie/controllers/HomeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/farmacie/src/main/java/gestiune/farmacie/controllers/HomeController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/farmacie/src/main/java/gestiune/farmacie/controllers/LogInController.java" beforeDir="false" afterPath="$PROJECT_DIR$/farmacie/src/main/java/gestiune/farmacie/controllers/LogInController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/farmacie/src/main/java/gestiune/farmacie/controllers/ManageUsersController.java" beforeDir="false" afterPath="$PROJECT_DIR$/farmacie/src/main/java/gestiune/farmacie/controllers/ManageUsersController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/farmacie/src/main/java/gestiune/farmacie/controllers/MyAccountController.java" beforeDir="false" afterPath="$PROJECT_DIR$/farmacie/src/main/java/gestiune/farmacie/controllers/MyAccountController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/farmacie/src/main/java/gestiune/farmacie/data/access/EmployeeRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/farmacie/src/main/java/gestiune/farmacie/data/access/EmployeeRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/farmacie/src/main/java/gestiune/farmacie/data/business/objects/Employee.java" beforeDir="false" afterPath="$PROJECT_DIR$/farmacie/src/main/java/gestiune/farmacie/data/business/objects/Employee.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/farmacie/src/main/java/gestiune/farmacie/data/business/objects/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/farmacie/src/main/java/gestiune/farmacie/data/business/objects/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/farmacie/src/main/java/gestiune/farmacie/data/business/objects/UserPermissions.java" beforeDir="false" afterPath="$PROJECT_DIR$/farmacie/src/main/java/gestiune/farmacie/data/business/objects/UserPermissions.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/farmacie/src/main/java/gestiune/farmacie/data/business/objects/UserRole.java" beforeDir="false" afterPath="$PROJECT_DIR$/farmacie/src/main/java/gestiune/farmacie/data/business/objects/UserRole.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/farmacie/src/main/java/gestiune/farmacie/data/objects/DatabaseResult.java" beforeDir="false" afterPath="$PROJECT_DIR$/farmacie/src/main/java/gestiune/farmacie/data/objects/DatabaseResult.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/farmacie/src/main/java/gestiune/farmacie/data/objects/PlatformInstance.java" beforeDir="false" afterPath="$PROJECT_DIR$/farmacie/src/main/java/gestiune/farmacie/data/objects/PlatformInstance.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/farmacie/src/main/java/gestiune/farmacie/data/objects/UserTableRowData.java" beforeDir="false" afterPath="$PROJECT_DIR$/farmacie/src/main/java/gestiune/farmacie/data/objects/UserTableRowData.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/farmacie/src/main/java/gestiune/farmacie/utils/BCrypt.java" beforeDir="false" afterPath="$PROJECT_DIR$/farmacie/src/main/java/gestiune/farmacie/utils/BCrypt.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/farmacie/src/main/java/gestiune/farmacie/utils/DateConverter.java" beforeDir="false" afterPath="$PROJECT_DIR$/farmacie/src/main/java/gestiune/farmacie/utils/DateConverter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/farmacie/src/main/java/gestiune/farmacie/utils/Password.java" beforeDir="false" afterPath="$PROJECT_DIR$/farmacie/src/main/java/gestiune/farmacie/utils/Password.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/farmacie/src/main/javadoc/allclasses-index.html" beforeDir="false" afterPath="$PROJECT_DIR$/farmacie/src/main/javadoc/allclasses-index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/farmacie/src/main/javadoc/allpackages-index.html" beforeDir="false" afterPath="$PROJECT_DIR$/farmacie/src/main/javadoc/allpackages-index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/farmacie/src/main/javadoc/element-list" beforeDir="false" afterPath="$PROJECT_DIR$/farmacie/src/main/javadoc/element-list" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/farmacie/src/main/javadoc/gestiune.farmacie/gestiune/farmacie/Main.html" beforeDir="false" afterPath="$PROJECT_DIR$/farmacie/src/main/javadoc/gestiune.farmacie/gestiune/farmacie/Main.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/farmacie/src/main/javadoc/gestiune.farmacie/gestiune/farmacie/components/MyDialog.html" beforeDir="false" afterPath="$PROJECT_DIR$/farmacie/src/main/javadoc/gestiune.farmacie/gestiune/farmacie/components/MyDialog.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/farmacie/src/main/javadoc/gestiune.farmacie/gestiune/farmacie/components/MyMenubar.html" beforeDir="false" afterPath="$PROJECT_DIR$/farmacie/src/main/javadoc/gestiune.farmacie/gestiune/farmacie/components/MyMenubar.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/farmacie/src/main/javadoc/gestiune.farmacie/gestiune/farmacie/components/package-summary.html" beforeDir="false" afterPath="$PROJECT_DIR$/farmacie/src/main/javadoc/gestiune.farmacie/gestiune/farmacie/components/package-summary.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/farmacie/src/main/javadoc/gestiune.farmacie/gestiune/farmacie/components/package-tree.html" beforeDir="false" afterPath="$PROJECT_DIR$/farmacie/src/main/javadoc/gestiune.farmacie/gestiune/farmacie/components/package-tree.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/farmacie/src/main/javadoc/gestiune.farmacie/gestiune/farmacie/controllers/AplicationEntryController.html" beforeDir="false" afterPath="$PROJECT_DIR$/farmacie/src/main/javadoc/gestiune.farmacie/gestiune/farmacie/controllers/AplicationEntryController.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/farmacie/src/main/javadoc/gestiune.farmacie/gestiune/farmacie/controllers/CreateCategController.html" beforeDir="false" afterPath="$PROJECT_DIR$/farmacie/src/main/javadoc/gestiune.farmacie/gestiune/farmacie/controllers/CreateCategController.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/farmacie/src/main/javadoc/gestiune.farmacie/gestiune/farmacie/controllers/CreateMedController.html" beforeDir="false" afterPath="$PROJECT_DIR$/farmacie/src/main/javadoc/gestiune.farmacie/gestiune/farmacie/controllers/CreateMedController.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/farmacie/src/main/javadoc/gestiune.farmacie/gestiune/farmacie/controllers/CreateProviderController.html" beforeDir="false" afterPath="$PROJECT_DIR$/farmacie/src/main/javadoc/gestiune.farmacie/gestiune/farmacie/controllers/CreateProviderController.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/farmacie/src/main/javadoc/gestiune.farmacie/gestiune/farmacie/controllers/CreateUpdateAccountController.html" beforeDir="false" afterPath="$PROJECT_DIR$/farmacie/src/main/javadoc/gestiune.farmacie/gestiune/farmacie/controllers/CreateUpdateAccountController.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/farmacie/src/main/javadoc/gestiune.farmacie/gestiune/farmacie/controllers/HomeController.html" beforeDir="false" afterPath="$PROJECT_DIR$/farmacie/src/main/javadoc/gestiune.farmacie/gestiune/farmacie/controllers/HomeController.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/farmacie/src/main/javadoc/gestiune.farmacie/gestiune/farmacie/controllers/LogInController.html" beforeDir="false" afterPath="$PROJECT_DIR$/farmacie/src/main/javadoc/gestiune.farmacie/gestiune/farmacie/controllers/LogInController.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/farmacie/src/main/javadoc/gestiune.farmacie/gestiune/farmacie/controllers/ManageUsersController.html" beforeDir="false" afterPath="$PROJECT_DIR$/farmacie/src/main/javadoc/gestiune.farmacie/gestiune/farmacie/controllers/ManageUsersController.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/farmacie/src/main/javadoc/gestiune.farmacie/gestiune/farmacie/controllers/MyAccountController.html" beforeDir="false" afterPath="$PROJECT_DIR$/farmacie/src/main/javadoc/gestiune.farmacie/gestiune/farmacie/controllers/MyAccountController.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/farmacie/src/main/javadoc/gestiune.farmacie/gestiune/farmacie/controllers/RedirectController.html" beforeDir="false" afterPath="$PROJECT_DIR$/farmacie/src/main/javadoc/gestiune.farmacie/gestiune/farmacie/controllers/RedirectController.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/farmacie/src/main/javadoc/gestiune.farmacie/gestiune/farmacie/controllers/package-summary.html" beforeDir="false" afterPath="$PROJECT_DIR$/farmacie/src/main/javadoc/gestiune.farmacie/gestiune/farmacie/controllers/package-summary.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/farmacie/src/main/javadoc/gestiune.farmacie/gestiune/farmacie/controllers/package-tree.html" beforeDir="false" afterPath="$PROJECT_DIR$/farmacie/src/main/javadoc/gestiune.farmacie/gestiune/farmacie/controllers/package-tree.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/farmacie/src/main/javadoc/gestiune.farmacie/gestiune/farmacie/data/DatabaseMigrator.html" beforeDir="false" afterPath="$PROJECT_DIR$/farmacie/src/main/javadoc/gestiune.farmacie/gestiune/farmacie/data/DatabaseMigrator.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/farmacie/src/main/javadoc/gestiune.farmacie/gestiune/farmacie/data/access/DatabaseConnection.html" beforeDir="false" afterPath="$PROJECT_DIR$/farmacie/src/main/javadoc/gestiune.farmacie/gestiune/farmacie/data/access/DatabaseConnection.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/farmacie/src/main/javadoc/gestiune.farmacie/gestiune/farmacie/data/access/EmployeeRepository.html" beforeDir="false" afterPath="$PROJECT_DIR$/farmacie/src/main/javadoc/gestiune.farmacie/gestiune/farmacie/data/access/EmployeeRepository.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/farmacie/src/main/javadoc/gestiune.farmacie/gestiune/farmacie/data/access/UserRepository.html" beforeDir="false" afterPath="$PROJECT_DIR$/farmacie/src/main/javadoc/gestiune.farmacie/gestiune/farmacie/data/access/UserRepository.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/farmacie/src/main/javadoc/gestiune.farmacie/gestiune/farmacie/data/access/package-summary.html" beforeDir="false" afterPath="$PROJECT_DIR$/farmacie/src/main/javadoc/gestiune.farmacie/gestiune/farmacie/data/access/package-summary.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/farmacie/src/main/javadoc/gestiune.farmacie/gestiune/farmacie/data/access/package-tree.html" beforeDir="false" afterPath="$PROJECT_DIR$/farmacie/src/main/javadoc/gestiune.farmacie/gestiune/farmacie/data/access/package-tree.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/farmacie/src/main/javadoc/gestiune.farmacie/gestiune/farmacie/data/business/objects/Employee.html" beforeDir="false" afterPath="$PROJECT_DIR$/farmacie/src/main/javadoc/gestiune.farmacie/gestiune/farmacie/data/business/objects/Employee.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/farmacie/src/main/javadoc/gestiune.farmacie/gestiune/farmacie/data/business/objects/User.html" beforeDir="false" afterPath="$PROJECT_DIR$/farmacie/src/main/javadoc/gestiune.farmacie/gestiune/farmacie/data/business/objects/User.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/farmacie/src/main/javadoc/gestiune.farmacie/gestiune/farmacie/data/business/objects/UserPermissions.html" beforeDir="false" afterPath="$PROJECT_DIR$/farmacie/src/main/javadoc/gestiune.farmacie/gestiune/farmacie/data/business/objects/UserPermissions.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/farmacie/src/main/javadoc/gestiune.farmacie/gestiune/farmacie/data/business/objects/UserRole.html" beforeDir="false" afterPath="$PROJECT_DIR$/farmacie/src/main/javadoc/gestiune.farmacie/gestiune/farmacie/data/business/objects/UserRole.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/farmacie/src/main/javadoc/gestiune.farmacie/gestiune/farmacie/data/business/objects/package-summary.html" beforeDir="false" afterPath="$PROJECT_DIR$/farmacie/src/main/javadoc/gestiune.farmacie/gestiune/farmacie/data/business/objects/package-summary.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/farmacie/src/main/javadoc/gestiune.farmacie/gestiune/farmacie/data/business/objects/package-tree.html" beforeDir="false" afterPath="$PROJECT_DIR$/farmacie/src/main/javadoc/gestiune.farmacie/gestiune/farmacie/data/business/objects/package-tree.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/farmacie/src/main/javadoc/gestiune.farmacie/gestiune/farmacie/data/objects/DatabaseResult.html" beforeDir="false" afterPath="$PROJECT_DIR$/farmacie/src/main/javadoc/gestiune.farmacie/gestiune/farmacie/data/objects/DatabaseResult.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/farmacie/src/main/javadoc/gestiune.farmacie/gestiune/farmacie/data/objects/PlatformInstance.html" beforeDir="false" afterPath="$PROJECT_DIR$/farmacie/src/main/javadoc/gestiune.farmacie/gestiune/farmacie/data/objects/PlatformInstance.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/farmacie/src/main/javadoc/gestiune.farmacie/gestiune/farmacie/data/objects/package-summary.html" beforeDir="false" afterPath="$PROJECT_DIR$/farmacie/src/main/javadoc/gestiune.farmacie/gestiune/farmacie/data/objects/package-summary.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/farmacie/src/main/javadoc/gestiune.farmacie/gestiune/farmacie/data/objects/package-tree.html" beforeDir="false" afterPath="$PROJECT_DIR$/farmacie/src/main/javadoc/gestiune.farmacie/gestiune/farmacie/data/objects/package-tree.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/farmacie/src/main/javadoc/gestiune.farmacie/gestiune/farmacie/data/package-summary.html" beforeDir="false" afterPath="$PROJECT_DIR$/farmacie/src/main/javadoc/gestiune.farmacie/gestiune/farmacie/data/package-summary.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/farmacie/src/main/javadoc/gestiune.farmacie/gestiune/farmacie/data/package-tree.html" beforeDir="false" afterPath="$PROJECT_DIR$/farmacie/src/main/javadoc/gestiune.farmacie/gestiune/farmacie/data/package-tree.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/farmacie/src/main/javadoc/gestiune.farmacie/gestiune/farmacie/package-summary.html" beforeDir="false" afterPath="$PROJECT_DIR$/farmacie/src/main/javadoc/gestiune.farmacie/gestiune/farmacie/package-summary.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/farmacie/src/main/javadoc/gestiune.farmacie/gestiune/farmacie/package-tree.html" beforeDir="false" afterPath="$PROJECT_DIR$/farmacie/src/main/javadoc/gestiune.farmacie/gestiune/farmacie/package-tree.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/farmacie/src/main/javadoc/gestiune.farmacie/gestiune/farmacie/utils/DateConverter.html" beforeDir="false" afterPath="$PROJECT_DIR$/farmacie/src/main/javadoc/gestiune.farmacie/gestiune/farmacie/utils/DateConverter.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/farmacie/src/main/javadoc/gestiune.farmacie/gestiune/farmacie/utils/EmailOperations.html" beforeDir="false" afterPath="$PROJECT_DIR$/farmacie/src/main/javadoc/gestiune.farmacie/gestiune/farmacie/utils/EmailOperations.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/farmacie/src/main/javadoc/gestiune.farmacie/gestiune/farmacie/utils/FileOperations.html" beforeDir="false" afterPath="$PROJECT_DIR$/farmacie/src/main/javadoc/gestiune.farmacie/gestiune/farmacie/utils/FileOperations.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/farmacie/src/main/javadoc/gestiune.farmacie/gestiune/farmacie/utils/Password.html" beforeDir="false" afterPath="$PROJECT_DIR$/farmacie/src/main/javadoc/gestiune.farmacie/gestiune/farmacie/utils/Password.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/farmacie/src/main/javadoc/gestiune.farmacie/gestiune/farmacie/utils/package-summary.html" beforeDir="false" afterPath="$PROJECT_DIR$/farmacie/src/main/javadoc/gestiune.farmacie/gestiune/farmacie/utils/package-summary.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/farmacie/src/main/javadoc/gestiune.farmacie/gestiune/farmacie/utils/package-tree.html" beforeDir="false" afterPath="$PROJECT_DIR$/farmacie/src/main/javadoc/gestiune.farmacie/gestiune/farmacie/utils/package-tree.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/farmacie/src/main/javadoc/gestiune.farmacie/module-summary.html" beforeDir="false" afterPath="$PROJECT_DIR$/farmacie/src/main/javadoc/gestiune.farmacie/module-summary.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/farmacie/src/main/javadoc/help-doc.html" beforeDir="false" afterPath="$PROJECT_DIR$/farmacie/src/main/javadoc/help-doc.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/farmacie/src/main/javadoc/index-files/index-1.html" beforeDir="false" afterPath="$PROJECT_DIR$/farmacie/src/main/javadoc/index-files/index-1.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/farmacie/src/main/javadoc/index-files/index-10.html" beforeDir="false" afterPath="$PROJECT_DIR$/farmacie/src/main/javadoc/index-files/index-10.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/farmacie/src/main/javadoc/index-files/index-11.html" beforeDir="false" afterPath="$PROJECT_DIR$/farmacie/src/main/javadoc/index-files/index-11.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/farmacie/src/main/javadoc/index-files/index-12.html" beforeDir="false" afterPath="$PROJECT_DIR$/farmacie/src/main/javadoc/index-files/index-12.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/farmacie/src/main/javadoc/index-files/index-13.html" beforeDir="false" afterPath="$PROJECT_DIR$/farmacie/src/main/javadoc/index-files/index-13.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/farmacie/src/main/javadoc/index-files/index-14.html" beforeDir="false" afterPath="$PROJECT_DIR$/farmacie/src/main/javadoc/index-files/index-14.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/farmacie/src/main/javadoc/index-files/index-15.html" beforeDir="false" afterPath="$PROJECT_DIR$/farmacie/src/main/javadoc/index-files/index-15.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/farmacie/src/main/javadoc/index-files/index-2.html" beforeDir="false" afterPath="$PROJECT_DIR$/farmacie/src/main/javadoc/index-files/index-2.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/farmacie/src/main/javadoc/index-files/index-3.html" beforeDir="false" afterPath="$PROJECT_DIR$/farmacie/src/main/javadoc/index-files/index-3.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/farmacie/src/main/javadoc/index-files/index-4.html" beforeDir="false" afterPath="$PROJECT_DIR$/farmacie/src/main/javadoc/index-files/index-4.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/farmacie/src/main/javadoc/index-files/index-5.html" beforeDir="false" afterPath="$PROJECT_DIR$/farmacie/src/main/javadoc/index-files/index-5.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/farmacie/src/main/javadoc/index-files/index-6.html" beforeDir="false" afterPath="$PROJECT_DIR$/farmacie/src/main/javadoc/index-files/index-6.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/farmacie/src/main/javadoc/index-files/index-7.html" beforeDir="false" afterPath="$PROJECT_DIR$/farmacie/src/main/javadoc/index-files/index-7.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/farmacie/src/main/javadoc/index-files/index-8.html" beforeDir="false" afterPath="$PROJECT_DIR$/farmacie/src/main/javadoc/index-files/index-8.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/farmacie/src/main/javadoc/index-files/index-9.html" beforeDir="false" afterPath="$PROJECT_DIR$/farmacie/src/main/javadoc/index-files/index-9.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/farmacie/src/main/javadoc/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/farmacie/src/main/javadoc/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/farmacie/src/main/javadoc/member-search-index.js" beforeDir="false" afterPath="$PROJECT_DIR$/farmacie/src/main/javadoc/member-search-index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/farmacie/src/main/javadoc/overview-tree.html" beforeDir="false" afterPath="$PROJECT_DIR$/farmacie/src/main/javadoc/overview-tree.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/farmacie/src/main/javadoc/package-search-index.js" beforeDir="false" afterPath="$PROJECT_DIR$/farmacie/src/main/javadoc/package-search-index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/farmacie/src/main/javadoc/search.html" beforeDir="false" afterPath="$PROJECT_DIR$/farmacie/src/main/javadoc/search.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/farmacie/src/main/javadoc/type-search-index.js" beforeDir="false" afterPath="$PROJECT_DIR$/farmacie/src/main/javadoc/type-search-index.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -171,33 +257,28 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/farmacie/src/main/java/gestiune/farmacie/controllers/RedirectController.java</url>
-          <line>40</line>
+          <line>55</line>
           <option name="timeStamp" value="10" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/farmacie/src/main/java/gestiune/farmacie/controllers/RedirectController.java</url>
-          <line>16</line>
+          <line>23</line>
           <option name="timeStamp" value="12" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/farmacie/src/main/java/gestiune/farmacie/controllers/RedirectController.java</url>
-          <line>28</line>
+          <line>39</line>
           <option name="timeStamp" value="13" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/farmacie/src/main/java/gestiune/farmacie/controllers/RedirectController.java</url>
-          <line>52</line>
+          <line>71</line>
           <option name="timeStamp" value="15" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/farmacie/src/main/java/gestiune/farmacie/controllers/RedirectController.java</url>
-          <line>60</line>
+          <line>84</line>
           <option name="timeStamp" value="24" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/farmacie/src/main/java/gestiune/farmacie/components/MyMenubar.java</url>
-          <line>38</line>
-          <option name="timeStamp" value="28" />
         </line-breakpoint>
         <breakpoint type="java-exception">
           <properties class="java.lang.UnsupportedOperationException" package="java.lang" />

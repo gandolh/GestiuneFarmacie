@@ -7,6 +7,11 @@ import javafx.scene.control.Alert;
  * Dialog-ul meu custom pentru javaFX pentru diverse afisari de eroare, warning, etc
  */
 public class MyDialog {
+
+    /**
+     * Construieste un dialog custom in functie de datele de intrare
+     * @param alertType
+     */
     public MyDialog(Alert.AlertType alertType){
         Alert alert = new Alert(alertType);
         alert.setTitle("Credentiale incorecte");

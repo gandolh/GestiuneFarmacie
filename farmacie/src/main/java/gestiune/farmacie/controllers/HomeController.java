@@ -24,8 +24,14 @@ import java.util.ResourceBundle;
  */
 public class HomeController implements Initializable {
 
+    /**
+     * Label pentru afisarea unui mesaj de salut utilizatorului
+     */
     @FXML
     private Label greetingLabel;
+    /**
+     * Layout-ul principal al ferestrei
+     */
     @FXML
     private BorderPane rootBorderPane;
 

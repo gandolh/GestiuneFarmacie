@@ -29,36 +29,75 @@ public class PlatformInstance {
      * Referinta asupra procesului curent de javafx
      */
     private static HostServices hostedServices;
+
+    /**
+     * intoarce referinta asupra procesului curent de javafx
+     * @return referinta asupra procesului curent de javafx
+     */
     public static HostServices getHostedServices() {
         return hostedServices;
     }
+
+    /**
+     * seteaza referinta asupra procesului curent de javafx in Main.java
+     * @param hostedServices referinta asupra procesului curent de javafx
+     */
     public static void setHostedServices(HostServices hostedServices) {
         PlatformInstance.hostedServices = hostedServices;
     }
+
+    /**
+     * intoarce format-ul de data afisat in aplicatie
+     * @return format-ul de data afisat in aplicatie
+     */
     public static DateFormat getDateFormat() {
         return dateFormat;
     }
+
+    /**
+     * setaza format-ul de data afisat in aplicatie
+     * @param dateFormat format-ul de data afisat in aplicatie
+     */
     public static void setDateFormat(DateFormat dateFormat) {
         PlatformInstance.dateFormat = dateFormat;
     }
+
+    /**
+     * intoarce formatul de date necesar server-ului de SQL pentru conversia la DateTime a unui string
+     * @return formatul de date necesar server-ului de SQL pentru conversia la DateTime a unui string
+     */
     public static DateFormat getSqlDateFormat() {
         return sqlDateFormat;
     }
+
+    /**
+     * seteaza formatul de date necesar server-ului de SQL pentru conversia la DateTime a unui string
+     * @param sqlDateFormat formatul de date necesar server-ului de SQL pentru conversia la DateTime a unui string
+     */
     public static void setSqlDateFormat(DateFormat sqlDateFormat) {
         PlatformInstance.sqlDateFormat = sqlDateFormat;
     }
+
+    /**
+     * intoarce utilizatorul de aplicatie curent curent, sau un utilizator gol daca nu este setat
+     * @return utilizatorul de aplicatie curent curent
+     */
     public static User getUser() {
         if(user == null)return new User();
         return user;
     }
 
+    /**
+     * seteaza utilizatorul de aplicatie curent curent
+     * @param user utilizatorul de aplicatie curent curent
+     */
     public static void setUser(User user) {
         PlatformInstance.user = user;
     }
 
     /**
      * Preluarea locatiei Procedurilor sql.
-     * @return
+     * @return locatia Procedurilor sql.
      */
     public static String getProcsPath(){
         Path currentPath = Paths.get(System.getProperty("user.dir"));

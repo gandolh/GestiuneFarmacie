@@ -1,3 +1,6 @@
+/**
+ * Modulul principal pentru aplicatia javaFx
+ */
 module gestiune.farmacie {
     requires javafx.controls;
     requires javafx.fxml;

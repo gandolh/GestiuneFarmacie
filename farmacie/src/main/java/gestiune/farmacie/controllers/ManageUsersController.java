@@ -25,6 +25,12 @@ import java.util.ResourceBundle;
  */
 public class ManageUsersController implements Initializable {
     /**
+     * Controller FXML
+     */
+    public ManageUsersController() {
+    }
+
+    /**
      * Layout-ul principal al ferestrei
      */
     @FXML

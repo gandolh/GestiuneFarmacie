@@ -58,14 +58,14 @@ public class User {
 
     /**
      * Constructorul complet
-     * @param userId
-     * @param employeeId
-     * @param username
-     * @param hashedPassword
-     * @param firstname
-     * @param lastname
-     * @param birthdate
-     * @param hiredate
+     * @param userId id de utilizator
+     * @param employeeId id de angajat
+     * @param username nume de utilizator
+     * @param hashedPassword parola hashuita
+     * @param firstname prenume
+     * @param lastname nume de familie
+     * @param birthdate data nasterii
+     * @param hiredate data angajarii
      */
     public User(String userId, String employeeId, String username, String hashedPassword, String firstname,
                 String lastname, Date birthdate, Date hiredate) {
@@ -81,12 +81,12 @@ public class User {
 
     /**
      * Constructorul fara id-uri in cazul crearii acestora la nivelul bazei de date
-     * @param username
-     * @param hashedPassword
-     * @param firstname
-     * @param lastname
-     * @param birthdate
-     * @param hiredate
+     * @param username nume de utilizator
+     * @param hashedPassword parola hashuita
+     * @param firstname prenume
+     * @param lastname nume de familie
+     * @param birthdate data nasterii
+     * @param hiredate data angajarii
      */
     public User(String username, String hashedPassword, String firstname, String lastname, Date birthdate, Date hiredate) {
         this.username = username;

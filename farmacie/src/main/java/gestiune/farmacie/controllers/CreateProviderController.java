@@ -11,6 +11,12 @@ public class CreateProviderController {
     /**
      * Work in progress
      */
+    public CreateProviderController() {
+    }
+
+    /**
+     * Work in progress
+     */
     @FXML
     private Button buttonANAF;
     /**

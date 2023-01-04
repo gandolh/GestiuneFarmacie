@@ -5,6 +5,7 @@ import javafx.application.HostServices;
 
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.security.PrivateKey;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 
@@ -12,6 +13,12 @@ import java.text.SimpleDateFormat;
  * O instanta singletone ce mentine date statice necesare functionarii optime intregii aplicatii
  */
 public class PlatformInstance {
+    /**
+     * Clasa nu ar trebui initializata
+     */
+    private PlatformInstance() {
+    }
+
     /**
      * utilizatorul de sistem curent
      */

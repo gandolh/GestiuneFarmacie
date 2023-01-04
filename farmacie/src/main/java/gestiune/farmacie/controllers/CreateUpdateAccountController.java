@@ -26,6 +26,12 @@ import java.util.UUID;
  */
 public class CreateUpdateAccountController implements Initializable {
     /**
+     * Controller javaFX
+     */
+    public CreateUpdateAccountController() {
+    }
+
+    /**
      * Textfield pentru pentru numele de utilizator
      */
     @FXML
@@ -93,7 +99,7 @@ public class CreateUpdateAccountController implements Initializable {
 
     /**
      * Redirectionare catre scena de gestionare a conturilor
-     * @param event
+     * @param event ActionEvent
      */
     public void cancel(ActionEvent event) {
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
@@ -103,7 +109,7 @@ public class CreateUpdateAccountController implements Initializable {
 
     /**
      * Metoda corespunzatoare butonului de adaugare a unui nou utilizator
-     * @param event
+     * @param event ActionEvent
      */
     @FXML
     private void add(ActionEvent event) {
@@ -122,13 +128,13 @@ public class CreateUpdateAccountController implements Initializable {
     /**
      * Crearea unui utilizator
      * @param stage Reprezinta o referinta catre fereastra curenta
-     * @param username
-     * @param email
-     * @param password
-     * @param firstname
-     * @param lastname
-     * @param birthdate
-     * @param hiredate
+     * @param username nume de utilizator
+     * @param email email
+     * @param password parola
+     * @param firstname prenume
+     * @param lastname nume de familie
+     * @param birthdate data nasterii
+     * @param hiredate data angajarii
      */
     private void createUser(Stage stage,String username,String email, String password, String firstname,
                            String lastname, Date birthdate, Date hiredate){
@@ -144,7 +150,7 @@ public class CreateUpdateAccountController implements Initializable {
 
     /**
      * Actiunea corespunzatoare butonului de actualizare
-     * @param event
+     * @param event ActionEvent
      */
     public void update(ActionEvent event){
         String username = usernameField.getText();
@@ -162,14 +168,14 @@ public class CreateUpdateAccountController implements Initializable {
     /**
      * actualizarea unui utilizator
      * @param stage Fereastra curenta
-     * @param username
-     * @param email
-     * @param userId
-     * @param firstname
-     * @param lastname
-     * @param birthdate
-     * @param hiredate
-     * @param employeeId
+     * @param username nume de utilizator
+     * @param email email
+     * @param userId id de utilizator
+     * @param firstname prenume
+     * @param lastname nume de familie
+     * @param birthdate data nasterii
+     * @param hiredate data angajarii
+     * @param employeeId id de angajat
      */
     private void updateUser(Stage stage,String username, String email, String userId, String firstname, String lastname, Date birthdate, Date hiredate, String employeeId){
         boolean isUserUpdated = false;
@@ -211,7 +217,7 @@ public class CreateUpdateAccountController implements Initializable {
 
     /**
      * Initializarea scenei specific actualizarii
-     * @param user
+     * @param user utilizatorul caruia i se doreste actualizarea datelor
      */
     public void initializeUpdate(User user){
         this.selectedUser = user;

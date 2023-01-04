@@ -14,6 +14,11 @@ import java.io.IOException;
  * Punctul de pornire al aplicatiei JavaFX
  */
 public class Main extends Application {
+    /**
+     * Entrypoint aplicatie javafx
+     */
+    public Main() {
+    }
 
     /**
      * Pornire aplicatie FX
@@ -21,7 +26,7 @@ public class Main extends Application {
      * the application scene can be set.
      * Applications may create other stages, if needed, but they will not be
      * primary stages.
-     * @throws IOException
+     * @throws IOException la citirea fisierului fxml
      */
     @Override
     public void start(Stage stage) throws IOException {
@@ -35,7 +40,7 @@ public class Main extends Application {
 
     /**
      * Entrypoint aplicatie JavaFX
-     * @param args
+     * @param args console args
      */
     public static void main(String[] args) {
         launch();

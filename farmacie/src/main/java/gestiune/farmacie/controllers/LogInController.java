@@ -20,6 +20,12 @@ import java.util.ResourceBundle;
  */
 public class LogInController implements Initializable {
     /**
+     * Controller javaFX
+     */
+    public LogInController() {
+    }
+
+    /**
      * TextField pentru numele de utilizator
      */
     @FXML
@@ -39,10 +45,9 @@ public class LogInController implements Initializable {
 
     /**
      * Redirectionare catre punctul de intrare in aplicatie
-     * @param event
-     * @throws IOException
+     * @param event ActionEvent
      */
-    public void back(ActionEvent event) throws IOException {
+    public void back(ActionEvent event){
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         RedirectController redirect = new RedirectController();
         redirect.goToAplicationEntry(stage);
@@ -51,10 +56,9 @@ public class LogInController implements Initializable {
 
     /**
      * Efectuarea autentificarii sau aruncarea unui mesaj de eroare in caz contrar
-     * @param event
-     * @throws IOException
+     * @param event ActionEvent
      */
-    public void logIn(ActionEvent event) throws IOException {
+    public void logIn(ActionEvent event) {
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         UserRepository userRepo = new UserRepository();
         boolean isUser = userRepo.getIsUser(usernameField.getText(), passwordField.getText());

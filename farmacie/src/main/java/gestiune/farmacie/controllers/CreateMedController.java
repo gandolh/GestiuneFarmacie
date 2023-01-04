@@ -12,6 +12,12 @@ public class CreateMedController {
     /**
      * Work in progress
      */
+    public CreateMedController() {
+    }
+
+    /**
+     * Work in progress
+     */
     @FXML
     private ComboBox dropMed;
     /**

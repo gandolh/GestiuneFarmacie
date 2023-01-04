@@ -7,6 +7,12 @@ import java.io.File;
  */
 public class FileOperations {
     /**
+     * Clasa nu poate fi initializata
+     */
+    private FileOperations() {
+    }
+
+    /**
      * Afisare toate fisierele de la o cale
      * @param path calea de la care sa se afiseze toate fisierele
      */

@@ -10,7 +10,7 @@ public class MyDialog {
 
     /**
      * Construieste un dialog custom in functie de datele de intrare
-     * @param alertType
+     * @param alertType tipul de alerta
      */
     public MyDialog(Alert.AlertType alertType){
         Alert alert = new Alert(alertType);

@@ -22,6 +22,12 @@ import java.util.ResourceBundle;
  */
 public class MyAccountController implements Initializable {
     /**
+     * Controller FXML
+     */
+    public MyAccountController() {
+    }
+
+    /**
      * Textfield pentru pentru numele de utilizator
      */
     @FXML
@@ -111,7 +117,7 @@ public class MyAccountController implements Initializable {
 
     /**
      * Schimbarea parolei utilizatorului curent
-     * @param event
+     * @param event ActionEvent
      */
     public void changePassword(ActionEvent event){
         UserRepository userRepo = new UserRepository();

@@ -4,6 +4,23 @@ package gestiune.farmacie.data.business.objects;
  * Clasa pentru structura permisiunilor unui utilizator
  */
 public class UserPermissions {
+
+    /**
+     * Constructorul gol
+     */
+    public UserPermissions() {
+    }
+
+    /**
+     * Constructorul cu parametrii
+     * @param value un string ce reprezinta permisiunea utilizatorului de a accesa o functionalitate
+     * @param id identificatorul unic pentru permisiune
+     */
+    public UserPermissions(String value, String id) {
+        this.value = value;
+        this.id = id;
+    }
+
     /**
      * String ce reprezinta o permisiune a unui utilizator. Daca o actiune necesita o anumita valoare
      * iar rolul utilizatorului nu o contine atunci nu este autorizata.

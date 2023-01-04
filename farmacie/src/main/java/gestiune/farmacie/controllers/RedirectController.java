@@ -13,6 +13,12 @@ import java.io.IOException;
  */
 public class RedirectController {
     /**
+     * Constructorul gol
+     */
+    public RedirectController() {
+    }
+
+    /**
      * Redirectionare catre punctul de pornire al aplicatiei
      * @param stage referinta la fereastra curenta
      */

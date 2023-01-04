@@ -6,6 +6,25 @@ import java.util.List;
  * Clasa pentru rolul unui utilizator
  */
 public class UserRole {
+
+    /**
+     * Constructorul gol
+     */
+    public UserRole() {
+    }
+
+    /**
+     * Constructorul cu parametrii
+     * @param id id-ul de identificare unic al rolului
+     * @param roleName numele rolului
+     * @param permissions permisiuni
+     */
+    public UserRole(String id, String roleName, List<UserPermissions> permissions) {
+        this.id = id;
+        this.roleName = roleName;
+        this.permissions = permissions;
+    }
+
     /**
      * identificatorul unic pentru rolul curent
      */

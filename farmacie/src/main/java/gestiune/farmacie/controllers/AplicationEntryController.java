@@ -15,6 +15,12 @@ import java.io.IOException;
  */
 public class AplicationEntryController {
     /**
+     * JavaFX Controller
+     */
+    public AplicationEntryController() {
+    }
+
+    /**
      * Fereastra curenta
      */
     private Stage stage;

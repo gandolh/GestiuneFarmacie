@@ -11,6 +11,11 @@ import java.sql.SQLException;
  * Clasa utilizata pentru realizarea comunicarii cu baza de date
  */
 public class DatabaseConnection {
+    /**
+     * Clasa trebuie folosita doar static
+     */
+    private DatabaseConnection() {
+    }
 
     /**
      * Conexiunea sql ce se mentine vie pe parcursul aplicatiei
@@ -53,7 +58,7 @@ public class DatabaseConnection {
      * Executa un querry (select) SQL
      * @param sql un string ce reprezinta un querry sql
      * @return Rezultat-ul query-ului
-     * @throws SQLException
+     * @throws SQLException eroare la executarea script-ului sql la nivel de server SQL.
      */
     public static ResultSet executeQuerry(String sql) throws SQLException {
        return getConnection().prepareCall(sql).executeQuery();
@@ -64,7 +69,7 @@ public class DatabaseConnection {
      * @param sql un nonQuerry sub forma de string
      * @return "true if the first result is a ResultSet object; false if the first result
      * is an update count or there is no result"
-     * @throws SQLException
+     * @throws SQLException eroare la executarea script-ului sql la nivel de server SQL.
      */
     public static boolean executeNonQuerry(String sql) throws SQLException {
         return getConnection().prepareCall(sql).execute();
@@ -77,7 +82,7 @@ public class DatabaseConnection {
      * @param params un array de string-uri ce va fi folosit pentru a inlocui caracterul "?" in string-ul sql.
      * @return "true if the first result is a ResultSet object; false if the first result
      * is an update count or there is no result"
-     * @throws SQLException
+     * @throws SQLException eroare la executarea script-ului sql la nivel de server SQL.
      */
     public static boolean executeNonQuerry(String sql, String[] params) throws SQLException {
         PreparedStatement stmt = getConnection().prepareStatement(sql);

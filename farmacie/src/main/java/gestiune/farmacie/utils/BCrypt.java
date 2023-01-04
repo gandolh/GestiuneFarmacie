@@ -61,6 +61,11 @@ import java.security.SecureRandom;
  * @version 0.2
  */
 public class BCrypt {
+	/**
+	 * Clasa se foloseste doar static si intern
+	 */
+	private BCrypt() {
+	}
 	// BCrypt parameters
 	/**
 	 * Parametru pentru generare salt parola

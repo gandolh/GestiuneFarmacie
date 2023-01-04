@@ -6,6 +6,26 @@ package gestiune.farmacie.data.objects;
  */
 public class DatabaseResult {
     /**
+     * Constructorul gol
+     */
+    public DatabaseResult() {
+    }
+
+    /**
+     * Constructorul cu parametrii
+     * @param status status
+     * @param message mesajul de eroare, in cazul in care exista
+     * @param rowsAffected numarul de linii afectate
+     */
+    public DatabaseResult(String status, String message, int rowsAffected) {
+        this.status = status;
+        this.message = message;
+        this.rowsAffected = rowsAffected;
+    }
+
+
+
+    /**
      * status reprezinta un cod de 3 cifre ca in cazul request-urilor HTTP.
      * 200 insemnand ok, 404 insemnand not found, iar orice cod cu 5xx inseamna
      * eroare interna la server.

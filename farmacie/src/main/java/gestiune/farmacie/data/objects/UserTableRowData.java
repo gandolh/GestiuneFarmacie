@@ -56,6 +56,7 @@ public class UserTableRowData {
 
     /**
      * intoarce layout-ul principal al ferestrei
+     * @return layout-ul principal al ferestrei
      */
     public BorderPane getBorderPane() {
         return root;
@@ -63,114 +64,134 @@ public class UserTableRowData {
 
     /**
      *  intoarce id-ul de utilizator
+     * @return id-ul de utilizator
      */
     public String getUserId() {
         return userId;
     }
     /**
      * intoarce id-ul de angajat
+     * @return id-ul de angajat
      */
     public String getEmployeeId() {
         return employeeId;
     }
     /**
      * intoarce numele de utilizator
+     * @return numele de utilizator
      */
     public String getUsername() {
         return username;
     }
     /**
      * intoarce prenumele
+     * @return prenumele
      */
     public String getFirstname() {
         return firstname;
     }
     /**
      * intoarce numele de familie
+     * @return  numele de familie
      */
     public String getLastname() {
         return lastname;
     }
     /**
      * intoarce data nasterii
+     * @return data nasterii
      */
     public String getBirthdate() {
         return birthdate;
     }
     /**
      * intoarce data angajarii
+     * @return data angajarii
      */
     public String getHiredate() {
         return hiredate;
     }
     /**
      * intoarce referinta asupra butoanelor de actiune
+     * @return referinta asupra butoanelor de actiune
      */
     public SplitMenuButton getActions() {
         return actions;
     }
     /**
      * intoarce email-ul
+     * @return email-ul
      */
     public String getEmail() {
         return email;
     }
+
     /**
-     * seteaza id-ul de utilizator
+     * id-ul de utilizator
+     * @param userId id-ul de utilizator
      */
     public void setUserId(String userId) {
         this.userId = userId;
     }
     /**
      * seteaza id-ul de angajat
+     * @param employeeId id-ul de angajat
      */
     public void setEmployeeId(String employeeId) {
         this.employeeId = employeeId;
     }
     /**
      * seteaza numele de utilizator
+     * @param username numele de utilizator
      */
     public void setUsername(String username) {
         this.username = username;
     }
     /**
      * seteaza prenumele
+     * @param firstname prenumele
      */
     public void setFirstname(String firstname) {
         this.firstname = firstname;
     }
     /**
      * seteaza numele de familie
+     * @param lastname numele de familie
      */
     public void setLastname(String lastname) {
         this.lastname = lastname;
     }
     /**
      * seteaza data nasterii
+     * @param birthdate data nasterii
      */
     public void setBirthdate(String birthdate) {
         this.birthdate = birthdate;
     }
     /**
      * seteaza data angajarii
+     * @param hiredate data angajarii
      */
     public void setHiredate(String hiredate) {
         this.hiredate = hiredate;
     }
     /**
      * seteaza actiunile
+     * @param actions actiunile
      */
     public void setActions(SplitMenuButton actions) {
         actions = actions;
     }
     /**
      * seteaza layout-ul principal
+     * @param root layout-ul principal
      */
     public void setBorderPane(BorderPane root) {
         this.root = root;
     }
     /**
      * seteaza email-ul
+     * @param email email
      */
     public void setEmail(String email) {
         this.email = email;

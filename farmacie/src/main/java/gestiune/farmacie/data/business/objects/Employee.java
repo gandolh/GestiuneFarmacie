@@ -8,6 +8,26 @@ import java.util.UUID;
  */
 public class Employee {
     /**
+     * Constructorul cu parametrii
+     * @param id id de angajat
+     * @param firstname prenume
+     * @param lastname nume de familie
+     * @param birthdate data nasterii
+     */
+    public Employee(UUID id, String firstname, String lastname, Date birthdate) {
+        this.id = id;
+        this.firstname = firstname;
+        this.lastname = lastname;
+        this.birthdate = birthdate;
+    }
+
+    /**
+     * Constructorul gol
+     */
+    public Employee() {
+    }
+
+    /**
      * Id-ul de angajat
      */
     private UUID id;
@@ -42,7 +62,7 @@ public class Employee {
 
     /**
      * Intoarce prenumele
-     * @return
+     * @return prenumele
      */
     public String getFirstname() {
         return firstname;
@@ -50,7 +70,7 @@ public class Employee {
 
     /**
      * Seteaza prenumele
-     * @param firstname
+     * @param firstname prenumele
      */
     public void setFirstname(String firstname) {
         this.firstname = firstname;

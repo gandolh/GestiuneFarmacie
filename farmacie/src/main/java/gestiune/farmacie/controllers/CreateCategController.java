@@ -12,6 +12,12 @@ public class CreateCategController {
     /**
      * Work in progress
      */
+    public CreateCategController() {
+    }
+
+    /**
+     * Work in progress
+     */
     @FXML
     private TextField fieldId;
     /**

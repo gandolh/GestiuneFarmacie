@@ -8,6 +8,12 @@ import java.time.ZoneId;
  */
 public class DateConverter {
     /**
+     * Clasa statica folosita doar pentru conversia datelor
+     */
+    private DateConverter() {
+    }
+
+    /**
      * Conversie de data din java.util.Date in localDate
      * @param dateToConvert o data in formatul java.util.Date
      * @return localDate

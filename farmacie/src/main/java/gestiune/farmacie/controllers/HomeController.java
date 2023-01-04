@@ -25,6 +25,12 @@ import java.util.ResourceBundle;
 public class HomeController implements Initializable {
 
     /**
+     * Controller JavaFX
+     */
+    public HomeController() {
+    }
+
+    /**
      * Label pentru afisarea unui mesaj de salut utilizatorului
      */
     @FXML

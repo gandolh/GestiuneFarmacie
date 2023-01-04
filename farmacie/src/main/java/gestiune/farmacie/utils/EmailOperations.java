@@ -6,6 +6,7 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.security.PrivateKey;
 import java.time.temporal.ValueRange;
 import java.util.Properties;
 
@@ -23,6 +24,11 @@ import javax.mail.internet.NewsAddress;
  * Clasa ajutatoare pentru gestionarea trimiterii de email-uri
  */
 public class EmailOperations {
+    /**
+     * Initializare clasa ajutatoare pentru gestiunea operatilor cu sms-ul
+     */
+    private EmailOperations() {
+    }
 
     /**
      * Construieste calea catre template-urile de email-uri
@@ -52,6 +58,7 @@ public class EmailOperations {
     /**
      * Trimiterea mail-ului de resetare a parolei
      * @param newPassword noua parola
+     * @param to destinatar
      */
     public static void sendResetPassword(String to,String newPassword){
         String body = getResetPasswordBody().replaceFirst("HERE_SECRET_PASSWORD",newPassword);

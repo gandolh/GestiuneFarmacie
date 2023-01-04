@@ -20,10 +20,16 @@ import static gestiune.farmacie.data.objects.PlatformInstance.getProcsPath;
  * Clasa folosita pentru a usura gestionarea utilizatorilor
  */
 public class UserRepository {
+
+    /**
+     * Constructorul gol
+     */
+    public UserRepository() {
+    }
     /**
      * Metoda intoarce un utilizator de aplicatie ce are numele de utilizator si parola corespunzatoare.
-     * @param username
-     * @param passwd
+     * @param username nume de utilizator
+     * @param passwd parola
      * @return un utilizator de aplicatie ce are numele de utilizator si parola corespunzatoare, null in cazul in care
      * nu exista
      */
@@ -58,13 +64,13 @@ public class UserRepository {
 
     /**
      * Creaza un utilizator de aplicatie nou
-     * @param username
-     * @param email
-     * @param password
-     * @param firstname
-     * @param lastname
-     * @param birthdate
-     * @param hiredate
+     * @param username nume de utilizator
+     * @param email email
+     * @param password parola
+     * @param firstname prenume
+     * @param lastname nume de familie
+     * @param birthdate data nasterii
+     * @param hiredate data angajarii
      * @return true daca crearea a avut success, fals in caz contrar.
      */
     public boolean createUser(String username,String email, String password, String firstname, String lastname, Date birthdate, Date hiredate) {
@@ -88,8 +94,8 @@ public class UserRepository {
 
     /**
      * Verifica daca credentialele sunt ale unui utilizator
-     * @param username
-     * @param password
+     * @param username nume de utilizator
+     * @param password parola
      * @return true daca credentialele sunt asociate unui utilizator, fals in caz contrar
      */
     public Boolean getIsUser(String username, String password) {
@@ -164,14 +170,14 @@ public class UserRepository {
 
     /**
      * Actualizarea datelor unui utilizator
-     * @param username
-     * @param email
-     * @param userId
-     * @param firstname
-     * @param lastname
-     * @param birthdate
-     * @param hiredate
-     * @param employeeId
+     * @param username nume de utilizator
+     * @param email email
+     * @param userId id de utilizator
+     * @param firstname prenume
+     * @param lastname nume de familie
+     * @param birthdate data nasterii
+     * @param hiredate data angajarii
+     * @param employeeId id de angajat
      * @return true daca s-a putut realiza actiunea, false in caz contrar
      */
     public boolean updateUser(String username, String email, String userId, String firstname, String lastname, Date birthdate, Date hiredate, String employeeId) {

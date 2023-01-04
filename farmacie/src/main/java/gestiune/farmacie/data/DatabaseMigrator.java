@@ -23,16 +23,23 @@ import static gestiune.farmacie.utils.FileOperations.showFilesAtPath;
  */
 public class DatabaseMigrator {
 
+    /**
+     * Clasa este folosita pentru a realiza migrarea unei baze de date la cea mai recenta versiune pentru proiectul
+     * JavaFx
+     */
+    public DatabaseMigrator() {
+    }
 
     /**
      * Metoda de intrare ce sterge tabelele (daca acestea exista), creaza structura noua si adauga datele initiale
      * de care are nevoie aplicatia
-     * @param args
+     * @param args args
      */
     public static void main(String[] args) {
         dropTables();
          createTables();
         seedTables();
+        System.out.println("gata");
 
         //user.dir property for current directory and user.home for home directory
 //        showFilesAtPath(getProcsPath());

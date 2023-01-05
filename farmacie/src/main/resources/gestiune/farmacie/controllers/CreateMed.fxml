@@ -4,25 +4,37 @@
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
-<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.FlowPane?>
 <?import javafx.scene.text.Font?>
 
 
-<AnchorPane fx:id="dropMed" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gestiune.farmacie.controllers.CreateMedController">
+<FlowPane alignment="CENTER" columnHalignment="CENTER" orientation="VERTICAL" prefHeight="450.0" prefWidth="800.0" vgap="10.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gestiune.farmacie.controllers.CreateMedController">
    <children>
-      <Label layoutX="178.0" layoutY="14.0" prefHeight="51.0" prefWidth="244.0" text="Introducere medicamente">
-         <font>
-            <Font size="21.0" />
-         </font>
-      </Label>
-      <ComboBox layoutX="215.0" layoutY="80.0" prefHeight="26.0" prefWidth="169.0" promptText="Tipul medicamentului" />
-      <ComboBox fx:id="dropFurnizor" layoutX="215.0" layoutY="118.0" prefHeight="26.0" prefWidth="170.0" promptText="Furnizor" />
-      <TextField fx:id="textPret" layoutX="214.0" layoutY="153.0" prefHeight="26.0" prefWidth="170.0" promptText="Pret" />
-      <TextField fx:id="textStoc" layoutX="214.0" layoutY="187.0" prefHeight="26.0" prefWidth="170.0" promptText="Stoc introdus" />
-      <TextField fx:id="textComentarii" layoutX="215.0" layoutY="237.0" prefHeight="26.0" prefWidth="170.0" promptText="Comentarii" />
-      <Button fx:id="buttonAdd" layoutX="334.0" layoutY="303.0" mnemonicParsing="false" text="Adauga" />
-      <Button fx:id="buttonCancel" layoutX="215.0" layoutY="303.0" mnemonicParsing="false" text="Cancel" />
-      <Button fx:id="buttonPlus" layoutX="385.0" layoutY="188.0" mnemonicParsing="false" text="+" />
-      <Button fx:id="buttonMinus" layoutX="193.0" layoutY="188.0" mnemonicParsing="false" text="-" />
+      <FlowPane columnHalignment="CENTER" prefHeight="200.0" prefWidth="200.0" vgap="15.0">
+         <children>
+            <Label alignment="CENTER" prefHeight="51.0" prefWidth="244.0" text="Introducere medicamente">
+               <font>
+                  <Font size="21.0" />
+               </font>
+            </Label>
+            <ComboBox prefHeight="26.0" prefWidth="245.0" promptText="Tipul medicamentului" />
+            <ComboBox fx:id="dropFurnizor" prefHeight="26.0" prefWidth="246.0" promptText="Furnizor" />
+            <TextField fx:id="textPret" prefHeight="26.0" prefWidth="243.0" promptText="Pret" />
+            <TextField fx:id="textComentarii" prefHeight="26.0" prefWidth="241.0" promptText="Comentarii" />
+            <FlowPane alignment="CENTER" prefHeight="28.0" prefWidth="240.0">
+               <children>
+                  <Button fx:id="buttonMinus" mnemonicParsing="false" text="-" />
+                  <TextField fx:id="textStoc" prefHeight="26.0" prefWidth="194.0" promptText="Stoc introdus" />
+                  <Button fx:id="buttonPlus" mnemonicParsing="false" text="+" />
+               </children>
+            </FlowPane>
+            <FlowPane alignment="CENTER" hgap="10.0" prefHeight="28.0" prefWidth="218.0">
+               <children>
+                  <Button fx:id="buttonAdd" mnemonicParsing="false" text="Adauga" />
+                  <Button fx:id="buttonCancel" mnemonicParsing="false" text="Cancel" />
+               </children>
+            </FlowPane>
+         </children>
+      </FlowPane>
    </children>
-</AnchorPane>
+</FlowPane>

@@ -1,28 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
-<?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.FlowPane?>
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane fx:id="rootBorderPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="450" prefWidth="800.0"  xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gestiune.farmacie.controllers.CreateUpdateAccountController">
+<BorderPane fx:id="rootBorderPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="450" prefWidth="800.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gestiune.farmacie.controllers.CreateUpdateAccountController">
    <center>
-      <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+      <FlowPane alignment="CENTER" orientation="VERTICAL" prefHeight="450.0" prefWidth="800.0" vgap="15.0">
          <children>
-            <Label alignment="CENTER" layoutX="-6.0" layoutY="29.0" prefHeight="47.0" prefWidth="600.0" text="Contul meu" textAlignment="CENTER">
+            <Label alignment="CENTER" prefHeight="47.0" prefWidth="600.0" text="Contul meu" textAlignment="CENTER">
                <font>
                   <Font size="20.0" />
                </font>
             </Label>
-            <GridPane alignment="CENTER" layoutX="160.0" layoutY="86.0" prefHeight="217.0" prefWidth="265.0" AnchorPane.topAnchor="86.0">
+            <GridPane alignment="CENTER" prefHeight="217.0" prefWidth="447.0" vgap="5.0">
                <columnConstraints>
                   <ColumnConstraints hgrow="SOMETIMES" maxWidth="266.0" minWidth="10.0" prefWidth="121.0" />
                   <ColumnConstraints hgrow="SOMETIMES" maxWidth="330.0" minWidth="10.0" prefWidth="159.0" />
@@ -46,7 +45,7 @@
                   <TextField fx:id="emailField" GridPane.columnIndex="1" GridPane.rowIndex="1" />
                   <Button fx:id="resetPasswordBtn" mnemonicParsing="false" onAction="#resetPassword" prefHeight="25.0" prefWidth="149.0" text="Reseteaza parola" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
                   <PasswordField fx:id="passwordField" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                  <TextField fx:id="firstNameField" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                  <TextField fx:id="firstNameField" prefHeight="25.0" prefWidth="252.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
                   <TextField fx:id="lastNameField" GridPane.columnIndex="1" GridPane.rowIndex="4" />
                   <DatePicker fx:id="birthdateField" GridPane.columnIndex="1" GridPane.rowIndex="5" />
                   <DatePicker fx:id="hiredateField" GridPane.columnIndex="1" GridPane.rowIndex="6" />
@@ -54,12 +53,13 @@
                   <Label text="Email" GridPane.rowIndex="1" />
                </children>
             </GridPane>
-            <Button fx:id="cancelBtn" layoutX="226.0" layoutY="329.0" mnemonicParsing="false" onAction="#cancel" text="Anulare" />
-            <Button fx:id="addOrUpdateBtn" layoutX="321.0" layoutY="329.0" mnemonicParsing="false" text="Adauga" />
+            <FlowPane alignment="CENTER" hgap="10.0" prefHeight="26.0" prefWidth="600.0">
+               <children>
+                  <Button fx:id="addOrUpdateBtn" mnemonicParsing="false" text="Adauga" />
+                  <Button fx:id="cancelBtn" mnemonicParsing="false" onAction="#cancel" text="Anulare" />
+               </children>
+            </FlowPane>
          </children>
-         <BorderPane.margin>
-            <Insets />
-         </BorderPane.margin>
-      </AnchorPane>
+      </FlowPane>
    </center>
 </BorderPane>

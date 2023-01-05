@@ -4,21 +4,41 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
-<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="450" prefWidth="800.0"  xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gestiune.farmacie.controllers.LogInController">
+
+<FlowPane alignment="CENTER" columnHalignment="CENTER" hgap="15.0" orientation="VERTICAL" prefHeight="450.0" prefWidth="800.0" vgap="15.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gestiune.farmacie.controllers.LogInController">
    <children>
-      <TextField fx:id="usernameField" layoutX="226.0" layoutY="200.0" promptText="Username" />
-      <PasswordField fx:id="passwordField" layoutX="225.0" layoutY="268.0" promptText="Password" />
-      <Label layoutX="274.0" layoutY="169.0" text="Username" />
-      <Label layoutX="275.0" layoutY="239.0" text="Password" />
-      <Label alignment="CENTER" layoutX="240.0" layoutY="53.0" prefHeight="81.0" prefWidth="121.0" text="Log In">
+      <Label alignment="CENTER" prefHeight="81.0" prefWidth="121.0" text="Log In">
          <font>
             <Font size="41.0" />
          </font>
       </Label>
-      <Button fx:id="loginButton" layoutX="325.0" layoutY="318.0" mnemonicParsing="false" onAction="#logIn" text="Log In" />
-      <Button layoutX="225.0" layoutY="318.0" mnemonicParsing="false" onAction="#back" text="Back" />
+      <GridPane>
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="193.0" minWidth="10.0" prefWidth="83.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="319.0" minWidth="10.0" prefWidth="317.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Label text="Password" />
+            <PasswordField fx:id="passwordField" prefHeight="25.0" prefWidth="337.0" promptText="Password" GridPane.columnIndex="1" />
+            <Label text="Username" GridPane.rowIndex="1" />
+            <TextField fx:id="usernameField" prefHeight="25.0" prefWidth="336.0" promptText="Username" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+         </children>
+      </GridPane>
+      <FlowPane alignment="CENTER" hgap="10.0" vgap="10.0">
+         <children>
+            <Button fx:id="loginButton" mnemonicParsing="false" onAction="#logIn" text="Log In" />
+            <Button mnemonicParsing="false" onAction="#back" text="Back" />
+         </children>
+      </FlowPane>
    </children>
-</AnchorPane>
+</FlowPane>

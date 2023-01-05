@@ -2,14 +2,19 @@
 
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.FlowPane?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane fx:id="rootBorderPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="450" prefWidth="800.0"  xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gestiune.farmacie.controllers.HomeController">
+<BorderPane fx:id="rootBorderPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="450" prefWidth="800.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gestiune.farmacie.controllers.HomeController">
    <center>
-      <Label fx:id="greetingLabel" alignment="CENTER" contentDisplay="CENTER" prefHeight="75.0" prefWidth="230.0" textAlignment="CENTER" BorderPane.alignment="CENTER">
-         <font>
-            <Font size="18.0" />
-         </font>
-      </Label>
+      <FlowPane alignment="CENTER" orientation="VERTICAL" BorderPane.alignment="CENTER">
+         <children>
+            <Label fx:id="greetingLabel" alignment="CENTER" contentDisplay="CENTER" prefHeight="75.0" prefWidth="230.0" text="hello" textAlignment="CENTER">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+         </children>
+      </FlowPane>
    </center>
 </BorderPane>

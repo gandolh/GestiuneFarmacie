@@ -60,7 +60,7 @@ public class DatabaseMigrator {
                 try{
                     DatabaseConnection.executeNonQuerry(dropSeq);
                 }catch (Exception e){
-//                   e.printStackTrace();
+                   e.printStackTrace();
                     System.err.println("Nu s-a putut executa comanda drop: a" + dropSeq);
 
                 }

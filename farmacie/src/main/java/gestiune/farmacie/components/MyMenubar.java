@@ -1,6 +1,5 @@
 package gestiune.farmacie.components;
 
-import com.sun.javafx.menu.MenuItemBase;
 import gestiune.farmacie.Main;
 import gestiune.farmacie.controllers.RedirectController;
 import gestiune.farmacie.data.objects.PlatformInstance;

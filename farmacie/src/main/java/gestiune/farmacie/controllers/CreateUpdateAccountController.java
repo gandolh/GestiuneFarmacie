@@ -8,6 +8,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextField;
@@ -16,6 +17,8 @@ import javafx.scene.layout.RowConstraints;
 import javafx.stage.Stage;
 
 import java.net.URL;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.sql.Date;
 import java.util.ResourceBundle;
@@ -120,8 +123,68 @@ public class CreateUpdateAccountController implements Initializable {
         String email = emailField.getText();
         Date birthdate = Date.valueOf(birthdateField.getValue());
         Date hiredate = Date.valueOf(hiredateField.getValue());
-        createUser((Stage) ((Node) event.getSource()).getScene().getWindow(),
-                username,email, password, firstname, lastname, birthdate, hiredate);
+        DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
+        if(validate( username,  firstname,  lastname,  email,  dateFormat.format(birthdate), dateFormat.format(hiredate))){
+            createUser((Stage) ((Node) event.getSource()).getScene().getWindow(),
+                    username,email, password, firstname, lastname, birthdate, hiredate);
+        }else{
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("date invalide");
+            alert.setHeaderText("date invalide");
+            alert.setContentText("Va rugam verificati datele introduse");
+            alert.showAndWait();
+        }
+
+
+    }
+
+    /**
+     *
+     * @return
+     */
+    public Boolean validate(String username, String firstname, String lastname, String email, String birthdate,
+                             String hiredate){
+        Boolean isUsernameValid = validateUserName(username);
+        Boolean isfirstnameValid = validateFirstName(firstname);
+        Boolean islastnameValid = validateLastName(lastname);
+        Boolean isemailValid = validateEmail(email);
+        Boolean isbirthdatValid = validateBirthdate(birthdate);
+        Boolean ishiredateValid = validateHiredate(hiredate);
+
+        return isUsernameValid && isfirstnameValid && isbirthdatValid && isemailValid && islastnameValid && isbirthdatValid && ishiredateValid;
+
+    }
+
+    public Boolean validateUserName(String username){
+
+        return username.matches("[A-Za-z0-9]+");
+    }
+
+    public Boolean validateFirstName(String firstname){
+
+        return firstname.matches("[A-Z][a-z]+");    }
+
+    public Boolean validateLastName(String lastname) {
+
+        return lastname.matches("[A-Z][a-z]+");
+
+    }
+
+    public Boolean validateEmail(String email) {
+
+        return email.matches("[\\w-]+@([\\w-]+\\.)+[\\w-]{2,4}");
+
+    }
+
+    public  Boolean validateBirthdate(String birthdate){
+
+        return birthdate.matches("(0?[1-9]|[12][0-9]|3[01])[\\/\\-](0?[1-9]|1[012])[\\/\\-]\\d{4}");
+
+    }
+
+    public  Boolean validateHiredate(String hiredate){
+
+        return hiredate.matches("(0?[1-9]|[12][0-9]|3[01])[\\/\\-](0?[1-9]|1[012])[\\/\\-]\\d{4}");
 
     }
 
@@ -160,8 +223,18 @@ public class CreateUpdateAccountController implements Initializable {
         Date birthdate = Date.valueOf(birthdateField.getValue());
         Date hiredate = Date.valueOf(hiredateField.getValue());
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        updateUser(stage, username, email, selectedUser.getUserId(), firstname, lastname, birthdate,
-                hiredate,selectedUser.getEmployeeId());
+        DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
+        if(validate( username,  firstname,  lastname,  email,  dateFormat.format(birthdate), dateFormat.format(hiredate))){
+            updateUser(stage, username, email, selectedUser.getUserId(), firstname, lastname, birthdate,
+                    hiredate,selectedUser.getEmployeeId());
+        }else{
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("date invalide");
+            alert.setHeaderText("date invalide");
+            alert.setContentText("Va rugam verificati datele introduse");
+            alert.showAndWait();
+        }
+
     }
 
 

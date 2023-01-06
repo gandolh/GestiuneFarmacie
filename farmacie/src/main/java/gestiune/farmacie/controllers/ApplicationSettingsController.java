@@ -44,10 +44,8 @@ public class ApplicationSettingsController implements Initializable {
     @FXML
     private TextField emailTemplatePath;
 
-
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-
         emailTemplatePath.setText(EmailOperations.getEmailTemplatePath());
         appDateFormat.setText(((SimpleDateFormat)PlatformInstance.getDateFormat()).toPattern());
         sqlDateFormat.setText(((SimpleDateFormat)PlatformInstance.getDateFormat()).toPattern());

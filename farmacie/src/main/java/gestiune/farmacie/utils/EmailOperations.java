@@ -34,7 +34,7 @@ public class EmailOperations {
      * Construieste calea catre template-urile de email-uri
      * @return un string ce reprezinta calea
      */
-    private static String getEmailTemplatePath(){
+    public static String getEmailTemplatePath(){
         Path currentPath = Paths.get(System.getProperty("user.dir"));
         Path filePath = Paths.get(currentPath.toString(), "farmacie","src","main","java","gestiune","farmacie","templates","mail");
 //        System.out.println(filePath.toString());

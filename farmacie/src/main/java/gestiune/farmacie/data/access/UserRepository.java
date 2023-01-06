@@ -215,4 +215,18 @@ public class UserRepository {
         }
         return false;
     }
+
+    public String getAdminEmail() {
+        String sql = String.format("select email from FarmacieUser where id='%s'", "1");
+        ResultSet set = null;
+        try {
+            set = DatabaseConnection.executeQuerry(sql);
+            set.next();
+            String email = set.getString("email");
+            return email;
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
 }

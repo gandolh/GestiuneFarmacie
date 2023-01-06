@@ -10,7 +10,6 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 
-
 <FlowPane alignment="CENTER" columnHalignment="CENTER" hgap="15.0" orientation="VERTICAL" prefHeight="450.0" prefWidth="800.0" vgap="15.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gestiune.farmacie.controllers.LogInController">
    <children>
       <Label alignment="CENTER" prefHeight="81.0" prefWidth="121.0" text="Log In">
@@ -28,10 +27,10 @@
           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <Label text="Password" />
-            <PasswordField fx:id="passwordField" prefHeight="25.0" prefWidth="337.0" promptText="Password" GridPane.columnIndex="1" />
-            <Label text="Username" GridPane.rowIndex="1" />
-            <TextField fx:id="usernameField" prefHeight="25.0" prefWidth="336.0" promptText="Username" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <Label text="Username" />
+            <TextField fx:id="usernameField" prefHeight="25.0" prefWidth="336.0" promptText="Username" GridPane.columnIndex="1" />
+             <Label text="Password" GridPane.rowIndex="1" />
+             <PasswordField fx:id="passwordField" prefHeight="25.0" prefWidth="337.0" promptText="Password" GridPane.columnIndex="1" GridPane.rowIndex="1" />
          </children>
       </GridPane>
       <FlowPane alignment="CENTER" hgap="10.0" vgap="10.0">

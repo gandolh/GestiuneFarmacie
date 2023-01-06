@@ -162,17 +162,17 @@ public class CreateUpdateAccountController implements Initializable {
 
     public Boolean validateFirstName(String firstname){
 
-        return firstname.matches("[A-Z][a-z]+");    }
+        return firstname.matches("[A-Za-z]+");    }
 
     public Boolean validateLastName(String lastname) {
 
-        return lastname.matches("[A-Z][a-z]+");
+        return lastname.matches("[A-Za-z]+");
 
     }
 
     public Boolean validateEmail(String email) {
 
-        return email.matches("[\\w-]+@([\\w-]+\\.)+[\\w-]{2,4}");
+        return email.matches("[\\w\\.-]+@([\\w\\.-]+\\.)+[\\w-]{2,4}");
 
     }
 

@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane fx:id="rootBorderPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gestiune.farmacie.controllers.ApplicationSettingsController">
+    <center>
+        <FlowPane alignment="CENTER" columnHalignment="CENTER" hgap="10.0" orientation="VERTICAL" prefHeight="480.0" prefWidth="800.0" vgap="10.0" BorderPane.alignment="CENTER">
+            <children>
+                <Label alignment="CENTER" prefHeight="28.0" prefWidth="356.0" text="Setari de aplicatie">
+                    <font>
+                        <Font size="19.0" />
+                    </font>
+                </Label>
+            <FlowPane hgap="5.0" prefHeight="250.0" prefWidth="533.0" vgap="5.0">
+               <children>
+                      <GridPane prefHeight="159.0" prefWidth="271.0">
+                          <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="169.0" minWidth="10.0" prefWidth="130.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="291.0" minWidth="10.0" prefWidth="141.0" />
+                          </columnConstraints>
+                          <rowConstraints>
+                              <RowConstraints maxHeight="79.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="79.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="79.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="79.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                          </rowConstraints>
+                          <children>
+                              <Label text="format data in aplicatie" />
+                        <Label text="format data sql" GridPane.rowIndex="1" />
+                        <Label text="admin username" GridPane.rowIndex="2" />
+                        <Label text="admin email" GridPane.rowIndex="3" />
+                        <TextField fx:id="appDateFormat" disable="true" GridPane.columnIndex="1" />
+                        <TextField fx:id="sqlDateFormat" disable="true" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <TextField fx:id="username" disable="true" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                        <TextField fx:id="emailAdmin" disable="true" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                          </children>
+                      </GridPane>
+                  <GridPane prefHeight="159.0" prefWidth="256.0">
+                     <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="277.0" minWidth="10.0" prefWidth="121.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="291.0" minWidth="10.0" prefWidth="135.0" />
+                     </columnConstraints>
+                     <rowConstraints>
+                        <RowConstraints maxHeight="79.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="79.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="79.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="79.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                     </rowConstraints>
+                     <children>
+                        <Label text="email SMTP" />
+                        <Label text="password smtp" GridPane.rowIndex="1" />
+                        <Label text="email template path" GridPane.rowIndex="2" />
+                        <Label GridPane.rowIndex="3" />
+                        <Label text="cale catre proceduri" GridPane.rowIndex="3" />
+                        <TextField fx:id="emailSMTP" disable="true" GridPane.columnIndex="1" />
+                        <TextField fx:id="emailTemplatePath" disable="true" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                        <TextField fx:id="procPath" disable="true" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                        <PasswordField fx:id="paroleSMTP" disable="true" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                     </children>
+                  </GridPane>
+                  <GridPane prefHeight="159.0" prefWidth="533.0">
+                     <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="294.0" minWidth="10.0" prefWidth="131.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="422.0" minWidth="10.0" prefWidth="402.0" />
+                     </columnConstraints>
+                     <rowConstraints>
+                        <RowConstraints maxHeight="79.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="79.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="79.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="79.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="79.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                     </rowConstraints>
+                     <children>
+                        <Label text="database user" />
+                        <Label text="database password" GridPane.rowIndex="1" />
+                        <Label text="database  server" GridPane.rowIndex="2" />
+                        <Label text="database name" GridPane.rowIndex="4" />
+                        <Label GridPane.rowIndex="3" />
+                        <Label text="database port" GridPane.rowIndex="3" />
+                        <TextField fx:id="databaseUser" disable="true" GridPane.columnIndex="1" />
+                        <TextField fx:id="DatabaseServer" disable="true" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                        <TextField fx:id="DatabasePort" disable="true" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                        <TextField fx:id="DatabaseName" disable="true" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                        <PasswordField fx:id="databasePassword" disable="true" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                     </children>
+                  </GridPane>
+               </children>
+            </FlowPane>
+            </children></FlowPane>
+    </center>
+</BorderPane>

@@ -46,6 +46,12 @@ public class MyMenubar extends MenuBar {
      * Butonul din bara de navigatie pentru deconectare
      */
     private Menu logout;
+    /**
+     * Butonul din bara de navigatie catre raportare problems
+     */
+    private MenuItem raportareProbleme;
+
+    private MenuItem appSettings;
 
     /**
      * ia path-ul de la javadoc din solutia actuala.
@@ -77,16 +83,16 @@ public class MyMenubar extends MenuBar {
         contulMeu = new MenuItem("Contul meu");
         gestionareConturi = new MenuItem("Gestionare conturi");
         Menu settings = new Menu("Setari");
-        MenuItem systemSettings = new MenuItem("Setari de sistem");
-        MenuItem platformSettings = new MenuItem("Setari de platforma");
+        appSettings = new MenuItem("Setari de aplicatie");
+        MenuItem userSettings = new MenuItem("Setari de utilizator");
         Menu help = new Menu("Ajutor");
-        MenuItem raportareProbleme = new MenuItem("Raportare probleme");
+        raportareProbleme = new MenuItem("Raportare probleme");
         documentation = new MenuItem("Documentatie");
         logout = new Menu("Deconectare");
 
         //adauga contul meu
         accounts.getItems().add(contulMeu);
-        settings.getItems().addAll(platformSettings, systemSettings);
+        settings.getItems().addAll(userSettings, appSettings);
         help.getItems().addAll(raportareProbleme, documentation);
         this.getMenus().addAll(home,accounts,settings,help, logout);
     }
@@ -117,6 +123,19 @@ public class MyMenubar extends MenuBar {
         documentation.setOnAction(event->{
             PlatformInstance.getHostedServices().showDocument(
                     getJavaDocPath().toUri().toString());
+        });
+
+
+        raportareProbleme.setOnAction(event->{
+            Stage stage = (Stage) this.getScene().getWindow();
+            RedirectController redirect = new RedirectController();
+            redirect.goToReportProblem(stage);
+        });
+
+        appSettings.setOnAction(event->{
+            Stage stage = (Stage) this.getScene().getWindow();
+            RedirectController redirect = new RedirectController();
+            redirect.goToApplicationSettings(stage);
         });
 
         addGoHomeAction(home);

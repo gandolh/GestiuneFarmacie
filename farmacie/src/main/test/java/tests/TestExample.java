@@ -21,7 +21,7 @@ public class TestExample {
         CreateUpdateAccountController controller = new CreateUpdateAccountController();
         assertTrue(controller.validateFirstName("Test"));
         assertTrue(controller.validateFirstName("Popescu"));
-        assertFalse(controller.validateFirstName("test"));
+        assertFalse(controller.validateFirstName("t2est"));
         assertFalse(controller.validateFirstName("Popescu1"));
     }
 
@@ -30,7 +30,7 @@ public class TestExample {
         CreateUpdateAccountController controller = new CreateUpdateAccountController();
         assertTrue(controller.validateLastName("Test"));
         assertTrue(controller.validateLastName("Matei"));
-        assertFalse(controller.validateLastName("test"));
+        assertFalse(controller.validateLastName("t2est"));
         assertFalse(controller.validateLastName("Matei@"));
     }
 

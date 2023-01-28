@@ -14,7 +14,7 @@
             <Font size="20.0" />
          </font>
       </Label>
-      <TextField fx:id="fieldId" editable="false" prefHeight="26.0" prefWidth="166.0" promptText="id" />
+      <TextField fx:id="fieldId" disable="true" editable="false" prefHeight="26.0" prefWidth="166.0" promptText="id" />
       <TextField fx:id="fieldTitlu" prefHeight="26.0" prefWidth="166.0" promptText="Titlu" />
       <TextArea fx:id="areaDescriere" prefHeight="137.0" prefWidth="263.0" promptText="Descriere">
          <font>
@@ -23,8 +23,8 @@
       </TextArea>
       <FlowPane alignment="CENTER" columnHalignment="CENTER" hgap="10.0" prefHeight="30.0" prefWidth="200.0">
          <children>
-            <Button fx:id="buttonCancel" mnemonicParsing="false" text="Cancel" />
-            <Button fx:id="buttonAdd" mnemonicParsing="false" text="Adauga" />
+            <Button fx:id="buttonCancel" mnemonicParsing="false" onAction="#cancel" text="Cancel" />
+            <Button fx:id="buttonAdd" mnemonicParsing="false" onAction="#addCategory" text="Adauga" />
          </children>
       </FlowPane>
    </children>

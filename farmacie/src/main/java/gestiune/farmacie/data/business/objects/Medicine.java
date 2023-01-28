@@ -5,11 +5,11 @@ import java.util.List;
 public class Medicine {
     private double price;
     private int stockCount;
-    private ShoeCategory categorie;
+    private MedicineCategory categorie;
     private Provider providerMed;
     private List<String> comentarii;
 
-    public Medicine(double price, int stockCount, ShoeCategory categorie, Provider providerMed, List<String> comentarii) {
+    public Medicine(double price, int stockCount, MedicineCategory categorie, Provider providerMed, List<String> comentarii) {
         this.price = price;
         this.stockCount = stockCount;
         this.categorie = categorie;
@@ -36,11 +36,11 @@ public class Medicine {
         this.stockCount = stockCount;
     }
 
-    public ShoeCategory getCategorie() {
+    public MedicineCategory getCategorie() {
         return categorie;
     }
 
-    public void setCategorie(ShoeCategory categorie) {
+    public void setCategorie(MedicineCategory categorie) {
         this.categorie = categorie;
     }
 

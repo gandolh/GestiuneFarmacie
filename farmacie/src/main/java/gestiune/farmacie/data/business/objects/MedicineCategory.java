@@ -1,10 +1,16 @@
 package gestiune.farmacie.data.business.objects;
 
-public class ShoeCategory {
+public class MedicineCategory {
 
     private String id;
     private String titlu;
     private String descriere;
+
+    public MedicineCategory(String id, String titlu, String descriere) {
+        this.id = id;
+        this.titlu = titlu;
+        this.descriere = descriere;
+    }
 
     public String getId() {
         return id;

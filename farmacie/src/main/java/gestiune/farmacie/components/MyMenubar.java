@@ -53,6 +53,11 @@ public class MyMenubar extends MenuBar {
 
     private MenuItem appSettings;
 
+    private Menu medicamenteMenu;
+    private MenuItem medicamente;
+    private MenuItem furnizori ;
+    private MenuItem categoriiDeMedicamente;
+
     /**
      * ia path-ul de la javadoc din solutia actuala.
      * @return Calea catre index-ul de la javadoc
@@ -89,12 +94,16 @@ public class MyMenubar extends MenuBar {
         raportareProbleme = new MenuItem("Raportare probleme");
         documentation = new MenuItem("Documentatie");
         logout = new Menu("Deconectare");
-
+        medicamenteMenu = new Menu("farmacie");
+        medicamente = new MenuItem("medicamente");
+        furnizori = new MenuItem("furnizori");
+        categoriiDeMedicamente = new MenuItem("categorii de medicamente");
         //adauga contul meu
         accounts.getItems().add(contulMeu);
+        medicamenteMenu.getItems().addAll(medicamente,furnizori,categoriiDeMedicamente);
         settings.getItems().addAll(userSettings, appSettings);
         help.getItems().addAll(raportareProbleme, documentation);
-        this.getMenus().addAll(home,accounts,settings,help, logout);
+        this.getMenus().addAll(home,accounts,medicamenteMenu, settings,help, logout);
     }
 
 

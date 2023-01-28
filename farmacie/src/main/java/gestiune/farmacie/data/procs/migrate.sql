@@ -41,7 +41,7 @@ IF NOT EXISTS (SELECT * FROM sysobjects WHERE name='FarmacieUser' and xtype='U')
 
 	id varchar(64) NOT NULL UNIQUE,
 	titlu varchar(64),
-	descr varchar(64)
+	descriere varchar(64)
 
 
 	)
@@ -79,7 +79,7 @@ IF NOT EXISTS (SELECT * FROM sysobjects WHERE name='FarmacieUser' and xtype='U')
     CREATE TABLE Medicine (
 
 	id varchar(64) NOT NULL UNIQUE,
-	valueMed int,
+	price decimal(2),
 	stockCount int,
 	categorie varchar(64),
 	providerMed varchar(64),
@@ -174,7 +174,7 @@ IF NOT EXISTS (SELECT * FROM sysobjects WHERE name='FarmacieUser' and xtype='U')
     CREATE TABLE Promotions (
 
 		cod int,
-		valueMed decimal(2),
+		price decimal(2),
 		medicineId varchar(64),
 		active bit
 

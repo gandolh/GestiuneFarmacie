@@ -5,12 +5,11 @@
 <?import javafx.scene.layout.FlowPane?>
 <?import javafx.scene.text.Font?>
 
-
-<FlowPane alignment="CENTER" columnHalignment="CENTER" orientation="VERTICAL" prefHeight="450.0" prefWidth="800" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gestiune.farmacie.controllers.AplicationEntryController">
+<FlowPane alignment="CENTER" columnHalignment="CENTER" orientation="VERTICAL" prefHeight="450.0" prefWidth="800" styleClass="background" stylesheets="@AplicationEntry.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gestiune.farmacie.controllers.AplicationEntryController">
    <children>
-      <Label alignment="CENTER" prefHeight="93.0" prefWidth="199.0" text="Farmacie" textAlignment="CENTER">
+      <Label alignment="CENTER" prefHeight="96.0" prefWidth="245.0" styleClass="label-header" text="Farmacie" textAlignment="CENTER">
          <font>
-            <Font size="36.0" />
+            <Font size="32.0" />
          </font>
       </Label>
       <Button mnemonicParsing="false" onAction="#goToLogIn" text="Log in" />

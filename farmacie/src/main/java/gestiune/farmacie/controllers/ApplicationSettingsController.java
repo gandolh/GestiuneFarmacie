@@ -15,7 +15,21 @@ import java.net.URL;
 import java.text.SimpleDateFormat;
 import java.util.ResourceBundle;
 
+
+/**
+ * un controller pt pagina de setari de aplicatie
+ */
 public class ApplicationSettingsController implements Initializable {
+
+    /**
+     * Constructor de baza
+     */
+    public ApplicationSettingsController() {
+    }
+
+    /**
+     * Border pane-ul de baza
+     */
     public BorderPane rootBorderPane;
     @FXML
     private TextField appDateFormat;
@@ -44,6 +58,12 @@ public class ApplicationSettingsController implements Initializable {
     @FXML
     private TextField emailTemplatePath;
 
+    /**
+     * initializeaza pagina curenta si pune informatiile in campurile roespunzaroare din interfata
+     * @param location locatie
+     * @param resources resurse
+     */
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         emailTemplatePath.setText(EmailOperations.getEmailTemplatePath());
@@ -62,6 +82,9 @@ public class ApplicationSettingsController implements Initializable {
         addMenuBar();
     }
 
+    /**
+     * afiseaza bara de meniu
+     */
     private void addMenuBar(){
         MyMenubar myMenubar = new MyMenubar();
         rootBorderPane.setTop(myMenubar);

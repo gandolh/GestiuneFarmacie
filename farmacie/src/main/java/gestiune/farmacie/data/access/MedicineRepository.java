@@ -11,10 +11,20 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Repo pt medicine
+ */
 public class MedicineRepository {
+    /**
+     * Constructor implicit
+     */
     public MedicineRepository() {
     }
 
+    /**
+     * Getter pt medicine
+     * @return ret
+     */
     public List<Medicine> getAllMedicine() {
 
         ArrayList<Medicine> medicines = new ArrayList<Medicine>();
@@ -55,6 +65,11 @@ public class MedicineRepository {
         }
     }
 
+    /**
+     * Adauga cateogire
+     * @param mc mc
+     * @throws SQLException Eroare
+     */
         public void addCategory(MedicineCategory mc) throws SQLException {
             String sql = "INSERT INTO [dbo].[MedicineCategory]\n" +
                     "           ([id]\n" +
@@ -69,6 +84,10 @@ public class MedicineRepository {
 
         }
 
+    /**
+     * Getter pt toate mediamentele
+     * @return ret
+     */
     public List<MedicineCategory> getAllMedicineCategories() {
         String sql = "SELECT TOP (1000) [id]\n" +
                 "      ,[titlu]\n" +
@@ -92,11 +111,23 @@ public class MedicineRepository {
             return new ArrayList<>();
     }
 
+    /**
+     * Delete medicamente
+     * @param categoryId id
+     * @throws SQLException Eroare
+     */
+
     public void deleteMedicineCategory(String categoryId) throws SQLException {
         String sql ="DELETE FROM [dbo].[MedicineCategory]\n" +
                 "      WHERE id='%s'";
         DatabaseConnection.executeNonQuerry(String.format(sql,categoryId));
     }
+
+    /**
+     * Update Categ
+     * @param mc mc
+     * @throws SQLException Eroare
+     */
 
     public void updateCategory(MedicineCategory mc) throws SQLException {
         String sql ="UPDATE [dbo].[MedicineCategory]\n" +
@@ -106,6 +137,11 @@ public class MedicineRepository {
         DatabaseConnection.executeNonQuerry(String.format(sql, mc.getTitlu(), mc.getDescriere(), mc.getId()));
 
     }
+
+    /**
+     * Getter pt provideri
+     * @return ret
+     */
 
     public List<Provider> getAllProviders() {
         List<Provider> providers = new ArrayList<Provider>();
@@ -145,6 +181,12 @@ public class MedicineRepository {
         return providers;
     }
 
+    /**
+     * Add provideri
+     * @param provider provider
+     * @throws SQLException Eroare
+     */
+
     public void addProvider(Provider provider) throws SQLException {
         String sql = "\n" +
                 "INSERT INTO [dbo].[ProviderFarmacie]\n" +
@@ -175,12 +217,22 @@ public class MedicineRepository {
         DatabaseConnection.executeNonQuerry(formattedSql);
     }
 
+    /**
+     * Delet provider
+     * @param cui cui
+     * @throws SQLException Eroare
+     */
     public void deleteProvider(String cui) throws SQLException {
         String sql = String.format("DELETE FROM [dbo].[ProviderFarmacie]\n" +
                 "      WHERE cui ='%s'",cui);
         DatabaseConnection.executeNonQuerry(sql);
     }
 
+    /**
+     * Provider update
+     * @param provider provdeer
+     * @throws SQLException Eroare
+     */
     public void updateProvider(Provider provider) throws SQLException {
         String sql = "UPDATE [dbo].[ProviderFarmacie]\n" +
                 "   SET [denumire] = '%s'\n" +
@@ -198,6 +250,12 @@ public class MedicineRepository {
                 provider.getCodCAEN(), provider.getEmail(),provider.getCui());
         DatabaseConnection.executeNonQuerry(formattedSql);
     }
+
+    /**
+     * Getter medicamente
+     * @param medicineCategoryTitle da
+     * @return ret
+     */
 
     public MedicineCategory getMedicineCategory(String medicineCategoryTitle) {
         String sql = "SELECT TOP (1000) [id]\n" +
@@ -217,6 +275,11 @@ public class MedicineRepository {
     return null;
     }
 
+    /**
+     * Getter provider
+     * @param providerDenumire da
+     * @return ret
+     */
     public Provider getProvider(String providerDenumire) {
         String sql = "SELECT TOP (1000) [cui]\n" +
                 "      ,[denumire]\n" +
@@ -245,6 +308,11 @@ public class MedicineRepository {
         return null;
     }
 
+    /**
+     * Adauga medicamente
+     * @param med medicament
+     * @throws SQLException eroare
+      */
     public void addMedicine(Medicine med) throws SQLException {
         String sql = "INSERT INTO [dbo].[Medicine]\n" +
                 "           ([id]\n" +
@@ -265,6 +333,11 @@ public class MedicineRepository {
                 med.getCategorie().getId(), med.getProviderMed().getCui(), med.getComentarii()));
     }
 
+    /**
+     * Update medicamente
+     * @param med med
+     * @throws SQLException Eroare
+     */
     public void updateMedicine(Medicine med) throws SQLException {
         String sql = "\n" +
                 "UPDATE [dbo].[Medicine]\n" +
@@ -279,6 +352,11 @@ public class MedicineRepository {
         DatabaseConnection.executeNonQuerry(formattedSql);
     }
 
+    /**
+     * Delete medicamente
+     * @param medicineId medid
+     * @throws SQLException Eraore
+     */
     public void deleteMedicine(String medicineId) throws SQLException {
             String sql = "\n" +
                     "DELETE FROM [dbo].[Medicine]\n" +

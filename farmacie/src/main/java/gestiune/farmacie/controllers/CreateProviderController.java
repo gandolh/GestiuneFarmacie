@@ -20,12 +20,20 @@ import java.sql.Date;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
 
+/**
+ * Clasa care initializeaza pagina de creare a unui provider
+ */
 
 public class CreateProviderController  implements Initializable {
+
+
     @FXML
     private BorderPane rootBorderPane;
 
 
+    /**
+     * consturctor implicit :(
+     */
     public CreateProviderController() {
     }
 
@@ -69,19 +77,36 @@ public class CreateProviderController  implements Initializable {
     @FXML
     private TextField fieldEmail;
 
+    /**
+     * Eveniment pentru interogare ANAF
+     * @param event event
+     */
     public void interogateANAF(ActionEvent event) {
     }
 
+    /**
+     * Actiunea de cancel
+     * @param event eveniment
+     */
     public void cancel(ActionEvent event) {
         RedirectToProviders(event);
 
     }
+
+    /**
+     * Redirectioneaza catre Providers
+     * @param event eveniment
+     */
     private void RedirectToProviders(ActionEvent event){
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         RedirectController redirect = new RedirectController();
         redirect.goToFurnizori(stage);
     }
 
+    /**
+     * Add
+     * @param event event
+     */
     public void add(ActionEvent event) {
         Provider provider = new Provider();
         provider.setCui(fieldCUI.getText());
@@ -114,14 +139,29 @@ public class CreateProviderController  implements Initializable {
         }
 
     }
+
+    /**
+     * Adauga bara de meniu
+     */
     private void addMenuBar(){
         MyMenubar myMenubar = new MyMenubar();
         rootBorderPane.setTop(myMenubar);
     }
+
+    /**
+     * Initializeaza pagina acutala
+     * @param location locatie
+     * @param resources resurse
+     */
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         addMenuBar();
     }
+
+    /**
+     * Alta initializare de ce sa va mint tot pentru pagina actuala
+     * @param provider provider
+     */
 
     public void initializeUpdate(Provider provider) {
         fieldCUI.setDisable(true);

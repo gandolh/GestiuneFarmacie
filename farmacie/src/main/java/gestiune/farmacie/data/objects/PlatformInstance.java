@@ -108,7 +108,7 @@ public class PlatformInstance {
      */
     public static String getProcsPath(){
         Path currentPath = Paths.get(System.getProperty("user.dir"));
-        Path filePath = Paths.get(currentPath.toString(), "src","main","java","gestiune","farmacie","data","procs");
+        Path filePath = Paths.get(currentPath.toString(), "farmacie","src","main","java","gestiune","farmacie","data","procs");
 //        System.out.println(filePath.toString());
         return filePath.toString();
     }

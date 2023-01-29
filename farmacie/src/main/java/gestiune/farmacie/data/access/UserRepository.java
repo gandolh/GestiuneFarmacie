@@ -216,6 +216,10 @@ public class UserRepository {
         return false;
     }
 
+    /**
+     * Get email
+     * @return ret
+     */
     public String getAdminEmail() {
         String sql = String.format("select email from FarmacieUser where id='%s'", "1");
         ResultSet set = null;

@@ -22,7 +22,16 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
 
+/**
+ * Initiaza furnizor medicamente
+ */
 public class FurnizorMedicamenteViewController implements Initializable {
+    /**
+     * Consturctro implicit
+     */
+    public FurnizorMedicamenteViewController() {
+    }
+
     @FXML
     private BorderPane rootBorderPane;
     @FXML
@@ -50,18 +59,31 @@ public class FurnizorMedicamenteViewController implements Initializable {
     @FXML
     private TableColumn emailTC;
 
+    /**
+     * Adauga un furnizor
+     * @param event eveniment
+     */
     public void goToAddFurnizor(ActionEvent event) {
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         RedirectController redirect = new RedirectController();
         redirect.goToAddFurnizor(stage);
     }
 
+    /**
+     * Initializeaza pagina
+     * @param location locatie
+     * @param resources resurse
+     */
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         configureColumns();
         getData();
         addMenuBar();
     }
+
+    /**
+     * Configureaza fiecare coloana din tabelul pentru furnizori
+     */
 
     private void configureColumns(){
         cuiTC.setCellValueFactory(new PropertyValueFactory<>("cui"));
@@ -77,6 +99,9 @@ public class FurnizorMedicamenteViewController implements Initializable {
         emailTC.setCellValueFactory(new PropertyValueFactory<>("actiuni"));
     }
 
+    /**
+     * Getter pt data
+     */
 
     private void getData(){
         MedicineRepository medicineRepo = new MedicineRepository();
@@ -89,6 +114,9 @@ public class FurnizorMedicamenteViewController implements Initializable {
     }
 
 
+    /**
+     * Adauga bara de meniu
+     */
     private void addMenuBar(){
         MyMenubar myMenubar = new MyMenubar();
         rootBorderPane.setTop(myMenubar);

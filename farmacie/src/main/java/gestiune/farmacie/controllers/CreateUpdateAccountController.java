@@ -139,8 +139,14 @@ public class CreateUpdateAccountController implements Initializable {
     }
 
     /**
-     *
-     * @return
+     * Unit test pentru validare
+     * @param username username
+     * @param firstname firstname
+     * @param lastname lastname
+     * @param email email
+     * @param birthdate birthdate
+     * @param hiredate hiredate
+     * @return reutrn
      */
     public Boolean validate(String username, String firstname, String lastname, String email, String birthdate,
                              String hiredate){
@@ -155,20 +161,41 @@ public class CreateUpdateAccountController implements Initializable {
 
     }
 
+    /**
+     *Validare username
+     * @param username username
+     * @return returneaza rezultat
+     */
     public Boolean validateUserName(String username){
 
         return username.matches("[A-Za-z0-9]+");
     }
 
+    /**
+     * Validare firstname
+     * @param firstname firstane
+     * @return returneaza validare
+     */
     public Boolean validateFirstName(String firstname){
 
         return firstname.matches("[A-Za-z]+");    }
 
+    /**
+     * Validare LastName
+     * @param lastname lastname
+     * @return returneaza valoarea
+     */
     public Boolean validateLastName(String lastname) {
 
         return lastname.matches("[A-Za-z]+");
 
     }
+
+    /**
+     * Validare email
+     * @param email email
+     * @return reurnt
+     */
 
     public Boolean validateEmail(String email) {
 
@@ -176,12 +203,23 @@ public class CreateUpdateAccountController implements Initializable {
 
     }
 
+    /**
+     * Validare virthdate
+     * @param birthdate birthdate
+     * @return return
+     */
+
     public  Boolean validateBirthdate(String birthdate){
 
         return birthdate.matches("(0?[1-9]|[12][0-9]|3[01])[\\/\\-](0?[1-9]|1[012])[\\/\\-]\\d{4}");
 
     }
 
+    /**
+     * Validare hiredate
+     * @param hiredate hiredate
+     * @return return
+     */
     public  Boolean validateHiredate(String hiredate){
 
         return hiredate.matches("(0?[1-9]|[12][0-9]|3[01])[\\/\\-](0?[1-9]|1[012])[\\/\\-]\\d{4}");

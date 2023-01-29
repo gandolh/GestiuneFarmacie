@@ -125,6 +125,10 @@ public class RedirectController {
         stage.show();
     }
 
+    /**
+     * Set
+     * @param stage stage
+     */
     public void goToReportProblem(Stage stage) {
         Parent root = null;
         try {
@@ -136,6 +140,11 @@ public class RedirectController {
         stage.setScene(scene);
         stage.show();
     }
+
+    /**
+     * Stage
+     * @param stage stage
+     */
 
     public void goToApplicationSettings(Stage stage) {
         Parent root = null;
@@ -149,6 +158,10 @@ public class RedirectController {
         stage.show();
     }
 
+    /**
+     * Medicine
+     * @param stage stage
+     */
     public void goToMedicamenteView(Stage stage) {
         Parent root = null;
         try {
@@ -160,6 +173,11 @@ public class RedirectController {
         stage.setScene(scene);
         stage.show();
     }
+
+    /**
+     * Stage
+     * @param stage stage
+     */
 
     public void goToFurnizori(Stage stage) {
         Parent root = null;
@@ -173,6 +191,10 @@ public class RedirectController {
         stage.show();
     }
 
+    /**
+     * Ceva
+     * @param stage stage
+     */
     public void goToCategoriiMedicamenteView(Stage stage) {
         Parent root = null;
         try {
@@ -185,6 +207,10 @@ public class RedirectController {
         stage.show();
     }
 
+    /**
+     * A
+     * @param stage stage
+     */
     public void goToCreateMedicine(Stage stage) {
         Parent root = null;
         try {
@@ -197,6 +223,10 @@ public class RedirectController {
         stage.show();
     }
 
+    /**
+     * Go to
+     * @param stage stage
+     */
     public void goToCreateMedCategory(Stage stage) {
         Parent root = null;
         try {
@@ -209,6 +239,11 @@ public class RedirectController {
         stage.show();
     }
 
+    /**
+     * Go to
+     * @param stage stage
+     * @param category categorie
+     */
     public void goToUpdateMedicineCategory(Stage stage, MedicineCategory category) {
 
         Parent root = null;
@@ -225,6 +260,11 @@ public class RedirectController {
         stage.show();
     }
 
+    /**
+     * Go to
+     * @param stage stage
+     */
+
     public void goToAddFurnizor(Stage stage) {
         Parent root = null;
         try {
@@ -236,6 +276,12 @@ public class RedirectController {
         stage.setScene(scene);
         stage.show();
     }
+
+    /**
+     * Go to
+     * @param stage stage
+     * @param provider provider
+     */
 
     public void goToUpdateProvider(Stage stage, Provider provider) {
 
@@ -253,6 +299,11 @@ public class RedirectController {
         stage.show();
     }
 
+    /**
+     * Go to
+     * @param stage stage
+     * @param medicine med
+     */
     public void goToUpdateMedicine(Stage stage, Medicine medicine) {
         Parent root = null;
         try {

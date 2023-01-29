@@ -22,7 +22,15 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
 
+/**
+ * Controller pentru pagina de categorii de medicamente
+ */
 public class CategoriiMedicamenteViewController implements Initializable {
+    /**
+     * Constructor implicit
+     */
+    public CategoriiMedicamenteViewController() {
+    }
 
     @FXML
     private BorderPane rootBorderPane;
@@ -39,6 +47,12 @@ public class CategoriiMedicamenteViewController implements Initializable {
     @FXML
     TableColumn actiuniTC;
 
+
+    /**
+     *
+     * @param location locatie
+     * @param resources resurse
+     */
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         configureColumns();
@@ -63,13 +77,19 @@ public class CategoriiMedicamenteViewController implements Initializable {
         categoryTable.getItems().addAll(medicineCategoriesTableData);
     }
 
-
+    /**
+     * adauga bara de meniu
+     */
     private void addMenuBar(){
         MyMenubar myMenubar = new MyMenubar();
         rootBorderPane.setTop(myMenubar);
     }
 
 
+    /**
+     * Redirectioneaza catre pagina de categorie
+     * @param event eveniment
+     */
     public void goToAddMedicineCategory(ActionEvent event) {
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         RedirectController redirect = new RedirectController();

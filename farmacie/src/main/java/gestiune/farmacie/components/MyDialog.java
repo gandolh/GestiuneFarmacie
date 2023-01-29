@@ -20,6 +20,14 @@ public class MyDialog {
         alert.showAndWait();
     }
 
+
+    /**
+     * Ceva dialog de ce sa va mint
+     * @param titlu tiltu
+     * @param header cap
+     * @param content continut detinut
+     */
+
     public MyDialog(String titlu, String header, String content){
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
         alert.setTitle(titlu);

@@ -25,8 +25,14 @@ import java.util.stream.Collectors;
  * Work in progress
  */
 public class CreateMedController implements Initializable {
+    /**
+     * radacina panoului
+     */
     public BorderPane rootBorderPane;
 
+    /**
+     * constructor implicit
+     */
 
     public CreateMedController() {
     }
@@ -59,11 +65,18 @@ public class CreateMedController implements Initializable {
     @FXML
     private Button buttonMinus;
 
+    /**
+     * Bara de meniu
+     */
     private void addMenuBar(){
         MyMenubar myMenubar = new MyMenubar();
         rootBorderPane.setTop(myMenubar);
     }
 
+    /**
+     * Scade valoarea din campul de stoc
+     * @param event eveniment
+     */
 
     public void decreaseStoc(ActionEvent event) {
         if(Integer.parseInt(textStoc.getText()) > 0)
@@ -71,14 +84,26 @@ public class CreateMedController implements Initializable {
 
     }
 
+    /**
+     * Creste valuarea din campul de stoc
+     * @param event eveniment
+     */
     public void increaseStoc(ActionEvent event) {
         textStoc.setText(String.valueOf(Integer.parseInt(textStoc.getText())+1));
     }
 
+    /**
+     * Actiunea de cancel
+     * @param event eveniment
+     */
     public void cancel(ActionEvent event) {
         redirectToMedicines(event);
     }
 
+    /**
+     * Actiunea de add
+     * @param event eveniment
+     */
     public void add(ActionEvent event) {
         Medicine med = new Medicine();
         med.setId(UUID.randomUUID().toString());
@@ -111,6 +136,11 @@ public class CreateMedController implements Initializable {
         }
     }
 
+    /**
+     * Initializeaza valorile din pagina
+     * @param location locatie
+     * @param resources resurse
+     */
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         textStoc.setText("0");
@@ -129,6 +159,10 @@ public class CreateMedController implements Initializable {
         comboBoxFurnizor.getSelectionModel().selectFirst();
     }
 
+    /**
+     * Redirectioneaza catre Medicamente
+     * @param event eveniment
+     */
 
     private void redirectToMedicines(ActionEvent event){
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
@@ -136,6 +170,10 @@ public class CreateMedController implements Initializable {
         redirect.goToMedicamenteView(stage);
     }
 
+    /**
+     * Initializeaza un update pe pagina de medicamente
+     * @param medicine medicament
+     */
     public void initializeUpdate(Medicine medicine) {
         buttonAdd.setText("Actualizeaza");
         comboBoxMed.setValue(medicine.getCategorie().getTitlu());

@@ -15,7 +15,16 @@ import javafx.scene.layout.BorderPane;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+/**
+ * Clasa pentru issueproblem
+ */
 public class IssueProblemController implements Initializable {
+    /**
+     * Constructor implicit
+     */
+    public IssueProblemController() {
+    }
+
     @FXML
     private BorderPane rootBorderPane;
     @FXML
@@ -23,9 +32,19 @@ public class IssueProblemController implements Initializable {
     @FXML
     private TextArea corpTextArea;
 
+    /**
+     * Metoda ce trimite problema prin email
+     * @param event eveniment
+     */
     public void trimiteProblema(ActionEvent event) {
         sendSuportMail(subjectField.getText(),  corpTextArea.getText());
     }
+
+    /**
+     * Trimitere propiu zisa
+     * @param subject subiect
+     * @param corp corp
+     */
 
     public void sendSuportMail(String subject, String corp){
         UserRepository userRepo = new UserRepository();
@@ -38,6 +57,11 @@ public class IssueProblemController implements Initializable {
         alert.showAndWait();
     }
 
+    /**
+     * Initializeaza datele din pagina
+     * @param location locatie
+     * @param resources resurse
+     */
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         addMenuBar();

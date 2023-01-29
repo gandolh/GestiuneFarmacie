@@ -23,8 +23,14 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
 
+/**
+ * Clasa pentru view de medicamente
+ */
 public class MedicamenteViewController implements Initializable {
 
+    /**
+     * Construcotr implicit
+     */
     public MedicamenteViewController() {
     }
     @FXML
@@ -53,6 +59,11 @@ public class MedicamenteViewController implements Initializable {
     @FXML
     private Button AddMedicineBtn;
 
+    /**
+     * Initializeaza datele in pagina
+     * @param location locatie
+     * @param resources resurse
+     */
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         configureColumns();
@@ -60,6 +71,9 @@ public class MedicamenteViewController implements Initializable {
         addMenuBar();
     }
 
+    /**
+     * Arhitectura pentru coloane
+     */
     private void configureColumns(){
         idTC.setCellValueFactory(new PropertyValueFactory<>("id"));
         pretTC.setCellValueFactory(new PropertyValueFactory<>("pret"));
@@ -69,7 +83,9 @@ public class MedicamenteViewController implements Initializable {
         ActionsTC.setCellValueFactory(new PropertyValueFactory<>("Actions"));
     }
 
-
+    /**
+     * Getter pentru data din baza de date
+     */
     private void getData(){
         MedicineRepository medicineRepo = new MedicineRepository();
         List<Medicine> medicines = medicineRepo.getAllMedicine();
@@ -80,13 +96,18 @@ public class MedicamenteViewController implements Initializable {
         userTable.getItems().addAll(medicinesTableData);
     }
 
-
+    /**
+     * Adauga bara de meniu
+     */
     private void addMenuBar(){
         MyMenubar myMenubar = new MyMenubar();
         rootBorderPane.setTop(myMenubar);
     }
 
-
+    /**
+     * Redirect catre medimcamente
+     * @param event eveniment
+     */
     public void goToAddMedicine(ActionEvent event) {
         //TODO
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();

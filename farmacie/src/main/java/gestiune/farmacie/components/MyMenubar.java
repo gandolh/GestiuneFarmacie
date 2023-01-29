@@ -1,16 +1,12 @@
 package gestiune.farmacie.components;
 
-import gestiune.farmacie.Main;
 import gestiune.farmacie.controllers.RedirectController;
 import gestiune.farmacie.data.objects.PlatformInstance;
-import javafx.application.Platform;
 import javafx.scene.control.Menu;
 import javafx.scene.control.MenuBar;
 import javafx.scene.control.MenuItem;
 import javafx.stage.Stage;
 
-import java.io.File;
-import java.io.IOException;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 
@@ -145,6 +141,22 @@ public class MyMenubar extends MenuBar {
             Stage stage = (Stage) this.getScene().getWindow();
             RedirectController redirect = new RedirectController();
             redirect.goToApplicationSettings(stage);
+        });
+
+        medicamente.setOnAction(event->{
+            Stage stage = (Stage) this.getScene().getWindow();
+            RedirectController redirect = new RedirectController();
+            redirect.goToMedicamenteView(stage);
+        });
+        categoriiDeMedicamente.setOnAction(event->{
+            Stage stage = (Stage) this.getScene().getWindow();
+            RedirectController redirect = new RedirectController();
+            redirect.goToCategoriiMedicamenteView(stage);
+        });
+        furnizori.setOnAction(event->{
+            Stage stage = (Stage) this.getScene().getWindow();
+            RedirectController redirect = new RedirectController();
+            redirect.goToFurnizori(stage);
         });
 
         addGoHomeAction(home);

@@ -1,5 +1,6 @@
 package gestiune.farmacie.controllers;
 
+import gestiune.farmacie.data.business.objects.MedicineCategory;
 import gestiune.farmacie.data.business.objects.User;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -138,6 +139,82 @@ public class RedirectController {
         Parent root = null;
         try {
             root = FXMLLoader.load(getClass().getResource("/gestiune/farmacie/controllers/ApplicationSettings.fxml"));
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        Scene scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+    }
+
+    public void goToMedicamenteView(Stage stage) {
+        Parent root = null;
+        try {
+            root = FXMLLoader.load(getClass().getResource("/gestiune/farmacie/controllers/MedicamenteView.fxml"));
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        Scene scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+    }
+
+    public void goToFurnizori(Stage stage) {
+        Parent root = null;
+        try {
+            root = FXMLLoader.load(getClass().getResource("/gestiune/farmacie/controllers/FurnizorMedicamenteView.fxml"));
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        Scene scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+    }
+
+    public void goToCategoriiMedicamenteView(Stage stage) {
+        Parent root = null;
+        try {
+            root = FXMLLoader.load(getClass().getResource("/gestiune/farmacie/controllers/CategoriiMedicamenteView.fxml"));
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        Scene scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+    }
+
+    public void goToCreateMedicine(Stage stage) {
+        Parent root = null;
+        try {
+            root = FXMLLoader.load(getClass().getResource("/gestiune/farmacie/controllers/CreateMed.fxml"));
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        Scene scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+    }
+
+    public void goToCreateMedCategory(Stage stage) {
+        Parent root = null;
+        try {
+            root = FXMLLoader.load(getClass().getResource("/gestiune/farmacie/controllers/CreateCateg.fxml"));
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        Scene scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+    }
+
+    public void goToUpdateMedicineCategory(Stage stage, MedicineCategory category) {
+
+        Parent root = null;
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/gestiune/farmacie/controllers/CreateCateg.fxml"));
+            root = loader.load();
+            CreateCategController controller = loader.getController();
+            controller.initializeUpdate(category);
         } catch (Exception e) {
             e.printStackTrace();
         }

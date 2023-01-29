@@ -6,6 +6,12 @@ public class MedicineCategory {
     private String titlu;
     private String descriere;
 
+    public MedicineCategory() {
+        this.id="";
+        this.titlu = "";
+        this.descriere="";
+    }
+
     public MedicineCategory(String id, String titlu, String descriere) {
         this.id = id;
         this.titlu = titlu;

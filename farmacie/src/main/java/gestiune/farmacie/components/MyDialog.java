@@ -19,4 +19,12 @@ public class MyDialog {
         alert.setContentText("Va rugam verificati datele introduse, sau creati-va un cont nou");
         alert.showAndWait();
     }
+
+    public MyDialog(String titlu, String header, String content){
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+        alert.setTitle(titlu);
+        alert.setHeaderText(header);
+        alert.setContentText(content);
+        alert.showAndWait();
+    }
 }

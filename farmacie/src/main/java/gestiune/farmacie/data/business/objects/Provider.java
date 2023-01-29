@@ -15,6 +15,31 @@ public class Provider {
     private int codCAEN;
     private Date dataInregistrare;
 
+    public Provider(String cui, String adresa, String denumire, int nrRegCom, String telefon, String codPostal, String iban, String email, int codCAEN, Date dataInregistrare) {
+        this.cui = cui;
+        this.adresa = adresa;
+        this.denumire = denumire;
+        this.nrRegCom = nrRegCom;
+        this.telefon = telefon;
+        this.codPostal = codPostal;
+        this.iban = iban;
+        this.email = email;
+        this.codCAEN = codCAEN;
+        this.dataInregistrare = dataInregistrare;
+    }
+
+    public Provider() {
+        this.cui ="";
+        this.adresa = "";
+        this.denumire = "";
+        this.nrRegCom = 21003;
+        this.telefon = "";
+        this.iban="";
+        this.email="";
+        this.codCAEN= 2001;
+        this.dataInregistrare = new Date(System.currentTimeMillis());
+    }
+
     public String getCui() {
         return cui;
     }

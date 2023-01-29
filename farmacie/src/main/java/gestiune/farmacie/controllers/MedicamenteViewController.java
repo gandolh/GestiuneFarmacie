@@ -28,30 +28,30 @@ public class MedicamenteViewController implements Initializable {
     public MedicamenteViewController() {
     }
     @FXML
-    public BorderPane rootBorderPane;
+    private BorderPane rootBorderPane;
 
     @FXML
-    public TableView<MedicineTableRowData> userTable;
+    private TableView<MedicineTableRowData> userTable;
 
     @FXML
-    public TableColumn idTC;
+    private TableColumn idTC;
 
     @FXML
-    public TableColumn pretTC;
+    private TableColumn pretTC;
 
     @FXML
-    public TableColumn stocTC;
+    private TableColumn stocTC;
 
     @FXML
-    public TableColumn categoryTC;
+    private TableColumn categoryTC;
 
     @FXML
-    public TableColumn providerTC;
+    private TableColumn providerTC;
     @FXML
-    public TableColumn ActionsTC;
+    private TableColumn ActionsTC;
 
     @FXML
-    public Button AddMedicineBtn;
+    private Button AddMedicineBtn;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -91,6 +91,6 @@ public class MedicamenteViewController implements Initializable {
         //TODO
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         RedirectController redirect = new RedirectController();
-        redirect.goToCreateUser(stage);
+        redirect.goToCreateMedicine(stage);
     }
 }

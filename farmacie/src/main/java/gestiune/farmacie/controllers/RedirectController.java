@@ -149,6 +149,7 @@ public class RedirectController {
     public void goToApplicationSettings(Stage stage) {
         Parent root = null;
         try {
+
             root = FXMLLoader.load(getClass().getResource("/gestiune/farmacie/controllers/ApplicationSettings.fxml"));
         } catch (Exception e) {
             e.printStackTrace();
@@ -311,6 +312,19 @@ public class RedirectController {
             root = loader.load();
             CreateMedController controller = loader.getController();
             controller.initializeUpdate(medicine);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        Scene scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+    }
+
+    public void goToUserSettings(Stage stage) {
+        Parent root = null;
+        try {
+
+            root = FXMLLoader.load(getClass().getResource("/gestiune/farmacie/controllers/UserSettings.fxml"));
         } catch (Exception e) {
             e.printStackTrace();
         }

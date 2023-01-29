@@ -57,6 +57,7 @@ public class MyMenubar extends MenuBar {
     private MenuItem medicamente;
     private MenuItem furnizori ;
     private MenuItem categoriiDeMedicamente;
+    private MenuItem userSettings;
 
     /**
      * ia path-ul de la javadoc din solutia actuala.
@@ -95,7 +96,7 @@ public class MyMenubar extends MenuBar {
         gestionareConturi = new MenuItem("Gestionare conturi");
         Menu settings = new Menu("Setari");
         appSettings = new MenuItem("Setari de aplicatie");
-        MenuItem userSettings = new MenuItem("Setari de utilizator");
+        userSettings = new MenuItem("Setari de utilizator");
         Menu help = new Menu("Ajutor");
         raportareProbleme = new MenuItem("Raportare probleme");
         javaDocDocumentation = new MenuItem("JavaDoc");
@@ -153,7 +154,15 @@ public class MyMenubar extends MenuBar {
             redirect.goToReportProblem(stage);
         });
 
+        userSettings.setOnAction(event->{
+
+            Stage stage = (Stage) this.getScene().getWindow();
+            RedirectController redirect = new RedirectController();
+            redirect.goToUserSettings(stage);
+        });
+
         appSettings.setOnAction(event->{
+
             Stage stage = (Stage) this.getScene().getWindow();
             RedirectController redirect = new RedirectController();
             redirect.goToApplicationSettings(stage);

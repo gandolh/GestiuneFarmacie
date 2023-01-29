@@ -9,9 +9,9 @@
 <?import javafx.scene.layout.FlowPane?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane fx:id="rootBorderPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="450" prefWidth="800.0" stylesheets="@AplicationEntry.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gestiune.farmacie.controllers.ManageUsersController">
+<BorderPane  fx:id="rootBorderPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="450" prefWidth="800.0" stylesheets="@AplicationEntry.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gestiune.farmacie.controllers.ManageUsersController">
    <center>
-      <FlowPane styleClass="background" stylesheets="@AplicationEntry.css" BorderPane.alignment="CENTER">
+      <FlowPane styleClass="background" BorderPane.alignment="CENTER">
          <children>
             <FlowPane prefHeight="61.0" prefWidth="800.0">
                <children>

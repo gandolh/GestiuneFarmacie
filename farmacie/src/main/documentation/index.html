@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Documentation Page</title>
+    <link href="bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+    <div class="container-md mainContainer">
+    <header>
+        <h1>Documentatia</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="#introduction">Introducere</a></li>
+            <li><a href="#user-management">Gestionare utilizator</a></li>
+            <li><a href="#medicine-management">Gestionare Medicamente</a></li>
+            <li><a href="#provider-management">Gestionare furnizor</a></li>
+            <li><a href="#Setarideplatforma">Vizualizare setari de platforma</a></li>
+            <li><a href="#error-handling">Gestionarea erorilor</a></li>
+            <li><a href="#data-backup-and-recovery">Data Backup si recuperare</a></li>
+            <li><a href="#troubleshooting">Troubleshooting</a></li>
+        </ul>
+    </nav>
+    <main>
+        
+        <section id="introduction">
+            <h2>Introduction</h2>
+            <p>Acest produs informatic are scopul de a ajuta o farmacie in a isi gestiona produsele in mod intern,
+                creand
+                medicamente, categorii de medicamente si furnizori. Se pot crea utilizatori ce au dreptul de a vizualiza
+                produsele,
+                si de a isi schimba parola. Datele utilizatorilor pot fi editate doar de catre Administrator.
+                </br> Intern, utilizatorii sunt farmacistii ce au nevoie de permisiuni de vizualizare asupra produselor
+                din farmacie,
+                putand eventual sa editeze datele acestora. <br />
+                Printre altele, utilizatorii (farmacistii) pot sa raporteze o problema, in cazul in care utilizatorii
+                constata o problemă. </p>
+            Pagina de intrare in aplicatie este urmatoarea:
+            <img src="appEntry.png" />
+            Pagina de login:
+            <img src="login.png" />
+            Pagina de acasa:
+            <img src="2.png" />
+        </section>
+        <section id="user-management">
+            <h2>Gestionarea utilizatorilor</h2>
+            <p>Gestionarea utilizatorilor poate fi facută doar de catre un administrator, si aceasta se face prin
+                intermediul submeniului Conturi -> Gestionare utilizatori</p>
+            <p>Ecranul de gestionare a utilizatorilor este:</p>
+            <img src="1.png" />
+            <p> Daca se da click pe butonul adauga:</p>
+            <img src="myAccount.png" />
+            <ul>
+                <h3>Daca se da click pe actiuni exista 2 optiuni posibile:</h3>
+                <li>Actualizeaza, de exemplu:
+                    <img src="5.png">
+
+                </li>
+                <li>sterge, ce doar sterge utilizatorul</li>
+            </ul>
+        </section>
+        <section id="medicine-management">
+            <h2>Gestionare medicamente</h2>
+            <p>
+                In aceasta parte se pot actualiza medicamentele si categoriile acestora. Ecranele specifice de
+                vizualizare a datelor sunt:
+                <img src="6.png" />
+                <img src="9.png" />
+            </p>
+            <p> Un exemplu de modificare a datelor unui medicament este:</p>
+            <img src="7.png" />
+        </section>
+        <section id="provider-management">
+            <h2>Gestionarea furnizorilor</h2>
+            <p>Furnizor prezinta aceleasi functionalitati ca la medicamente, un exemplu de view pentru acesta fiind:</p>
+            <img src="8.png" />
+        </section>
+        <section id="Setarideplatforma">
+            <h2>Vizualizarea setarilor de platforma</h2>
+            <p>Setarile de platforma sunt salvate intr-o clasa statica si pot fi vizualizate cu aceasta pagina. Un
+                exemplu este:
+            </p>
+            <img src="10.png" />
+        </section>
+
+        <section id="error-handling">
+            <h2>Gestionarea erorilor</h2>
+            <p>Erorile au fost gestionate astfel incat aplicatia sa nu se blocheze si sa continue indiferent de
+                probleme.
+                In cazul unei probleme de validare, se va arunca o fereastra de tip pop-up cu greselile efectuate, in
+                functie de context.
+            </p>
+        </section>
+        <section id="data-backup-and-recovery">
+            <h2>Data Backup si recuperare</h2>
+            <p>Explanation of how to backup and recover data</p>
+        </section>
+        <section id="troubleshooting">
+            <h2>Troubleshooting</h2>
+            <p>In cazul intampinarii unei probleme, se pot trimite intern din aplicatie email-uri de suport.</p>
+            <p> De exemplu:</p>
+            <img src="11.png" />
+            <p> De asemenea, se poate accesa documentatia folosind tot meniul ajutor, in cazul unei nelamuriri de
+                functionare,
+                sau pentru cei mai tehnici, se poate vizualiza javadoc-ul.
+            </p>
+            <p> Accesarea se face in felul urmator:</p>
+            <img src="12.png" />
+            <p> Deschiderea javadocului sau a documentatiei ar trebui prezentata in browser, asemanator ca in exemplul
+                urmator:</p>
+            <img src="13.png" />
+        </section>
+
+    </main>
+</div>
+</body>
+
+</html>

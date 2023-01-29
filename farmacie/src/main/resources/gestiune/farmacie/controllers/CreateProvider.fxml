@@ -11,9 +11,9 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane fx:id="rootBorderPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="450" prefWidth="1003.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gestiune.farmacie.controllers.CreateProviderController">
+<BorderPane stylesheets="@AplicationEntry.css" fx:id="rootBorderPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="450" prefWidth="1003.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gestiune.farmacie.controllers.CreateProviderController">
     <center>
-<FlowPane alignment="CENTER" columnHalignment="CENTER" orientation="VERTICAL" prefHeight="450.0" prefWidth="800.0" stylesheets="@AplicationEntry.css" vgap="10.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
+<FlowPane alignment="CENTER" columnHalignment="CENTER" orientation="VERTICAL" prefHeight="450.0" prefWidth="800.0" vgap="10.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <Label prefHeight="32.0" prefWidth="176.0" text="Introducere Provider">
          <font>

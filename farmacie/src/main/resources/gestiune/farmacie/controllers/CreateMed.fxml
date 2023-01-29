@@ -8,9 +8,9 @@
 <?import javafx.scene.layout.FlowPane?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane fx:id="rootBorderPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="450" prefWidth="1003.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gestiune.farmacie.controllers.CreateMedController">
+<BorderPane stylesheets="@AplicationEntry.css" fx:id="rootBorderPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="450" prefWidth="1003.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gestiune.farmacie.controllers.CreateMedController">
    <center>
-<FlowPane alignment="CENTER" columnHalignment="CENTER" orientation="VERTICAL" prefHeight="450.0" prefWidth="800.0" stylesheets="@AplicationEntry.css" vgap="10.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
+<FlowPane alignment="CENTER" columnHalignment="CENTER" orientation="VERTICAL" prefHeight="450.0" prefWidth="800.0" vgap="10.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <FlowPane columnHalignment="CENTER" prefHeight="200.0" prefWidth="200.0" vgap="15.0">
          <children>

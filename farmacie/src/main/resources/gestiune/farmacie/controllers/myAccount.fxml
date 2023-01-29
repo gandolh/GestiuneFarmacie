@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane fx:id="rootBorderPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="450" prefWidth="800.0" stylesheets="@AplicationEntry.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gestiune.farmacie.controllers.MyAccountController">
+<BorderPane  fx:id="rootBorderPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="450" prefWidth="800.0" stylesheets="@AplicationEntry.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gestiune.farmacie.controllers.MyAccountController">
    <center>
       <FlowPane alignment="CENTER" columnHalignment="CENTER" prefHeight="200.0" prefWidth="200.0">
          <children>

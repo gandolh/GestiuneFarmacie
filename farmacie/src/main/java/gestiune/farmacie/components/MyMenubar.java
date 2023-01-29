@@ -33,6 +33,10 @@ public class MyMenubar extends MenuBar {
     /**
      * Butonul din bara de navigatie pentru documentatie
      */
+    private MenuItem javaDocDocumentation;
+    /**
+     * menuitem documentatie
+     */
     private MenuItem documentation;
     /**
      * Butonul din bara de navigatie pentru Acasa
@@ -60,11 +64,17 @@ public class MyMenubar extends MenuBar {
      */
     private static Path getJavaDocPath(){
         Path currentPath = Paths.get(System.getProperty("user.dir"));
-        Path filePath = Paths.get(currentPath.toString(), "farmacie","src","main","javadoc","index.html");
-//        System.out.println(filePath.toString());
+        Path filePath = Paths.get(currentPath.toString(),"src","main","javadoc","index.html");
+        System.out.println("getJavaDocPath: " + filePath.toString());
         return filePath;
     }
 
+    private static Path getDocumentationPath(){
+        Path currentPath = Paths.get(System.getProperty("user.dir"));
+        Path filePath = Paths.get(currentPath.toString(),"src","main","documentation","index.html");
+        System.out.println("getDocumentationPath: " + filePath.toString());
+        return filePath;
+    }
 
     /**
      * Crearea barii de navigatie ca si componenta JavcFx
@@ -88,9 +98,10 @@ public class MyMenubar extends MenuBar {
         MenuItem userSettings = new MenuItem("Setari de utilizator");
         Menu help = new Menu("Ajutor");
         raportareProbleme = new MenuItem("Raportare probleme");
-        documentation = new MenuItem("Documentatie");
+        javaDocDocumentation = new MenuItem("JavaDoc");
+        documentation = new MenuItem("documentatie");
         logout = new Menu("Deconectare");
-        medicamenteMenu = new Menu("farmacie");
+        medicamenteMenu = new Menu("Farmacie");
         medicamente = new MenuItem("medicamente");
         furnizori = new MenuItem("furnizori");
         categoriiDeMedicamente = new MenuItem("categorii de medicamente");
@@ -98,7 +109,7 @@ public class MyMenubar extends MenuBar {
         accounts.getItems().add(contulMeu);
         medicamenteMenu.getItems().addAll(medicamente,furnizori,categoriiDeMedicamente);
         settings.getItems().addAll(userSettings, appSettings);
-        help.getItems().addAll(raportareProbleme, documentation);
+        help.getItems().addAll(raportareProbleme, javaDocDocumentation, documentation);
         this.getMenus().addAll(home,accounts,medicamenteMenu, settings,help, logout);
     }
 
@@ -125,11 +136,16 @@ public class MyMenubar extends MenuBar {
         }
 
         //adaugare deschidere browser la apasarea butonului de documentatie
-        documentation.setOnAction(event->{
+        javaDocDocumentation.setOnAction(event->{
+
             PlatformInstance.getHostedServices().showDocument(
                     getJavaDocPath().toUri().toString());
         });
 
+        documentation.setOnAction(event->{
+            PlatformInstance.getHostedServices().showDocument(
+                    getDocumentationPath().toUri().toString());
+        });
 
         raportareProbleme.setOnAction(event->{
             Stage stage = (Stage) this.getScene().getWindow();

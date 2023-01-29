@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.FlowPane?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane fx:id="rootBorderPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="450" prefWidth="1003.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gestiune.farmacie.controllers.FurnizorMedicamenteViewController">
+<BorderPane stylesheets="@AplicationEntry.css" fx:id="rootBorderPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="450" prefWidth="1003.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gestiune.farmacie.controllers.FurnizorMedicamenteViewController">
     <center>
         <FlowPane prefHeight="429.0" prefWidth="952.0" BorderPane.alignment="CENTER">
             <children>

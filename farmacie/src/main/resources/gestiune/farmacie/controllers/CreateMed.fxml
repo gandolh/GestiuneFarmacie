@@ -4,10 +4,13 @@
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.FlowPane?>
 <?import javafx.scene.text.Font?>
 
-<FlowPane alignment="CENTER" columnHalignment="CENTER" orientation="VERTICAL" prefHeight="450.0" prefWidth="800.0" stylesheets="@AplicationEntry.css" vgap="10.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gestiune.farmacie.controllers.CreateMedController">
+<BorderPane fx:id="rootBorderPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="450" prefWidth="1003.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gestiune.farmacie.controllers.CreateMedController">
+   <center>
+<FlowPane alignment="CENTER" columnHalignment="CENTER" orientation="VERTICAL" prefHeight="450.0" prefWidth="800.0" stylesheets="@AplicationEntry.css" vgap="10.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <FlowPane columnHalignment="CENTER" prefHeight="200.0" prefWidth="200.0" vgap="15.0">
          <children>
@@ -16,24 +19,26 @@
                   <Font size="21.0" />
                </font>
             </Label>
-            <ComboBox prefHeight="26.0" prefWidth="245.0" promptText="Tipul medicamentului" />
-            <ComboBox fx:id="dropFurnizor" prefHeight="26.0" prefWidth="246.0" promptText="Furnizor" />
+            <ComboBox fx:id="comboBoxMed" prefHeight="26.0" prefWidth="245.0" promptText="Tipul medicamentului" />
+            <ComboBox fx:id="comboBoxFurnizor" prefHeight="26.0" prefWidth="246.0" promptText="Furnizor" />
             <TextField fx:id="textPret" prefHeight="26.0" prefWidth="243.0" promptText="Pret" />
             <TextField fx:id="textComentarii" prefHeight="26.0" prefWidth="241.0" promptText="Comentarii" />
             <FlowPane alignment="CENTER" prefHeight="28.0" prefWidth="240.0">
                <children>
-                  <Button fx:id="buttonMinus" mnemonicParsing="false" text="-" />
+                  <Button fx:id="buttonMinus" mnemonicParsing="false" onAction="#decreaseStoc" text="-" />
                   <TextField fx:id="textStoc" prefHeight="26.0" prefWidth="166.0" promptText="Stoc introdus" />
-                  <Button fx:id="buttonPlus" mnemonicParsing="false" text="+" />
+                  <Button fx:id="buttonPlus" mnemonicParsing="false" onAction="#increaseStoc" text="+" />
                </children>
             </FlowPane>
             <FlowPane alignment="CENTER" hgap="10.0" prefHeight="28.0" prefWidth="218.0">
                <children>
-                  <Button fx:id="buttonAdd" mnemonicParsing="false" text="Adauga" />
-                  <Button fx:id="buttonCancel" mnemonicParsing="false" text="Cancel" />
+                  <Button fx:id="buttonCancel" mnemonicParsing="false" onAction="#cancel" text="Cancel" />
+                  <Button fx:id="buttonAdd" mnemonicParsing="false" onAction="#add" text="Adauga" />
                </children>
             </FlowPane>
          </children>
       </FlowPane>
    </children>
 </FlowPane>
+   </center>
+</BorderPane>

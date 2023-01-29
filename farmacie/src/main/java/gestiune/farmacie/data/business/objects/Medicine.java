@@ -9,7 +9,7 @@ public class Medicine {
     private int stockCount;
     private MedicineCategory categorie;
     private Provider providerMed;
-    private List<String> comentarii;
+    private String comentarii;
 
     public String getId() {
         return id;
@@ -19,7 +19,7 @@ public class Medicine {
         this.id = id;
     }
 
-    public Medicine(String id, double price, int stockCount, MedicineCategory categorie, Provider providerMed, List<String> comentarii) {
+    public Medicine(String id, double price, int stockCount, MedicineCategory categorie, Provider providerMed, String comentarii) {
         this.id = id;
         this.price = price;
         this.stockCount = stockCount;
@@ -34,7 +34,7 @@ public class Medicine {
         this.stockCount = 0;
         this.categorie =  new MedicineCategory();
         this.providerMed = new Provider();
-        this.comentarii =  List.of("comentariu", "comentariu2");
+        this.comentarii =  "comentariu";
 
     }
 
@@ -70,11 +70,11 @@ public class Medicine {
         this.providerMed = providerMed;
     }
 
-    public List<String> getComentarii() {
+    public String getComentarii() {
         return comentarii;
     }
 
-    public void setComentarii(List<String> comentarii) {
+    public void setComentarii(String comentarii) {
         this.comentarii = comentarii;
     }
 }

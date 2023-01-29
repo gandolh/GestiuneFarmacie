@@ -47,7 +47,7 @@ IF NOT EXISTS (SELECT * FROM sysobjects WHERE name='FarmacieUser' and xtype='U')
 	)
 
 
-			IF NOT EXISTS (SELECT * FROM sysobjects WHERE name='ProviderFarmacie' and xtype='U')
+    IF NOT EXISTS (SELECT * FROM sysobjects WHERE name='ProviderFarmacie' and xtype='U')
     CREATE TABLE ProviderFarmacie (
        cui varchar(64) NOT NULL UNIQUE,
 	   denumire varchar(64),
@@ -59,19 +59,18 @@ IF NOT EXISTS (SELECT * FROM sysobjects WHERE name='FarmacieUser' and xtype='U')
 	   dataInregistrare datetime,
 	   codCAEN int,
 	   email varchar(64)
-
 	)
 
 
-	IF NOT EXISTS (SELECT * FROM sysobjects WHERE name='Comentarii' and xtype='U')
-    CREATE TABLE Comentarii (
-
-	id varchar(64) NOT NULL UNIQUE,
-	titlu varchar(64),
-	descr varchar(64)
-
-
-	)
+--	IF NOT EXISTS (SELECT * FROM sysobjects WHERE name='Comentarii' and xtype='U')
+--    CREATE TABLE Comentarii (
+--
+--	id varchar(64) NOT NULL UNIQUE,
+--	titlu varchar(64),
+--	descr varchar(64)
+--
+--
+--	)
 
 
 
@@ -88,8 +87,6 @@ IF NOT EXISTS (SELECT * FROM sysobjects WHERE name='FarmacieUser' and xtype='U')
 
 	FOREIGN KEY (providerMed) REFERENCES ProviderFarmacie(cui),
 	FOREIGN KEY (categorie) REFERENCES MedicineCategory(id),
-	FOREIGN KEY (comentarii) REFERENCES Comentarii(id)
-
 	)
 
 		IF NOT EXISTS (SELECT * FROM sysobjects WHERE name='OrderMed' and xtype='U')

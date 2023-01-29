@@ -1,5 +1,6 @@
 package gestiune.farmacie.controllers;
 
+import gestiune.farmacie.data.business.objects.Medicine;
 import gestiune.farmacie.data.business.objects.MedicineCategory;
 import gestiune.farmacie.data.business.objects.Provider;
 import gestiune.farmacie.data.business.objects.User;
@@ -244,6 +245,21 @@ public class RedirectController {
             root = loader.load();
             CreateProviderController controller = loader.getController();
             controller.initializeUpdate(provider);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        Scene scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+    }
+
+    public void goToUpdateMedicine(Stage stage, Medicine medicine) {
+        Parent root = null;
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/gestiune/farmacie/controllers/CreateMed.fxml"));
+            root = loader.load();
+            CreateMedController controller = loader.getController();
+            controller.initializeUpdate(medicine);
         } catch (Exception e) {
             e.printStackTrace();
         }

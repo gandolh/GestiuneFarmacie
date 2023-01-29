@@ -5,15 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="026c8cb3-719d-47e0-898b-16e39ff3d832" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/gestiune/farmacie/data/objects/FurnizorTableRowData.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/gestiune/farmacie/controllers/CreateProviderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gestiune/farmacie/controllers/CreateProviderController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/gestiune/farmacie/controllers/FurnizorMedicamenteViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gestiune/farmacie/controllers/FurnizorMedicamenteViewController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/gestiune/farmacie/controllers/CreateMedController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gestiune/farmacie/controllers/CreateMedController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/gestiune/farmacie/controllers/RedirectController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gestiune/farmacie/controllers/RedirectController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/gestiune/farmacie/data/access/MedicineRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gestiune/farmacie/data/access/MedicineRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/gestiune/farmacie/controllers/CreateProvider.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/gestiune/farmacie/controllers/CreateProvider.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/gestiune/farmacie/controllers/FurnizorMedicamenteView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/gestiune/farmacie/controllers/FurnizorMedicamenteView.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/gestiune/farmacie/data/business/objects/Medicine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gestiune/farmacie/data/business/objects/Medicine.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/gestiune/farmacie/data/objects/MedicineTableRowData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gestiune/farmacie/data/objects/MedicineTableRowData.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/gestiune/farmacie/data/procs/migrate.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gestiune/farmacie/data/procs/migrate.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/gestiune/farmacie/controllers/CreateMed.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/gestiune/farmacie/controllers/CreateMed.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -119,7 +119,17 @@
           <line>112</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/gestiune/farmacie/controllers/CreateMedController.java</url>
+          <line>89</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
+    <pin-to-top-manager>
+      <pinned-members>
+        <PinnedItemInfo parentTag="gestiune.farmacie.data.business.objects.Medicine" memberName="stockCount" />
+      </pinned-members>
+    </pin-to-top-manager>
   </component>
 </project>

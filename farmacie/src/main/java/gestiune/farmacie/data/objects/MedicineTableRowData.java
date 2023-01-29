@@ -1,6 +1,7 @@
 package gestiune.farmacie.data.objects;
 
 import gestiune.farmacie.controllers.RedirectController;
+import gestiune.farmacie.data.access.MedicineRepository;
 import gestiune.farmacie.data.access.UserRepository;
 import gestiune.farmacie.data.business.objects.Medicine;
 import javafx.scene.control.MenuItem;
@@ -9,13 +10,15 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 
+import java.sql.SQLException;
+
 public class MedicineTableRowData {
     private String id;
     private String pret;
     private String stock;
     private String category;
     private String provider;
-    private String Actions;
+    private SplitMenuButton Actions;
 
     public String getId() {
         return id;
@@ -57,12 +60,12 @@ public class MedicineTableRowData {
         this.provider = provider;
     }
 
-    public String getActions() {
+    public SplitMenuButton getActions() {
         return Actions;
     }
 
     public void setActions(SplitMenuButton actions) {
-        this.actions = actions;
+        Actions = actions;
     }
 
     public BorderPane getRoot() {
@@ -73,38 +76,38 @@ public class MedicineTableRowData {
         this.root = root;
     }
 
-    public void setActions(String actions) {
-        Actions = actions;
-    }
 
-    private SplitMenuButton actions;
+
 private BorderPane root;
     public MedicineTableRowData(BorderPane rootBorderPane, Medicine medicine) {
+        this.root = rootBorderPane;
         id = medicine.getId();
         pret = String.valueOf(medicine.getPrice());
         stock = String.valueOf(medicine.getStockCount());
         category = medicine.getCategorie().getTitlu();
         provider = medicine.getProviderMed().getDenumire();
-        actions = new SplitMenuButton();
-        actions.setText("Actiuni");
+        Actions = new SplitMenuButton();
+        Actions.setText("Actiuni");
         MenuItem actualizeazaMenuItem = new MenuItem("actualizeaza");
         MenuItem stergeMenuItem = new MenuItem("sterge");
 
-//        actualizeazaMenuItem.setOnAction(e -> {
-//            RedirectController redirect = new RedirectController();
-//            redirect.goToUpdateUser((Stage) root.getScene().getWindow(), user);
-//        });
-//
-//        stergeMenuItem.setOnAction(e -> {
-//            UserRepository userRepo = new UserRepository();
-//
-//            boolean isUserDeleted = userRepo.deleteUser(userId, employeeId);
-//            if(isUserDeleted){
-//                RedirectController redirect = new RedirectController();
-//                redirect.goToManageUsers((Stage) root.getScene().getWindow());
-//            }
-//        });
-//        actions.getItems().addAll(actualizeazaMenuItem, stergeMenuItem);
+        actualizeazaMenuItem.setOnAction(e -> {
+            RedirectController redirect = new RedirectController();
+            redirect.goToUpdateMedicine((Stage) root.getScene().getWindow(), medicine);
+        });
+
+        stergeMenuItem.setOnAction(e -> {
+            MedicineRepository medRepo = new MedicineRepository();
+
+            try {
+                medRepo.deleteMedicine(medicine.getId());
+                RedirectController redirect = new RedirectController();
+                redirect.goToManageUsers((Stage) root.getScene().getWindow());
+            } catch (SQLException ex) {
+                throw new RuntimeException(ex);
+            }
+        });
+        Actions.getItems().addAll(actualizeazaMenuItem, stergeMenuItem);
     }
 
 }

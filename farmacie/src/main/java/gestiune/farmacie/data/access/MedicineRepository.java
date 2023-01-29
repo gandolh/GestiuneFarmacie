@@ -33,7 +33,7 @@ public class MedicineRepository {
                 medicine.setId(set.getString("idMedicament"));
                 medicine.setPrice(set.getDouble("price"));
                 medicine.setStockCount(set.getInt("stockCount"));
-                medicine.setComentarii(List.of(set.getString("Comentarii").split(",")));
+                medicine.setComentarii(set.getString("Comentarii"));
                 medicine.getCategorie().setId(set.getString("idCategorie"));
                 medicine.getCategorie().setTitlu(set.getString("titlu"));
                 medicine.getCategorie().setDescriere(set.getString("descriere"));
@@ -197,5 +197,92 @@ public class MedicineRepository {
                 provider.getTelefon(), provider.getCodPostal(), provider.getIban(), provider.getDataInregistrare(),
                 provider.getCodCAEN(), provider.getEmail(),provider.getCui());
         DatabaseConnection.executeNonQuerry(formattedSql);
+    }
+
+    public MedicineCategory getMedicineCategory(String medicineCategoryTitle) {
+        String sql = "SELECT TOP (1000) [id]\n" +
+                "      ,[titlu]\n" +
+                "      ,[descriere]\n" +
+                "  FROM [piiiproject].[dbo].[MedicineCategory]\n" +
+                "  where titlu='%s'";
+        String formattedSql = String.format(sql, medicineCategoryTitle );
+        try {
+            ResultSet rs =  DatabaseConnection.executeQuerry(formattedSql);
+            if(rs.next()){
+                return new MedicineCategory( rs.getString("id"),rs.getString("titlu"),rs.getString("descriere"));
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    return null;
+    }
+
+    public Provider getProvider(String providerDenumire) {
+        String sql = "SELECT TOP (1000) [cui]\n" +
+                "      ,[denumire]\n" +
+                "      ,[adresa]\n" +
+                "      ,[nrRegCom]\n" +
+                "      ,[telefon]\n" +
+                "      ,[codPostal]\n" +
+                "      ,[iban]\n" +
+                "      ,[dataInregistrare]\n" +
+                "      ,[codCAEN]\n" +
+                "      ,[email]\n" +
+                "  FROM [piiiproject].[dbo].[ProviderFarmacie]\n" +
+                "  where denumire='%s'";
+        String formattedSql = String.format(sql, providerDenumire );
+        try {
+            ResultSet rs =  DatabaseConnection.executeQuerry(formattedSql);
+            if(rs.next()){
+                return new Provider( rs.getString("cui"),rs.getString("adresa"), rs.getString("denumire"),
+                        rs.getInt("nrRegCom"), rs.getString("telefon"), rs.getString("codPostal"),
+                        rs.getString("iban"), rs.getString("email"),rs.getInt("codCAEN"),
+                        rs.getDate("dataInregistrare"));
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+        return null;
+    }
+
+    public void addMedicine(Medicine med) throws SQLException {
+        String sql = "INSERT INTO [dbo].[Medicine]\n" +
+                "           ([id]\n" +
+                "           ,[price]\n" +
+                "           ,[stockCount]\n" +
+                "           ,[categorie]\n" +
+                "           ,[providerMed]\n" +
+                "           ,[comentarii])\n" +
+                "     VALUES\n" +
+                "           ('%s'\n" +
+                "           ,'%s'\n" +
+                "           ,'%s'\n" +
+                "           ,'%s'\n" +
+                "           ,'%s'\n" +
+                "           ,'%s')";
+
+        DatabaseConnection.executeNonQuerry(String.format(sql, med.getId(),med.getPrice(),med.getStockCount(),
+                med.getCategorie().getId(), med.getProviderMed().getCui(), med.getComentarii()));
+    }
+
+    public void updateMedicine(Medicine med) throws SQLException {
+        String sql = "\n" +
+                "UPDATE [dbo].[Medicine]\n" +
+                "   SET [price] = '%s'\n" +
+                "      ,[stockCount] = '%s' \n" +
+                "      ,[categorie] = '%s'\n" +
+                "      ,[providerMed] = '%s'\n" +
+                "      ,[comentarii] = '%s' \n" +
+                " WHERE  id='%s'";
+        String formattedSql = String.format(sql, med.getPrice(), med.getStockCount(), med.getCategorie().getId(),
+                med.getProviderMed().getCui(), med.getComentarii());
+        DatabaseConnection.executeNonQuerry(formattedSql);
+    }
+
+    public void deleteMedicine(String medicineId) throws SQLException {
+            String sql = "\n" +
+                    "DELETE FROM [dbo].[Medicine]\n" +
+                    "      WHERE id='%s'";
+            DatabaseConnection.executeQuerry(String.format(sql, medicineId));
     }
 }

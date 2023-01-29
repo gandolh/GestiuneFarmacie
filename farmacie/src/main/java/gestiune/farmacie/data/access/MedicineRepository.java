@@ -3,6 +3,7 @@ package gestiune.farmacie.data.access;
 import gestiune.farmacie.components.MyDialog;
 import gestiune.farmacie.data.business.objects.Medicine;
 import gestiune.farmacie.data.business.objects.MedicineCategory;
+import gestiune.farmacie.data.business.objects.Provider;
 import gestiune.farmacie.data.business.objects.User;
 
 import java.sql.ResultSet;
@@ -104,5 +105,97 @@ public class MedicineRepository {
                 " WHERE id='%s'";
         DatabaseConnection.executeNonQuerry(String.format(sql, mc.getTitlu(), mc.getDescriere(), mc.getId()));
 
+    }
+
+    public List<Provider> getAllProviders() {
+        List<Provider> providers = new ArrayList<Provider>();
+        String sql = "SELECT TOP (1000) [cui]\n" +
+                "      ,[denumire]\n" +
+                "      ,[adresa]\n" +
+                "      ,[nrRegCom]\n" +
+                "      ,[telefon]\n" +
+                "      ,[codPostal]\n" +
+                "      ,[iban]\n" +
+                "      ,[dataInregistrare]\n" +
+                "      ,[codCAEN]\n" +
+                "      ,[email]\n" +
+                "  FROM [piiiproject].[dbo].[ProviderFarmacie]";
+
+        ResultSet set = null;
+        try {
+            set = DatabaseConnection.executeQuerry(sql);
+            while(set.next()){
+                Provider provider = new Provider();
+                provider.setCui(set.getString("cui"));
+                provider.setDenumire(set.getString("denumire"));
+                provider.setAdresa(set.getString("adresa"));
+                provider.setNrRegCom(set.getInt("nrRegCom"));
+                provider.setTelefon(set.getString("telefon"));
+                provider.setCodPostal(set.getString("codPostal"));
+                provider.setIban(set.getString("iban"));
+                provider.setDataInregistrare(set.getDate("dataInregistrare"));
+                provider.setCodCAEN(set.getInt("codCAEN"));
+                provider.setEmail(set.getString("email"));
+                providers.add(provider);
+            }
+            return providers;
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return providers;
+    }
+
+    public void addProvider(Provider provider) throws SQLException {
+        String sql = "\n" +
+                "INSERT INTO [dbo].[ProviderFarmacie]\n" +
+                "([cui]\n" +
+                ",[denumire]\n" +
+                ",[adresa]\n" +
+                ",[nrRegCom]\n" +
+                ",[telefon]\n" +
+                ",[codPostal]\n" +
+                ",[iban]\n" +
+                ",[dataInregistrare]\n" +
+                ",[codCAEN]\n" +
+                ",[email])\n" +
+                "VALUES\n" +
+                "('%s'\n" +
+                ",'%s'\n" +
+                ",'%s'\n" +
+                ",'%s'\n" +
+                ",'%s'\n" +
+                ",'%s'\n" +
+                ",'%s'\n" +
+                ",'%s'\n" +
+                ",'%s'\n" +
+                ",'%s')";
+        String formattedSql = String.format(sql, provider.getCui(),provider.getDenumire()
+                ,provider.getAdresa(), provider.getNrRegCom(), provider.getTelefon(), provider.getCodPostal(), provider.getIban(),
+                provider.getDataInregistrare(), provider.getCodCAEN(), provider.getEmail());
+        DatabaseConnection.executeNonQuerry(formattedSql);
+    }
+
+    public void deleteProvider(String cui) throws SQLException {
+        String sql = String.format("DELETE FROM [dbo].[ProviderFarmacie]\n" +
+                "      WHERE cui ='%s'",cui);
+        DatabaseConnection.executeNonQuerry(sql);
+    }
+
+    public void updateProvider(Provider provider) throws SQLException {
+        String sql = "UPDATE [dbo].[ProviderFarmacie]\n" +
+                "   SET [denumire] = '%s'\n" +
+                "      ,[adresa] = '%s'\n" +
+                "      ,[nrRegCom] = '%s'\n" +
+                "      ,[telefon] = '%s'\n" +
+                "      ,[codPostal] = '%s'\n" +
+                "      ,[iban] = '%s'\n" +
+                "      ,[dataInregistrare] = '%s'\n" +
+                "      ,[codCAEN] = '%s'\n" +
+                "      ,[email] = '%s'\n" +
+                " WHERE cui='%s'";
+        String formattedSql = String.format(sql, provider.getDenumire(),provider.getAdresa(), provider.getNrRegCom(),
+                provider.getTelefon(), provider.getCodPostal(), provider.getIban(), provider.getDataInregistrare(),
+                provider.getCodCAEN(), provider.getEmail(),provider.getCui());
+        DatabaseConnection.executeNonQuerry(formattedSql);
     }
 }

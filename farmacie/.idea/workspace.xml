@@ -7,20 +7,6 @@
     <list default="true" id="026c8cb3-719d-47e0-898b-16e39ff3d832" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/gestiune/farmacie/components/MyMenubar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gestiune/farmacie/components/MyMenubar.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/gestiune/farmacie/controllers/UserSettingsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gestiune/farmacie/controllers/UserSettingsController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/gestiune/farmacie/controllers/CategoriiMedicamenteView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/gestiune/farmacie/controllers/CategoriiMedicamenteView.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/gestiune/farmacie/controllers/CreateCateg.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/gestiune/farmacie/controllers/CreateCateg.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/gestiune/farmacie/controllers/CreateMed.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/gestiune/farmacie/controllers/CreateMed.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/gestiune/farmacie/controllers/CreateProvider.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/gestiune/farmacie/controllers/CreateProvider.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/gestiune/farmacie/controllers/CreateUpdateAccount.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/gestiune/farmacie/controllers/CreateUpdateAccount.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/gestiune/farmacie/controllers/FurnizorMedicamenteView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/gestiune/farmacie/controllers/FurnizorMedicamenteView.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/gestiune/farmacie/controllers/Home.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/gestiune/farmacie/controllers/Home.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/gestiune/farmacie/controllers/LogIn.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/gestiune/farmacie/controllers/LogIn.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/gestiune/farmacie/controllers/ManageUsers.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/gestiune/farmacie/controllers/ManageUsers.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/gestiune/farmacie/controllers/MedicamenteView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/gestiune/farmacie/controllers/MedicamenteView.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/gestiune/farmacie/controllers/UserSettings.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/gestiune/farmacie/controllers/UserSettings.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/gestiune/farmacie/controllers/myAccount.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/gestiune/farmacie/controllers/myAccount.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
